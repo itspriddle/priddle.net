@@ -35,10 +35,8 @@
         <nav class="site-nav" style="text-transform: lowercase">
           <a class="page-link" href="/">{{ site.title }}</a> /
           <a class="page-link{% if current_page == "/work/" %} page-link-active{% endif %}" href="{{ "/work/" | relative_url }}">Work</a> /
-          <a class="page-link{% if current_page == "/oss/" %} page-link-active{% endif %}" href="{{ "/oss/" | relative_url }}">OSS</a>
-          {% if jekyll.environment == "development" %}
-          / <a class="page-link{% if current_page == "/resume/" %} page-link-active{% endif %}" href="{{ "/resume/" | relative_url }}">Resume</a>
-          {% endif %}
+          <a class="page-link{% if current_page == "/oss/" %} page-link-active{% endif %}" href="{{ "/oss/" | relative_url }}">OSS</a> /
+          <a class="page-link{% if current_page == "/resume/" %} page-link-active{% endif %}" href="{{ "/resume/" | relative_url }}">Resume</a>
         </nav>
       </div>
     </header>
