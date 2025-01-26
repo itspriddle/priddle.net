@@ -25,4 +25,4 @@ caching, and a custom Laravel wrapper for WP-CLI that is distributed to over
 5,000 metal and virtual servers. I was responsible for the initial project
 architecture and I led a team of 12 developers to bring the project from an
 MVP to a fully functional application servicing over 385,000 WordPress sites
-for 100,000 customers.
+for 110,000 customers.
