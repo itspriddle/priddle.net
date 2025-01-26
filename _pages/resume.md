@@ -59,12 +59,11 @@ skills:
 - WordPress Plugin Development
 ---
 
-I'm Josh --- a full stack software engineer with over 17 years of experience in
-the web hosting industry. I specialize in web application development with
-Ruby on Rails and WordPress. I have a strong background in Linux systems
-administration and can oversee a project from its inception to deployment. I
-enjoy solving challenging problems and helping other developers through
-mentoring and Open Source Software contributions.
+I'm Josh --- a full stack developer and leader with over 15 years of
+experience designing and maintaining SaaS billing systems and control panels.
+Expert in API server and client implementation and integration. Extensive
+background in web hosting and Linux systems administration. Highly productive
+on remote, agile teams.
 
 ---
 
@@ -72,21 +71,17 @@ mentoring and Open Source Software contributions.
 
 ### Director of Software Development --- A2 Hosting, Inc (Remote)
 
-Feb 2020 - Present
+Aug 2019 - Present
 
-Lead the software development team responsible for maintaining the A2 client
-portal and billing system and internal staff web applications.
-
----
-
-### Senior Software Developer --- A2 Hosting, Inc (Remote)
-
-Aug 2019 - Feb 2020
-
-Worked with the software development team in a pair programming environment to
-implement new features and security improvements on the customer billing
-system and front-end marketing site. Promoted to Director of Software
-Development in Feb 2020.
+Lead the software development team responsible for maintaining the customer
+billing system and control panels servicing over 110,000 clients and 385,000
+WordPress sites. Spearheaded architecture, design, and development of custom
+Laravel PHP applications TurboHub, a control panel for managing WordPress
+websites on over 5,000 remote machines using WP-CLI, RabbitMQ, and Bash; and
+GoCart, a custom shopping cart powered by custom WHMCS APIs. Worked directly
+with the executive team to plan, architect, and execute all company-wide
+software projects via scrum. Utilized PHP, Laravel, MySQL, JavaScript, and
+Bash. Promoted from Sr. Software Developer to Director in Feb 2020.
 
 ---
 
@@ -94,12 +89,13 @@ Development in Feb 2020.
 
 Jul 2017 - Aug 2019
 
-Worked with the Uptime team maintaining performance and security on
-ThemeForest, one of the world's largest Rails sites by traffic. Duties
-included bug-fixes, performance improvements, regular platform and dependency
-updates, responding to on-call issues, and general support. Previously worked
-with the Hosted team maintaining the Rails billing system acquired from
-Pressed in 2017.
+Worked with Site Reliability Engineering team to maintain performance and
+security on ThemeForest.net, one of the world's largest Ruby on Rails sites by
+traffic. Duties included implementing bug-fixes, performance improvements,
+regular platform and dependency updates, responding to on-call issues, and
+general support. Implemented internal tooling for on-call rotations using
+PagerDuty and AWS Lambda. Utilized Ruby on Rails, Bash, and AWS (EC2,
+CloudFormation, S3, RDS, Lambda).
 
 ---
 
@@ -107,13 +103,17 @@ Pressed in 2017.
 
 Jul 2015 - Jul 2017
 
-Worked with the software and cloud engineering teams to build and maintain
-staff, partner, and customer control panels used to power managed WordPress
-hosting services. Was responsible for maintenance and implementation of new
-features of our Rails applications and libraries that integrate with the
-hosting platform and WordPress. Worked closely with CTO and senior software
-engineers to help review and interview candidates for employment. Frequently
-contributed to open source projects used or created by Pressed engineers.
+
+Worked with executive team and developers on planning, development, QA, and
+release of new features for our Ruby on Rails based billing and WordPress
+hosting platforms via scrum. Led architecture, design, and development of
+Pressed Bundles, a key feature that allowed partner WordPress agencies to
+configure and automatically install their themes and plugins for their
+clients. Oversaw all development and migration efforts to move payment
+processors from Litle/Vantiv to Braintree across all partner order forms.
+Interviewed and onboarded new developers. Frequently contributed to open
+source Ruby, Bash, and PHP projects used by Pressed engineers and the greater
+WordPress community. Pressed was acquired by Envato in September 2017.
 
 ---
 
