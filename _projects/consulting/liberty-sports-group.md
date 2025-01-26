@@ -11,6 +11,6 @@ project_type: work
 ---
 
 I worked with Allusis Productions to develop a fully custom WordPress site for
-Liberty Sports Group. I implemented the sites WordPress theme and multiple
+Liberty Sports Group. I implemented the site's WordPress theme and multiple
 plugins to improve the admin experience. I also oversaw the initial deployment
 of the website.
