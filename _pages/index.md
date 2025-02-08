@@ -6,7 +6,7 @@ permalink: /
 
 I'm Josh, a full stack developer and leader with over 15 years of experience
 designing and maintaining SaaS platforms, control panels, and billing systems
-uisng Ruby on Rails. Expert in API server and client implementation and
+using Ruby on Rails. Expert in API server and client implementation and
 integration. I have an extensive background in web hosting and Linux systems
 administration and I'm highly productive on remote, agile teams.
 
