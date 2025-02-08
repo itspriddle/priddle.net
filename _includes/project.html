@@ -28,7 +28,7 @@
     </h2>
 
     {% if project.project_type == "work" and project.company %}
-      <p class="post-meta">{{ project.company }} ({{ project.date | date: "%b %Y" }})</p>
+      <p class="post-meta">{{ project.company }}</p>
     {% endif %}
 
     {{ project.excerpt | markdownify }}
