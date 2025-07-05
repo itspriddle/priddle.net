@@ -59,21 +59,40 @@ skills:
 - WordPress Plugin Development
 ---
 
-I'm Josh --- a full stack developer and leader with over 15 years of
-experience designing and maintaining SaaS billing systems and control panels.
-Expert in API server and client implementation and integration. Extensive
-background in web hosting and Linux systems administration. Highly productive
-on remote, agile teams.
+I'm Josh, a full-stack developer and leader with 20 years of experience in the
+web hosting space. I love the challenge of taking an idea and creating
+something out of nothing. Over the years, I've built SaaS platforms, control
+panels, and billing systems that serve hundreds of thousands of customers and
+websites. I'm passionate about API design and integration, and I have deep
+experience with Linux systems administration. I thrive on remote, agile teams
+where I can help guide technical decisions and mentor other developers.
 
 ---
 
 ## Work Experience
 
+### Director of Software Development --- BuiltFast, LCC (Remote)
+
+May 2025 - Present
+
+Lead the architecture and development of a comprehensive web hosting
+management platform serving as the backbone for a modern hosting provider.
+Design multi-tenant Laravel 12 API applications supporting shared hosting,
+VPS, and managed WordPress services with automated provisioning and billing
+integration. Guide development team through complex technical decisions,
+establishing security-first architecture with strict account-level data
+isolation, robust authentication, and real-time webhook processing. Enforce
+high code quality standards using static analysis, comprehensive testing with
+PestPHP, and modern PHP 8.3+ practices to deliver a production-ready platform
+designed for scale.
+
+---
+
 ### Director of Software Development --- A2 Hosting, Inc (Remote)
 
-Aug 2019 - Present
+Aug 2019 - Apr 2025
 
-Lead the software development team responsible for maintaining the customer
+Led the software development team responsible for maintaining the customer
 billing system and control panels servicing over 110,000 clients and 385,000
 WordPress sites. Spearheaded architecture, design, and development of custom
 Laravel PHP applications TurboHub, a control panel for managing WordPress
