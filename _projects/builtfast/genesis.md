@@ -18,7 +18,7 @@ project_type: work
 
 Genesis is a hosting provisioning API built on Laravel 12 that handles the
 complete lifecycle of web hosting accounts and VPS instances. I was the lead
-architect on the project which serves as the core provisioning system for our
+architect on the project which serves as the core provisioning system for
 BuiltFast, handling everything from initial account creation to
 termination.
 
