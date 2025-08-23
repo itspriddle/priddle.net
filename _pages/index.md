@@ -21,7 +21,7 @@ WordPress plugins.
 I mainly program in PHP, Ruby, and Bash. I write a little over at
 [josh.fail][] and you can find me on [LinkedIn][] and on [Bluesky][].
 
-These days I'm a co-founder and Director of Software Development at
+These days I'm a Co-Founder and VP of Software Development at
 [BuiltFast][], a privately owned, founder-led hosting company focused on
 bringing true service back to the hosting space. We believe that great hosting
 is still possible, and we're excited to prove it.
