@@ -8,6 +8,7 @@ tags:
   - GitHub
   - Shellcheck
 project_type: oss
+category: github
 excerpt: |
   I was sick of writing custom scripts to run ShellCheck on all shell scripts
   in my projects, so I created `gh-shellcheck`. It automatically

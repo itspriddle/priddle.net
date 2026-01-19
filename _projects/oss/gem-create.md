@@ -9,6 +9,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   gem-create is a RubyGems plugin. It provides a gem create command which can be
   used to generate a skeleton for working on a new RubyGem.

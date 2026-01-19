@@ -8,6 +8,7 @@ tags:
   - Rsync
   - SSH
 project_type: oss
+category: vim
 ---
 
 This is a little TextMate bundle I wrote to let you use SSH/rsync to upload your website.

@@ -12,6 +12,7 @@ tags:
   - Ruby
   - Vim
 project_type: oss
+category: cli
 ---
 
 My dotfiles include my development environment for use on OS X and Linux.

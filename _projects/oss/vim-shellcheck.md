@@ -9,6 +9,7 @@ tags:
   - ShellCheck
   - Vim Plugin
 project_type: oss
+category: vim
 excerpt: |
   Vim wrapper for [ShellCheck](https://github.com/koalaman/shellcheck), a
   static analysis tool for shell scripts. It adds adds `:ShellCheck` and

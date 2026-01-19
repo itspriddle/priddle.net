@@ -11,6 +11,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   APND (Apple Push Notification Daemon) is a RubyGem that integrates with
   Apple's Push Notification Service.

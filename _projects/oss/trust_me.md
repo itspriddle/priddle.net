@@ -11,6 +11,7 @@ tags:
   - RubyGems
   - TeleSign
 project_type: oss
+category: ruby
 excerpt: |
   TrustMe is a RubyGem that interfaces with the
   [TeleSign](https://www.telesign.com/) REST API. I created the initial

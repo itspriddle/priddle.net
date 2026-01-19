@@ -1,7 +1,7 @@
 {%- assign page_url = page.url | remove_first: "index.html" | absolute_url -%}
 {%- assign current_page = page.url | remove_first: "index.html" | relative_url -%}
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-color-mode="light" data-env="{{ jekyll.environment }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" x-data="{ dark: localStorage.getItem('theme') === 'light' ? false : true }" x-init="$watch('dark', val => localStorage.setItem('theme', val ? 'dark' : 'light'))" :class="{ 'dark': dark }">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,117 +12,64 @@
     <link rel="canonical" href="{{ page_url }}">
     <meta property="og:url" content="{{ page_url }}" />
     <meta property="og:site_name" content="{{ site.title | smartify }}" />
-
-    <link rel="stylesheet" href="{{ "/stylesheets/main.css" | relative_url }}?{% include helpers/asset-hash.html %}">
-
-    <title>{% include helpers/page-title.html %}</title>
-
     <meta property="og:title" content="{% include helpers/page-title.html %}" />
     <meta name="author" content="{{ site.author.name }}" />
     <meta property="og:locale" content="en" />
     <meta property="og:type" content="website" />
+
+    <title>{% include helpers/page-title.html %}</title>
+
+    <link rel="stylesheet" href="{{ "/assets/css/app.css" | relative_url }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
   </head>
 
-  <body>
-    <header class="site-header">
-      <div class="wrapper">
-        <!--
-        <a class="site-title" href="/" title="{{ site.title }}">
-          {{ site.title }}
-        </a>
-        -->
+  <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased leading-relaxed">
 
-        <nav class="site-nav" style="text-transform: lowercase">
-          <a class="page-link" href="/">{{ site.title }}</a> /
-          <a class="page-link{% if current_page == "/work/" %} page-link-active{% endif %}" href="{{ "/work/" | relative_url }}">Work</a> /
-          <a class="page-link{% if current_page == "/oss/" %} page-link-active{% endif %}" href="{{ "/oss/" | relative_url }}">OSS</a> /
-          <a class="page-link{% if current_page == "/resume/" %} page-link-active{% endif %}" href="{{ "/resume/" | relative_url }}">Resume</a>
+    <header class="border-b border-zinc-200 dark:border-zinc-800">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="{{ "/" | relative_url }}" class="text-sm font-semibold tracking-tight hover:text-accent transition-colors group">
+          <span class="text-accent">jp</span><span>riddle</span>
+        </a>
+
+        <nav class="flex items-center gap-6">
+          {%- assign nav_items = "/work/,/oss/,/resume/" | split: "," -%}
+          {%- assign nav_labels = "/work,/oss,/resume" | split: "," -%}
+          {% for nav in nav_items %}
+          <a href="{{ nav | relative_url }}" class="text-xs transition-colors {% if current_page == nav %}text-accent font-medium{% else %}text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100{% endif %}">{% if current_page == nav %}[{{ nav_labels[forloop.index0] }}]{% else %}{{ nav_labels[forloop.index0] }}{% endif %}</a>
+          {% endfor %}
+
+          <button
+            @click="dark = !dark"
+            class="text-zinc-400 hover:text-accent transition-colors"
+            :aria-label="dark ? 'Switch to light mode' : 'Switch to dark mode'"
+          >
+            <span x-show="dark" x-cloak>{% lucide_icon sun class="w-4 h-4" %}</span>
+            <span x-show="!dark" x-cloak>{% lucide_icon moon class="w-4 h-4" %}</span>
+          </button>
         </nav>
       </div>
     </header>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+    <main class="max-w-4xl mx-auto px-6">
+      {{ content }}
     </main>
 
-    <footer class="site-footer">
-      <div class="wrapper">
-        <div class="footer-col-wrapper">
-          <div class="footer-col">
-            <a href="{{ site.url }}" title="{{ site.title }}">{{ site.title }}</a>
-            by <span class="color-mode-toggle">{{ site.author.name }}</span>
-          </div>
+    <footer class="border-t border-zinc-200 dark:border-zinc-800">
+      <div class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+        <span class="text-xs text-zinc-400 dark:text-zinc-500">&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}</span>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/{{ site.author.github }}" class="text-zinc-400 dark:text-zinc-500 hover:text-accent transition-colors" aria-label="GitHub">{% lucide_icon github class="w-3.5 h-3.5" %}</a>
+          <a href="https://linkedin.com/in/{{ site.author.linkedin }}" class="text-zinc-400 dark:text-zinc-500 hover:text-accent transition-colors" aria-label="LinkedIn">{% lucide_icon linkedin class="w-3.5 h-3.5" %}</a>
+          <a href="mailto:{{ site.author.email }}" class="text-zinc-400 dark:text-zinc-500 hover:text-accent transition-colors" aria-label="Email">{% lucide_icon mail class="w-3.5 h-3.5" %}</a>
+          <span class="text-xs text-zinc-400 dark:text-zinc-500">{{ site.author.location }}</span>
         </div>
       </div>
     </footer>
 
-    <script>
-      const ColorScheme = {
-        currentMode: () => {
-          return document.documentElement.getAttribute('data-color-mode');
-        },
-        userPrefersDark: () => {
-          return window.matchMedia('(prefers-color-scheme: dark)');
-        },
-        setMode: (mode) => {
-          document.documentElement.setAttribute('data-color-mode', mode);
-
-          localStorage.setItem('color-mode', mode);
-        },
-        toggleMode: () => {
-          const currentMode = ColorScheme.currentMode();
-          const nextMode = currentMode === 'dark' ? 'light' : 'dark';
-          ColorScheme.setMode(nextMode);
-        },
-        hotkeyHandler: (e) => {
-          // ctrl-i to toggle
-          if (e.ctrlKey && e.which == 73) {
-            ColorScheme.toggleMode();
-          }
-
-          // ctrl-shift-i to set to auto
-          //if (e.ctrlKey && e.shiftKey && e.which == 73) {
-          //  ColorScheme.setMode();
-          //}
-        },
-        toggleColorBtns: () => {
-          return document.querySelectorAll('.color-mode-toggle');
-        },
-        init: () => {
-          if (
-            localStorage.getItem('color-mode') === 'dark' ||
-            (ColorScheme.userPrefersDark().matches &&
-              !localStorage.getItem('color-mode'))
-          ) {
-            ColorScheme.setMode('dark');
-          } else {
-            ColorScheme.setMode('light');
-          }
-
-          ColorScheme.userPrefersDark().addEventListener("change", (e) => {
-            if (localStorage.getItem('color-mode')) {
-              return;
-            }
-
-            if (e.matches) {
-              ColorScheme.setMode('dark');
-            } else {
-              ColorScheme.setMode('light');
-            }
-          });
-
-          document.addEventListener("keyup", ColorScheme.hotkeyHandler, false);
-
-          ColorScheme.toggleColorBtns().forEach((btn) => {
-            btn.addEventListener("click", ColorScheme.toggleMode, false);
-          });
-        }
-      };
-
-      ColorScheme.init();
-
-    </script>
   </body>
 </html>

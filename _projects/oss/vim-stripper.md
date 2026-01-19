@@ -8,6 +8,7 @@ tags:
   - Git
   - Vim Plugin
 project_type: oss
+category: vim
 excerpt: |
   When I made the switch to Vim, I wanted to strip trailing whitespace when I
   saved a file. I wrote vim-stripper to do just that.

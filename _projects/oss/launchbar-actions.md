@@ -9,6 +9,7 @@ tags:
   - Ruby
   - Bash
 project_type: oss
+category: cli
 ---
 
 Just a few [LaunchBar][] Actions I use. See [the repo]({{ page.github }}) for

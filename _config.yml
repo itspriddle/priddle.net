@@ -29,23 +29,37 @@ exclude:
   - README.md
   - bin
   - vendor
+  - _prototype
+  - _repos
+  - _static-demos
 
 include:
   - _pages
 
-# Sass setup
-sass:
-  sass_dir: stylesheets
-  style: compressed
-
 # Gems
 plugins:
   - jekyll-sitemap
+  - jekyll-github-metadata
+  - jekyll-lucide
+  - jekyll-paginate-v2
+  - jekyll-tailwind
+
+# Tailwind configuration
+tailwind:
+  input: "assets/css/app.css"
+  output: "_site/assets/css/app.css"
+  minify: true
 
 # Collections
 collections:
   projects:
     output: true
+
+# Lucide icons
+lucide:
+  defaults:
+    class: "lucide-icon"
+
 
 # Default values
 defaults:

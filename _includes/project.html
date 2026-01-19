@@ -1,42 +1,30 @@
-{{ include.intro | markdownify }}
+{%- assign projects = include.collection | reverse -%}
+<div class="space-y-3">
+  {%- for project in projects limit: include.limit -%}
+  {%- assign plain_excerpt = project.excerpt | strip_html | normalize_whitespace -%}
+  {%- assign plain_content = project.content | strip_html | normalize_whitespace -%}
+  {%- if plain_excerpt != plain_content -%}
+    {%- assign has_detail = true -%}
+  {%- else -%}
+    {%- assign has_detail = false -%}
+  {%- endif -%}
 
-{% for project in include.collection reversed %}
-{%- assign plain_excerpt = project.excerpt | strip_html | normalize_whitespace -%}
-{%- assign plain_content = project.content | strip_html | normalize_whitespace -%}
-{%- if project.path contains "_projects/consulting" -%}
-{%- assign company_id = "personal" -%}
-{%- else -%}
-{%- assign company_id = project.company | default: "personal" | slugify -%}
-{%- endif -%}
-{%- assign project_classes = "project " -%}
-{%- for tag in project.tags -%}
-{%- assign t = tag | slugify -%}
-{%- assign project_classes = project_classes | append: "project-type-" | append: t -%}
-{%- unless forloop.last -%}
-{%- assign project_classes = project_classes | append: " " -%}
-{%- endunless -%}
-{%- endfor -%}
-  <hr>
-
-  <div class="{{ project_classes }}" data-company="{{ company_id }}">
-    <h2 id="{{ project.title | slugify }}">
-      {% if plain_excerpt == plain_content %}
-        {{ project.title | smartify }}
-      {% else %}
-        <a href="{{ project.url | relative_url }}">{{ project.title | smartify }}</a>
-      {% endif %}
-    </h2>
-
-    {% if project.project_type == "work" and project.company %}
-      <p class="post-meta">{{ project.company }}</p>
-    {% endif %}
-
-    {{ project.excerpt | markdownify }}
-
-    <p>Tags: {{ project.tags | sort | join: ", " | smartify }}</p>
-
-    {% if project.github %}
-      <p><a href="{{ project.github }}">View on GitHub &rarr;</a></p>
-    {% endif %}
+  {%- if has_detail -%}
+  <a href="{{ project.url | relative_url }}" class="block group border-l-2 border-zinc-200 dark:border-zinc-800 hover:border-accent pl-4 py-2 transition-all hover:translate-x-1">
+  {%- elsif project.github -%}
+  <a href="{{ project.github }}" class="block group border-l-2 border-zinc-200 dark:border-zinc-800 hover:border-accent pl-4 py-2 transition-all hover:translate-x-1">
+  {%- else -%}
+  <div class="group border-l-2 border-zinc-200 dark:border-zinc-800 pl-4 py-2">
+  {%- endif -%}
+    <div class="flex items-baseline justify-between gap-4">
+      <h3 class="text-sm font-medium group-hover:text-accent transition-colors">{{ project.title | smartify }}</h3>
+      <span class="text-xs text-zinc-400 dark:text-zinc-500 shrink-0">{% if project.company %}{{ project.company }}{% else %}{{ project.date | date: "%Y" }}{% endif %}</span>
+    </div>
+    <p class="text-xs text-zinc-500 dark:text-zinc-500 mt-1">{{ plain_excerpt | truncate: 120 }}</p>
+  {%- if has_detail or project.github -%}
+  </a>
+  {%- else -%}
   </div>
-{% endfor %}
+  {%- endif -%}
+  {%- endfor -%}
+</div>

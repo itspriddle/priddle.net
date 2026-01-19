@@ -11,6 +11,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   ReamazeAPI is a RubyGem that interfaces with the
   [Reamaze](https://www.reamaze.com/) REST API. I created the initial

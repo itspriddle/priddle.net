@@ -11,6 +11,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   TiFighter is a jQuery-like library designed to help you wage intergalactic war
   on your Titanium Mobile applications. This was one of my first projects using

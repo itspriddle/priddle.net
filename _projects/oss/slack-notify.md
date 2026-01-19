@@ -9,6 +9,7 @@ tags:
   - jq
   - Slack
 project_type: oss
+category: cli
 excerpt: |
   I send a lot of Slack notifications using incoming webhooks. I put together
   `slack-notify` to do it quickly with just Bash, jq, and curl.

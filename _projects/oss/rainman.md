@@ -9,6 +9,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   Rainman was a RubyGem implementing the abstract factory pattern in Rails
   applications' service objects. It was a premature abstraction and development

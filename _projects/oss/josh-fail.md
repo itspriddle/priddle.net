@@ -10,6 +10,7 @@ tags:
   - Jekyll
   - Ruby
 project_type: oss
+category: web
 ---
 
 My blog is hosted on GitHub Pages and built with Jekyll. I've written randomly

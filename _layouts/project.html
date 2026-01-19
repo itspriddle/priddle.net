@@ -2,26 +2,43 @@
 layout: default
 ---
 
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | smartify }}</h1>
-    <p class="post-meta">
-      {% if page.project_type == "work" and page.company %}
-        {{ page.company }} ({{ page.date | date: "%b %Y" }})
-      {% else %}
-        {{ page.date | date: "%b %Y" }}
-      {% endif %}
+{%- if page.path contains "oss/" -%}
+  {%- assign back_url = "/oss/" -%}
+  {%- assign back_label = "oss" -%}
+{%- else -%}
+  {%- assign back_url = "/work/" -%}
+  {%- assign back_label = "work" -%}
+{%- endif -%}
 
-      {% if page.github %}
-        • <a href="{{ page.github }}">View on GitHub</a>
-      {% endif %}
-    </p>
-  </header>
+<section class="pt-16 pb-8 fade-up">
+  <p class="text-xs text-zinc-400 dark:text-zinc-500 mb-6">
+    <a href="{{ back_url | relative_url }}" class="hover:text-accent transition-colors">/{{ back_label }}</a>
+    <span class="text-zinc-300 dark:text-zinc-700 mx-1">/</span>
+    <span class="text-zinc-600 dark:text-zinc-300">{{ page.title | smartify }}</span>
+  </p>
 
-  <div class="post-content">
-    {{ content }}
+  <h1 class="text-3xl font-bold tracking-tight mb-1">{{ page.title | smartify }}</h1>
+  {% if page.company %}
+  <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">{{ page.company }}</p>
+  {% endif %}
 
-    <hr>
-    <p>Tags: {{ page.tags | sort | join: ", " | smartify }}</p>
+  <div class="flex items-center gap-3 text-xs text-zinc-400 dark:text-zinc-500 py-3 border-y border-zinc-100 dark:border-zinc-800/50 mb-6">
+    <span>{{ page.date | date: "%b %Y" }}</span>
+    {% if page.github %}
+    <span class="text-zinc-300 dark:text-zinc-700">&middot;</span>
+    <a href="{{ page.github }}" class="inline-flex items-center gap-1 hover:text-accent transition-colors">{% lucide_icon github class="w-3 h-3" %} Source</a>
+    {% endif %}
+    {% if page.tags.size > 0 %}
+    <span class="text-zinc-300 dark:text-zinc-700">&middot;</span>
+    <div class="flex flex-wrap gap-1.5">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
+</section>
+
+<article class="content text-zinc-600 dark:text-zinc-400 pb-12 fade-up fade-up-1">
+  {{ content }}
 </article>

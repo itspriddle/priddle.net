@@ -1,14 +1,61 @@
 ---
-layout: page
-title: My Open Source Projects
+layout: default
+title: Open Source
 permalink: /oss/
-intro: |
-  I love open source software --- it lets me put food on the
-  table. I give back whenever I can.
-
-  Check out all of my projects at
-  [github.com/itspriddle](https://github.com/itspriddle).
 ---
 
-{% assign collection = site.projects | where_exp: "item", "item.hidden != true" | where: "project_type", "oss" %}
-{% include project.html title=page.title intro=page.intro collection=collection %}
+<section class="pt-16 pb-8 fade-up">
+  <h1 class="text-2xl font-bold tracking-tight mb-2">Open Source</h1>
+  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+    I love open source&mdash;it lets me put food on the table. I give back whenever I can.
+    See everything at <a href="https://github.com/{{ site.author.github }}" class="link-accent">github.com/{{ site.author.github }}</a>.
+  </p>
+</section>
+
+<section class="pb-8 fade-up" x-data="{ filter: 'all' }">
+  <div class="flex flex-wrap gap-2 mb-8">
+    {% assign filters = "all,cli,vim,ruby,php,github,web" | split: "," %}
+    {% assign labels = "All,CLI,Vim,Ruby,PHP,GitHub,Web" | split: "," %}
+    {% for f in filters %}
+    <button @click="filter = '{{ f }}'" :class="filter === '{{ f }}' ? 'bg-accent text-white border-accent' : 'text-zinc-400 dark:text-zinc-500 border-zinc-200 dark:border-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600'" class="px-2.5 py-0.5 text-xs border transition-all">{{ labels[forloop.index0] }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {% assign oss_projects = site.projects | where: "project_type", "oss" | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
+    {% for project in oss_projects %}
+    {%- assign plain_excerpt = project.excerpt | strip_html | normalize_whitespace -%}
+    {%- assign plain_content = project.content | strip_html | normalize_whitespace -%}
+    {%- if plain_excerpt != plain_content -%}
+      {%- assign has_detail = true -%}
+    {%- else -%}
+      {%- assign has_detail = false -%}
+    {%- endif -%}
+
+    <div x-show="filter === 'all' || filter === '{{ project.category }}'" x-transition.opacity>
+      {%- if has_detail -%}
+      <a href="{{ project.url | relative_url }}" class="block group border border-zinc-100 dark:border-zinc-800/50 p-4 h-full hover:border-accent/50 transition-all">
+      {%- elsif project.github -%}
+      <a href="{{ project.github }}" class="block group border border-zinc-100 dark:border-zinc-800/50 p-4 h-full hover:border-accent/50 transition-all">
+      {%- else -%}
+      <div class="group border border-zinc-100 dark:border-zinc-800/50 p-4 h-full">
+      {%- endif -%}
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <h3 class="text-sm font-medium group-hover:text-accent transition-colors">{{ project.title | smartify }}</h3>
+          {% if project.github %}
+          <span class="text-zinc-300 dark:text-zinc-600 shrink-0">{% lucide_icon github class="w-3.5 h-3.5" %}</span>
+          {% endif %}
+        </div>
+        <p class="text-xs text-zinc-500 dark:text-zinc-500 mb-2">{{ plain_excerpt | truncate: 80 }}</p>
+        {% if project.category %}
+        <span class="tag">{{ project.category }}</span>
+        {% endif %}
+      {%- if has_detail or project.github -%}
+      </a>
+      {%- else -%}
+      </div>
+      {%- endif -%}
+    </div>
+    {% endfor %}
+  </div>
+</section>

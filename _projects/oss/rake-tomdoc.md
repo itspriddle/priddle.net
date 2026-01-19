@@ -11,6 +11,7 @@ tags:
   - RubyGems
   - Tomdoc
 project_type: oss
+category: ruby
 excerpt: |
   rake-tomdoc is a RubyGem that adds adds rake [tomdoc](http://tomdoc.org/) to
   generate documentation for publishing to GitHub Pages.

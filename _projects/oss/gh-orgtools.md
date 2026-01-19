@@ -8,6 +8,7 @@ tags:
   - Git
   - CLI
 project_type: oss
+category: github
 excerpt:
   I found myself working with A2's repos and GitHub users and wanting a CLI,
   so I wrote `gh-orgtools` to save me some time.

@@ -8,6 +8,7 @@ tags:
   - Git
   - CLI
 project_type: oss
+category: github
 excerpt: |
   I missed `hub pull-request` in [GitHub CLI](https://cli.github.com), so I
   threw together `gh-prq`. It allows you to push a PR to GitHub and edit the

@@ -11,6 +11,7 @@ tags:
   - RubyGems
   - WHMCS
 project_type: oss
+category: ruby
 excerpt: |
   whmcs-ruby provides Ruby bindings for the [WHMCS
   API](http://docs.whmcs.com/API:Functions). This project was extracted from my

@@ -9,6 +9,7 @@ tags:
   - CLI
   - macOS
 project_type: oss
+category: ruby
 excerpt: |
   I wrote `things-cli` to work with [Things 3](https://culturedcode.com/things/)
   on macOS. This was the first project I've done with Bash testing (via bats)

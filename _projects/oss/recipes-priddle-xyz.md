@@ -10,6 +10,7 @@ tags:
   - Jekyll
   - Ruby
 project_type: oss
+category: web
 excerpt: |
   I wanted a website for my recipe collection that would also generate PDF files
   to print on 6x4 inch index cards. I hacked up [recipes.priddle.xyz][0] using

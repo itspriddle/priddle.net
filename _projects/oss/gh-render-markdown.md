@@ -9,6 +9,7 @@ tags:
   - Git
   - CLI
 project_type: oss
+category: github
 excerpt: |
   I wanted to learn about extensions in the new [GitHub
   CLI](https://cli.github.com), so I extracted an old script of mine into

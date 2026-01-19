@@ -7,6 +7,7 @@ tags:
   - Bash
   - Laravel
 project_type: oss
+category: cli
 excerpt: |
   I found myself copying Bash scripts from project to project, so I created
   LCARS (Laravel CLI and Reusable Scripts) to provide a unified command-line

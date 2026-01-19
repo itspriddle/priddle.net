@@ -9,6 +9,7 @@ tags:
   - Git
   - PHP
 project_type: oss
+category: php
 excerpt: |
   I missed ActionMailer from Ruby on Rails and started hacking up something
   similar for use with CodeIgniter apps. I gave it just enough love to be useful

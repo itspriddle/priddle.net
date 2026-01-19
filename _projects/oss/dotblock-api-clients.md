@@ -11,6 +11,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: cli
 ---
 
 As part of my work on DotBlock Mobile, I created API clients in [Bash][],

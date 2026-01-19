@@ -14,6 +14,7 @@ tags:
   - Ruby
   - Sinatra
 project_type: oss
+category: ruby
 excerpt: |
   shotty is a Ruby script that makes it easier to share screenshots and files
   via Dropbox on macOS.

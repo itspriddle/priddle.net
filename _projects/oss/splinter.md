@@ -11,6 +11,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   Splinter is a RubyGem that provides helpers for integration tests using
   Capybara. I created the initial implementation and help maintain the open

@@ -1,0 +1,56 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
+<section class="pt-16 pb-12 fade-up">
+  <h1 class="text-2xl font-bold tracking-tight mb-2">Contact</h1>
+  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+    I'm not currently looking for new opportunities, but feel free to reach out if you want to connect.
+  </p>
+</section>
+
+<section class="pb-12 fade-up fade-up-1">
+  <div class="space-y-4">
+    <a href="mailto:{{ site.author.email }}" class="flex items-center gap-4 p-4 border border-zinc-100 dark:border-zinc-800/50 group hover:border-accent/50 transition-all">
+      <span class="text-zinc-400 dark:text-zinc-500 group-hover:text-accent transition-colors">{% lucide_icon mail class="w-5 h-5" %}</span>
+      <div>
+        <p class="text-sm font-medium group-hover:text-accent transition-colors">Email</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">{{ site.author.email }}</p>
+      </div>
+    </a>
+
+    <a href="https://github.com/{{ site.author.github }}" class="flex items-center gap-4 p-4 border border-zinc-100 dark:border-zinc-800/50 group hover:border-accent/50 transition-all">
+      <span class="text-zinc-400 dark:text-zinc-500 group-hover:text-accent transition-colors">{% lucide_icon github class="w-5 h-5" %}</span>
+      <div>
+        <p class="text-sm font-medium group-hover:text-accent transition-colors">GitHub</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">@{{ site.author.github }}</p>
+      </div>
+    </a>
+
+    <a href="https://linkedin.com/in/{{ site.author.linkedin }}" class="flex items-center gap-4 p-4 border border-zinc-100 dark:border-zinc-800/50 group hover:border-accent/50 transition-all">
+      <span class="text-zinc-400 dark:text-zinc-500 group-hover:text-accent transition-colors">{% lucide_icon linkedin class="w-5 h-5" %}</span>
+      <div>
+        <p class="text-sm font-medium group-hover:text-accent transition-colors">LinkedIn</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">/in/{{ site.author.linkedin }}</p>
+      </div>
+    </a>
+
+    <a href="https://bsky.app/profile/josh.fail" class="flex items-center gap-4 p-4 border border-zinc-100 dark:border-zinc-800/50 group hover:border-accent/50 transition-all">
+      <span class="text-zinc-400 dark:text-zinc-500 group-hover:text-accent transition-colors">{% lucide_icon cloud class="w-5 h-5" %}</span>
+      <div>
+        <p class="text-sm font-medium group-hover:text-accent transition-colors">Bluesky</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">@josh.fail</p>
+      </div>
+    </a>
+
+    <a href="{{ site.author.blog }}" class="flex items-center gap-4 p-4 border border-zinc-100 dark:border-zinc-800/50 group hover:border-accent/50 transition-all">
+      <span class="text-zinc-400 dark:text-zinc-500 group-hover:text-accent transition-colors">{% lucide_icon pen-line class="w-5 h-5" %}</span>
+      <div>
+        <p class="text-sm font-medium group-hover:text-accent transition-colors">Blog</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">josh.fail</p>
+      </div>
+    </a>
+  </div>
+</section>

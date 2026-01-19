@@ -18,19 +18,50 @@ tags:
 project_type: work
 ---
 
-letscallsanta.com is a free service that lets children leave a voicemail for
-Santa to let him know what they'd like for Christmas. The voicemail is
-delivered to parents via email and can be shared on Facebook and Twitter or
-made public on the letscallsanta.com site. The web application was designed
-using CodeIgniter, MySQL, and jQuery; in 2009 I rewrote the application in
-Ruby on Rails. This project was initially completed in about 1 week and
-remains one of my favorite projects I've worked on.
+letscallsanta.com was a free holiday service that let children call Santa's
+personal phone line and leave a voicemail telling him what they wanted for
+Christmas. Parents would receive the recording via email and could share it on
+Facebook and Twitter or opt-in to have it featured on the public "Nice List"
+leaderboard where visitors could vote for their favorites.
 
-<!--
-**Biggest Challenge:** I built a basic version of this with a coworker without
-asking anyone and fully expected it to never be used.
+A coworker and I built the initial version without asking anyone, fully
+expecting it would never see the light of day. To our surprise, it got
+approved and became an official ViaTalk holiday promotion. This remains one of
+my favorite projects---the recordings that parents chose to share publicly had
+everyone in the office laughing.
 
-**Biggest Triumph:** Getting approval and company resources to do this well
-was great --- but the best part was how much the recordings (shared with
-parental permission) made everyone in the office laugh.
--->
+## How It Worked
+
+1. Parents registered with their phone number and email address
+2. They received Santa's toll-free number (1-866-674-7411) to call
+3. Kids called the number and left their message for Santa
+4. Asterisk recorded the call and linked it to their account via caller ID
+5. Parents received an email with a link to listen to the recording
+6. Optionally, parents could opt-in to share it on the public Nice List
+
+## Technical Implementation
+
+**CodeIgniter Version (2008):** The original was built in about a week using
+CodeIgniter, MySQL, and jQuery. It connected directly to ViaTalk's Asterisk
+PBX database (`pbx_core`) to associate incoming calls with registered users.
+Recordings were stored as MP3s identified by MD5 hashes, and a Flash-based
+player handled playback. The Nice List featured IP-based vote tracking to
+prevent stuffing the ballot.
+
+**Rails Rewrite (2009):** The following year I rewrote it in Rails 3. The new
+version added a proper message processing pipeline---a cron job would find new
+recordings, encode the WAV files to MP3 using LAME, generate secure URL tokens
+for sharing, and send notification emails. It also added counter caching for
+votes, better token-based URLs, Hoptoad exception tracking, and cleaner
+separation between the main app database and the Asterisk SIP configuration.
+
+Both versions integrated with AddThis for social sharing, and the Rails
+version added native Facebook Like and Twitter Tweet buttons.
+
+## Screenshots
+
+![Homepage]({{ "/images/lets-call-santa/homepage.png" | relative_url }})
+
+![Voicemail Playback]({{ "/images/lets-call-santa/voicemail-playback.png" | relative_url }})
+
+![Success Page]({{ "/images/lets-call-santa/success.png" | relative_url }})

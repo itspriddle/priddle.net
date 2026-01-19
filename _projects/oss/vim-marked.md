@@ -9,6 +9,7 @@ tags:
   - Markdown
   - Vim Plugin
 project_type: oss
+category: vim
 excerpt: |
   vim-marked is a tiny plugin I made to integrate Vim and
   [Marked.app](http://marked2app.com/). It allows you to open the current

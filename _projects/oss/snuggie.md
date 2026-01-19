@@ -11,6 +11,7 @@ tags:
   - RubyGems
   - Softaculous
 project_type: oss
+category: ruby
 excerpt: |
   Snuggie is a RubyGem that interfaces with the
   [Softaculous](https://www.softaculous.com) API. I created the initial

@@ -8,6 +8,7 @@ tags:
   - PHPStan
   - Security
 project_type: oss
+category: php
 excerpt: |
   I wanted a way to automatically detect parameters in PHP functions and
   methods that might contain sensitive information, so I created this PHPStan

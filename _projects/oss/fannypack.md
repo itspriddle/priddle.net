@@ -11,6 +11,7 @@ tags:
   - Ruby
   - RubyGems
 project_type: oss
+category: ruby
 excerpt: |
   FannyPack is a RubyGem that interfaces with the
   [Fantastico](https://www.netenberg.com/fantastico.php) API. I created the

@@ -10,6 +10,7 @@ tags:
   - Security
   - Passwords
 project_type: oss
+category: ruby
 excerpt: |
   generate-password.lbaction is a [LaunchBar
   6](https://www.obdev.at/products/launchbar/index.html) Action to generate
