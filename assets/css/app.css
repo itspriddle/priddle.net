@@ -32,6 +32,8 @@
 /* Light mode warm off-white */
 body {
   background-color: #fafaf9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .dark body {
   background-color: #09090b;
