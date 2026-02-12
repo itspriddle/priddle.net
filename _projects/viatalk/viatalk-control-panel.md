@@ -43,7 +43,7 @@ human-readable call statuses like "Call Forwarded", "Blacklist", "DND", or
 Integrated web-based voicemail playback into the control panel using jPlayer
 and a custom jQuery plugin. In 2009, HTML5 audio didn't exist, so this required
 Flash-based audio delivery and handling asynchronous WAV-to-MP3 conversion via
-polling. See [ViaTalk Voicemail System](/work/viatalk/voicemail-system/) for
+polling. See [ViaTalk Voicemail System](/work/viatalk/voicemail-player/) for
 details on the backend services I built to support this.
 
 ### VT Beta Lab

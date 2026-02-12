@@ -1,5 +1,5 @@
 ---
-title: ViaTalk Voicemail System
+title: ViaTalk Voicemail Player
 company: ViaTalk, LLC
 role: Solo Developer
 period: 2009 - 2010
@@ -19,7 +19,7 @@ excerpt: >-
   WAV-to-MP3 conversion, PHP API for file serving, and jQuery audio player.
 ---
 
-The ViaTalk Voicemail System was a set of services I built to enable web-based
+The ViaTalk Voicemail Player was a set of services I built to enable web-based
 voicemail playback in the ViaTalk Control Panel. Asterisk stored voicemail as
 WAV files, but streaming large WAV files over the web in 2009 was impractical.
 The system consisted of three components: a Ruby daemon that converted WAV files
