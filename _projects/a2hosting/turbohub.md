@@ -1,31 +1,26 @@
 ---
-title:   TurboHub
+title: TurboHub
 company: A2 Hosting, Inc
-period:  Feb 2023
-date:    2023-02-10
+role: Technical Lead / System Architect
+period: Feb 2023 - Apr 2025
+date: 2023-02-10
 tags:
-  - Bash
-  - CLI
-  - Deployer
-  - GitHub Actions
-  - Inertia.js
   - Laravel
-  - Laravel Horizon
   - Laravel Zero
-  - MySQL
-  - Nginx
   - PHP
-  - Pusher
+  - Vue.js
+  - Inertia.js
   - RabbitMQ
   - Redis
-  - SCSS
-  - Supervisord
-  - Vite
-  - Vue.js
+  - MySQL
   - WHMCS
-  - WP-CLI
-  - WordPress
+  - GitHub Actions
+  - Deployer
 project_type: work
+tier: 1
+excerpt: >-
+  Distributed WordPress site management platform serving 385,000+ sites across
+  5,000+ servers — designed the three-tier architecture and led a team of 12.
 ---
 
 TurboHub is a distributed WordPress site management platform built for A2
@@ -36,22 +31,25 @@ across shared, VPS, and dedicated hosting plans. The system spans three
 codebases: a Laravel 10 web application (TurboHub Web), a Laravel Zero agent
 distributed as a compiled PHAR binary to hosting servers (TurboHub Agent), and
 a suite of WHMCS provisioning modules that tie it all into A2 Hosting's
-billing and account infrastructure. I designed the overall system architecture
-and led a team of 12 developers from MVP through production, ultimately
-servicing over 385,000 WordPress sites for 110,000 customers across 5,000+
-servers in four global regions.
+billing and account infrastructure. I designed the overall system architecture,
+built early prototypes to validate the approach, and led a team of 12
+developers from MVP through production. The platform ultimately serviced over
+385,000 WordPress sites for 110,000 customers across 5,000+ servers in four
+global regions.
 
 ## My Role
 
-I served as technical lead and system architect for TurboHub. My
-responsibilities included:
+My role was system architecture and team leadership — I designed the system
+and guided 12 developers through building it, but the day-to-day development
+was theirs.
 
-- **System Architecture** -- Designed the distributed three-tier architecture:
-  WHMCS for billing integration and customer entitlement, the web application
-  for the user-facing control panel and business logic, and the server-side
-  agent for direct WordPress operations. Chose RabbitMQ as the communication
-  backbone between the web tier and thousands of agents, using a synchronous
-  RPC pattern with per-server queues for reliable, targeted command execution.
+- **System Architecture** -- Designed the distributed three-tier architecture
+  and built early prototypes to prove out the approach: WHMCS for billing
+  integration and customer entitlement, the web application for the control
+  panel and business logic, and the server-side agent for direct WordPress
+  operations. Chose RabbitMQ as the communication backbone between the web tier
+  and thousands of agents, using a synchronous RPC pattern with per-server
+  queues for reliable, targeted command execution.
 
 - **Technology Selection** -- Evaluated and selected the core stack: Laravel 10
   with Inertia.js and Vue 3 for a modern single-page experience without a
@@ -168,21 +166,6 @@ rendering and no separate API layer.
 - **Security** -- Integration with the A2 Optimized WordPress plugin for
   server-level security settings. Vulnerability scanning against the Patchstack
   database with alerting for affected plugins.
-
-### Technical Stack
-
-- **Backend** -- Laravel 10, PHP 8.1+, MySQL, Redis (sessions, cache, queues)
-- **Frontend** -- Vue 3, Inertia.js, Vite, ApexCharts, Ziggy (Laravel route
-  generation for JavaScript)
-- **Queues** -- Redis with Laravel Horizon managing two supervisor pools:
-  a default queue for general jobs and an optimizations queue with extended
-  timeouts for long-running performance analysis
-- **Real-time** -- Pusher for WebSocket broadcasts on private per-user channels
-- **Integrations** -- RabbitMQ (agent communication), WHMCS API (auth and
-  data), Google PageSpeed API, Patchstack API, Mixpanel (analytics), Sentry
-  (error tracking), Slack (operational notifications), Grafana (metrics)
-- **Deployment** -- Deployer 7.3+ with zero-downtime releases, environment
-  encryption, automated migrations, and frontend builds
 
 ## TurboHub Agent
 

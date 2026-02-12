@@ -10,16 +10,28 @@ permalink: /work/
 </section>
 
 <section class="pb-8 fade-up" x-data="{ filter: 'all' }">
+  {% assign work_projects = site.projects | where: "project_type", "work" | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
   <div class="flex flex-wrap gap-2 mb-8">
     {% assign filters = "all,builtfast,a2hosting,envato,pressed,wwwh,dotblock,viatalk,consulting" | split: "," %}
     {% assign labels = "All,BuiltFast,A2 Hosting,Envato,Pressed,WWWH,DotBlock,ViaTalk,Consulting" | split: "," %}
     {% for f in filters %}
-    <button @click="filter = '{{ f }}'" :class="filter === '{{ f }}' ? 'bg-accent text-white border-accent' : 'text-zinc-400 dark:text-zinc-500 border-zinc-200 dark:border-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600'" class="px-2.5 py-0.5 text-xs border transition-all">{{ labels[forloop.index0] }}</button>
+    {%- if f == 'all' -%}
+      {%- assign count = work_projects.size -%}
+    {%- else -%}
+      {%- assign count = 0 -%}
+      {%- for p in work_projects -%}
+        {%- assign parts = p.path | split: "/" -%}
+        {%- assign slug = parts[1] -%}
+        {%- if slug == f -%}
+          {%- assign count = count | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    <button @click="filter = '{{ f }}'" :class="filter === '{{ f }}' ? 'bg-accent text-white border-accent' : 'text-zinc-400 dark:text-zinc-500 border-zinc-200 dark:border-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600'" class="px-2.5 py-0.5 text-xs border transition-all">{{ labels[forloop.index0] }} <span class="opacity-60">{{ count }}</span></button>
     {% endfor %}
   </div>
 
   <div class="space-y-3">
-    {% assign work_projects = site.projects | where: "project_type", "work" | where_exp: "item", "item.hidden != true" | sort: "date" | reverse %}
     {% for project in work_projects %}
     {%- assign path_parts = project.path | split: "/" -%}
     {%- assign company_slug = path_parts[1] -%}

@@ -1,22 +1,24 @@
 ---
-title:   Ennouncement
+title: Ennouncement
 company: ViaTalk, LLC
-period:  Apr 2010
-date:    2010-04-01
+role: Lead Developer
+period: Apr 2010
+date: 2010-04-01
 tags:
-  - Asterisk
-  - Apache
-  - CSS
-  - Javascript
-  - jQuery
-  - Linux
-  - MySQL
-  - PHP
   - Ruby
   - Rails
-  - Titanium Mobile
+  - PHP
+  - Asterisk
+  - JavaScript
+  - Appcelerator Titanium
+  - MySQL
   - VoIP
 project_type: work
+tier: 1
+excerpt: >-
+  Call broadcasting platform — Rails web app, iPhone app, and Asterisk
+  telephony. Shipped the originally scoped application in about a week after
+  it was 6 months behind schedule.
 ---
 
 Ennouncement is a call broadcasting platform that allows users to record and
@@ -83,67 +85,29 @@ Built on Ruby on Rails 2.3.9 with MySQL and jQuery.
   ($2 for 100 up to $20 for 1,000) purchasable via direct credit card or
   PayPal Express Checkout through ActiveMerchant.
 
-### Data Model
-
-- **Users** own Groups, AuthorizedNumbers, Providers, and Payments
-- **Groups** contain Contacts and Ennouncements (broadcasts)
-- **Ennouncements** (outboxes table) track broadcast state: Pending, In
-  Progress, Completed
-- **EnnouncementDetails** track per-contact call outcomes (No Answer,
-  Voicemail, Answered)
-- **Providers** (sip_conf table) store SIP trunk configuration with
-  credentials, host, codec, NAT, and concurrent call limits
-
-### JSON API
-
-RESTful endpoints for groups, contacts, ennouncements, providers, and account
-info. Authenticated via HTTP Basic Auth. Used by the mobile app and available
-for third-party integration.
+The data model tracks users, contact groups, broadcasts with per-contact call
+outcomes (answered, voicemail, no answer), and SIP trunk configurations. A
+RESTful JSON API authenticated via HTTP Basic Auth serves the mobile app and
+supports third-party integration.
 
 ## Asterisk Telephony
 
-### Inbound Call Flow
+The telephony layer handled both inbound and outbound call flows through custom
+Asterisk dialplans and PHP processing scripts.
 
-Users dial in to +1-866-681-5599. The dialplan:
+**Inbound**: Users dialed a toll-free number, authenticated via PIN, and
+recorded their announcement through an IVR menu with options to review,
+re-record, save for later, or send immediately.
 
-1. Looks up the caller's phone number in the `user_numbers` table
-2. Authenticates via a 6-digit PIN
-3. Checks for pending/saved announcements and offers resume/restart/delete
-4. Presents the recording IVR:
-   - Record an announcement name and message body (stored as GSM files)
-   - Review, re-record, save for later, or send immediately
-5. On send, triggers the PHP broadcast processor via `System()`
+**Outbound broadcasting**: When triggered, a PHP processor generated Asterisk
+`.call` files for each contact, atomically moving them to the outgoing spool
+while enforcing concurrent channel limits. Each outbound call used Asterisk's
+`BackgroundDetect()` for answering machine detection — machines got the full
+announcement, humans got an interactive menu. Credits were deducted per call.
 
-Non-customers who receive a broadcast call and dial back can replay their most
-recent announcement.
-
-### Outbound Broadcasting
-
-When a broadcast is triggered, the PHP processor:
-
-1. Retrieves verified contacts for the target group
-2. Filters out international numbers (Caribbean area codes)
-3. Creates Asterisk `.call` files for each contact, writing to `/tmp/` then
-   atomically moving to `/var/spool/asterisk/outgoing/`
-4. Enforces concurrent channel limits by polling active calls and sleeping
-   when at capacity
-5. Deducts credits per call (purchased credits first, then ViaTalk credits)
-
-Each outbound call routes to a `detect` context using `BackgroundDetect()` for
-answering machine detection:
-
-- **Machine detected** -- Plays the full announcement (delivery greeting,
-  name, powered-by attribution, message body) and hangs up. State recorded as
-  "Voicemail".
-- **Human detected** -- Plays the announcement with an interactive menu
-  (replay or hang up). State recorded as "Answered".
-
-### SIP Trunk Management
-
-Trunk configurations are stored in MySQL and dynamically generated into
-Asterisk's `sip_ennouncement.conf` by a PHP script. A cron job handles the
-lifecycle: generates configs for newly activated trunks, reloads the SIP
-module via `asterisk -rx 'sip reload'`, and resets state after each cycle.
+**SIP trunk management**: Trunk configurations stored in MySQL were dynamically
+generated into Asterisk config files by a PHP script, with a cron job handling
+the lifecycle of config generation, SIP module reloads, and state cleanup.
 
 ## Mobile Application
 

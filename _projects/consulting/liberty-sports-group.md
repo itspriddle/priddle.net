@@ -1,15 +1,19 @@
 ---
-title:   Liberty Sports Group Website
+title: Liberty Sports Group Website
 company: Liberty Sports Group, LLC
-period:  Apr 2011
-date:    2011-04-01
+role: Contract Developer
+period: Apr 2011
+date: 2011-04-01
 tags:
-  - Consulting
   - PHP
   - WordPress
-  - Capistrano
   - jQuery
+  - Capistrano
 project_type: work
+tier: 3
+excerpt: >-
+  Custom WordPress theme and plugins for a local athletic organization, with
+  Capistrano deployment pipeline for staging and production.
 ---
 
 I worked with [Allusis Productions](http://allusis.net) to build a custom

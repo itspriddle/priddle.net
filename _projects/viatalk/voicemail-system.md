@@ -1,26 +1,22 @@
 ---
-title:   ViaTalk Voicemail System
+title: ViaTalk Voicemail System
 company: ViaTalk, LLC
-period:  2009-2010
-date:    2009-06-01
+role: Solo Developer
+period: 2009 - 2010
+date: 2009-06-01
 tags:
-  - Apache
-  - Asterisk
-  - Capistrano
-  - CodeIgniter
-  - DaemonKit
-  - Flash
-  - Git
-  - jQuery
-  - jPlayer
-  - LAME
-  - Linux
-  - MySQL
-  - PHP
   - Ruby
-  - Voip
-  - X-Sendfile
+  - PHP
+  - CodeIgniter
+  - MySQL
+  - Asterisk
+  - jQuery
+  - VoIP
 project_type: work
+tier: 2
+excerpt: >-
+  Three-component system for web-based voicemail playback — Ruby daemon for
+  WAV-to-MP3 conversion, PHP API for file serving, and jQuery audio player.
 ---
 
 The ViaTalk Voicemail System was a set of services I built to enable web-based
@@ -50,11 +46,6 @@ Endpoints authenticated via API key, validated file freshness by comparing
 timestamps, and served files using Apache's X-Sendfile for efficient delivery.
 The API returned XML metadata including conversion status, duration, and file
 size, allowing the player to poll until encoding completed.
-
-```
-GET /main/{api_key}/{context}/{mailbox}/{folder}/{filename}.xml
-GET /main/{api_key}/{context}/{mailbox}/{folder}/{filename}.mp3
-```
 
 ### Control Panel Player
 

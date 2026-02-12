@@ -1,25 +1,23 @@
 ---
-title:   Will Dikker
+title: Will Dikker
 company: Will Dikker, LLC
-period:  Jan 2009
-date:    2009-01-01
+role: Lead Backend Developer
+period: Jan 2009
+date: 2009-01-01
 tags:
-  - ActiveMerchant
-  - Air2Web
-  - Authorize.net
-  - Blueprint CSS
-  - Capistrano
-  - Ferret
-  - Geokit
-  - jQuery
-  - Linux
-  - MySQL
-  - Passenger
-  - Rails
   - Ruby
+  - Rails
+  - MySQL
+  - Authorize.net
   - SMS
-  - Startup
+  - jQuery
+  - Capistrano
 project_type: work
+tier: 1
+excerpt: >-
+  Vehicle classifieds marketplace with SMS text-in via physical stickers —
+  built the full Rails backend including payment processing, geolocation
+  search, and Air2Web SMS integration.
 ---
 
 Will Dikker was a local startup providing a classifieds marketplace for
@@ -43,26 +41,11 @@ the plugin-heavy architecture typical of the Rails 2 era, with 15 vendor
 plugins providing core functionality including authentication, state
 management, file uploads, payment processing, and full-text search.
 
-### Core Models
-
 The data model centered on a `Listing` entity with polymorphic
-category-specific detail models:
-
-- **Listing** -- The core classifieds record with title, description, asking
-  price, ZIP code, and geolocation coordinates. Managed by an AASM state
-  machine with transitions through unactivated, pending, active, suspended,
-  expired, sold, and deleted states.
-- **Automobile** -- Year, make, model, mileage, VIN, and numerous feature
-  flags (power steering, cruise control, sunroof, etc.)
-- **Motorcycle** -- Make, model, engine size, VIN, year
-- **Boat** -- Class, manufacturer, hull material, engine specs, length
-- **Rv** -- Manufacturer, model, sleeping capacity, AC units, slide-outs
-- **UtilityTrailer** -- Subcategory, construction type, hitch type
-
-Supporting models included `ListingPhoto` for image attachments,
-`ListingItemNumber` for the unique sticker codes, `ListingMessage` for
-buyer-seller communication, and `Order`/`OrderTransaction` for payment
-tracking.
+category-specific detail models for each vehicle type (automobiles,
+motorcycles, boats, RVs, utility trailers). Listings were managed by an AASM
+state machine tracking the full lifecycle from creation through activation,
+expiration, sale, and deletion.
 
 ### Multi-Step Listing Wizard
 
@@ -158,23 +141,3 @@ recipe also included iptables firewall configuration for server hardening.
 Error tracking was handled by Hoptoad (now Airbrake), and reCAPTCHA protected
 public-facing forms.
 
-## Technical Stack
-
-- **Framework** -- Rails 2.2.2, Ruby 1.8
-- **Database** -- MySQL with ActiveRecord and database-backed sessions
-- **App Server** -- Phusion Passenger (mod_rails)
-- **Deployment** -- Capistrano, Git
-- **Authentication** -- restful_authentication with SSL enforcement
-- **State Management** -- AASM (listings and users)
-- **Payments** -- ActiveMerchant with Authorize.net
-- **SMS** -- Air2Web XML API, short code 78501
-- **Search** -- Acts as Ferret (full-text indexing)
-- **Geolocation** -- Geokit with Google geocoding
-- **File Uploads** -- attachment_fu (filesystem storage)
-- **Background Jobs** -- delayed_job
-- **Frontend** -- jQuery, jQuery UI, FancyBox, Blueprint CSS
-- **Error Tracking** -- Hoptoad (Airbrake)
-- **CAPTCHA** -- reCAPTCHA
-- **Soft Deletes** -- acts_as_paranoid
-- **Observers** -- ActiveRecord observers for user, listing, order, and SMS
-  lifecycle events

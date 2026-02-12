@@ -1,25 +1,22 @@
 ---
-title:   cp.viatalk.com
+title: ViaTalk Control Panel
 company: ViaTalk, LLC
-period:  2008-2012
-date:    2008-12-01
+role: Sole Developer (maintenance)
+period: 2008 - 2012
+date: 2008-12-01
 tags:
-  - Apache
-  - Asterisk
-  - Capistrano
-  - CSS
-  - Ferret
-  - Git
-  - Javascript
-  - jQuery
-  - jPlayer
-  - Linux
-  - MySQL
-  - Passenger
-  - Rails
   - Ruby
-  - Voip
+  - Rails
+  - MySQL
+  - Asterisk
+  - jQuery
+  - Capistrano
+  - VoIP
 project_type: work
+tier: 2
+excerpt: >-
+  Primary customer and staff interface for ViaTalk's VoIP service — became
+  sole developer responsible for maintenance, security, and new features.
 ---
 
 ViaTalk Control Panel (cp.viatalk.com) was a large Ruby on Rails application
@@ -46,7 +43,7 @@ human-readable call statuses like "Call Forwarded", "Blacklist", "DND", or
 Integrated web-based voicemail playback into the control panel using jPlayer
 and a custom jQuery plugin. In 2009, HTML5 audio didn't exist, so this required
 Flash-based audio delivery and handling asynchronous WAV-to-MP3 conversion via
-polling. See [ViaTalk Voicemail System](/work/voicemail-system/) for
+polling. See [ViaTalk Voicemail System](/work/viatalk/voicemail-system/) for
 details on the backend services I built to support this.
 
 ### VT Beta Lab

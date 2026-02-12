@@ -1,16 +1,19 @@
 ---
-title:   childsautomotive.com
+title: Childs Automotive Website Redesign
 company: Childs Automotive
-period:  Aug 2002
-date:    2002-08-01
+role: Contract Developer
+period: Aug 2002
+date: 2002-08-01
 tags:
-  - Consulting
-  - Design
-  - Dreamweaver
-  - Fireworks
   - HTML
   - JavaScript
+  - Fireworks
+  - Dreamweaver
 project_type: work
+tier: 2
+excerpt: >-
+  The first website I got paid for — a full redesign of a local auto repair
+  shop's site, built with Fireworks MX and Dreamweaver MX.
 ---
 
 The first website I got paid for. I designed and built a complete redesign of

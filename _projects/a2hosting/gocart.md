@@ -1,24 +1,23 @@
 ---
-title:   GoCart
+title: GoCart
 company: A2 Hosting, Inc
-period:  Apr 2023
-date:    2023-04-01
+role: Lead Architect
+period: Apr 2023 - Apr 2025
+date: 2023-04-01
 tags:
-  - Blade
-  - Bootstrap
-  - Deployer
-  - GitHub Actions
-  - Guzzle
-  - JavaScript
-  - jQuery
   - Laravel
-  - MySQL
-  - Nginx
   - PHP
-  - Playwright
-  - Sentry
   - Stripe
+  - WHMCS
+  - Playwright
+  - GitHub Actions
+  - Deployer
+  - Sentry
 project_type: work
+tier: 2
+excerpt: >-
+  Custom Laravel checkout application at cart.a2hosting.com, replacing WHMCS's
+  built-in order flow with a modern storefront for all hosting products.
 ---
 
 GoCart is a custom Laravel 10 checkout application for A2 Hosting, serving as
@@ -63,9 +62,9 @@ primarily by A2 Hosting's marketing team.
   environment variables, Slack deploy announcements, and rollback via release
   deletion.
 
-- **Playwright Integration** -- Built the end-to-end test pipeline using
-  Playwright, triggered on deploys through GitHub Actions (8+ PRs iterating on
-  the CI configuration).
+- **Playwright Integration** -- Built the [end-to-end test pipeline](/work/a2hosting/a2-playwright/)
+  using Playwright, triggered on deploys through GitHub Actions (8+ PRs iterating
+  on the CI configuration).
 
 - **Monitoring and Observability** -- Configured Sentry for error tracking and
   performance profiling, including JS SDK integration, sample rate tuning, and
@@ -88,66 +87,23 @@ primarily by A2 Hosting's marketing team.
 
 ## Architecture
 
-GoCart is a stateless Laravel 10 application. It has no application-specific
-database tables --- all persistent data lives in WHMCS. The application fetches
+GoCart is a stateless Laravel 10 application with no application-specific
+database tables — all persistent data lives in WHMCS. The application fetches
 product information, submits orders, and authenticates users by calling endpoints
-on the WHMCS `go_cart` addon module.
+on a custom WHMCS addon module (`go_cart`).
 
-### GoCart Library (`app/libraries/GoCart/`)
+The core of the codebase is a PHP library that abstracts all WHMCS API
+interaction behind a clean interface: a fluent order builder for constructing
+orders with user data, products, promotions, and payment methods; a product
+fetcher with caching; an authenticator with proxy IP forwarding for fraud
+detection behind Cloudflare; and a URL builder for WHMCS endpoint routing.
 
-A standalone PHP library encapsulating all WHMCS API interaction:
+The WHMCS addon module exposes a REST API covering product data and pricing,
+order validation and placement (Stripe, PayPal, bank transfer), token-based
+authentication, domain availability and TLD pricing, and locale data. A custom
+WHMCS report tracks all orders placed through GoCart.
 
-- **GoCart.php** -- Static facade providing entry points: `getProductData()`,
-  `OrderBuilder()`, `getCountries()`, `getStates()`
-- **Builder.php** -- Fluent interface for constructing orders with user data,
-  products, promotions, payment methods, affiliate tracking, and metadata
-- **Paths.php** -- URL builder targeting WHMCS endpoints via
-  `index.php?m=go_cart&a=<action>` (actions: `get_product`, `order`, `pricing`,
-  `domain`, `get_locale`, `authenticate`)
-- **ProductFetcher.php** -- Reads product data and locale information from WHMCS
-  with caching
-- **ProductSubmitter.php** -- Submits orders and pricing requests, forwards
-  marketing/affiliate cookies to WHMCS
-- **Authenticator.php** -- Validates user credentials against WHMCS with IP
-  forwarding for fraud prevention
-
-### WHMCS Addon Module (`go_cart`)
-
-The WHMCS side exposes a REST API for GoCart to consume:
-
-- **Product API** -- Returns product details, pricing across billing cycles and
-  currencies, configuration options, custom fields, promotions, and upsells
-- **Order API** -- Validates and places orders including user
-  registration/login, domain handling, payment processing (Stripe charges,
-  PayPal redirects, bank transfer), fraud checks, and metadata storage
-- **Pricing API** -- Calculates totals with tax, promotions, config options, and
-  domain fees based on user location
-- **Authentication API** -- Token-based session management supporting
-  multi-account users with permission checks
-- **Domain API** -- Availability checking, TLD pricing, addon pricing (DNS
-  management, ID protection, email forwarding)
-- **Locale API** -- Country and state lists for address forms
-- **Reports** -- Custom WHMCS report (`a2_gocart_orders`) listing all orders
-  placed through GoCart
-
-### Controllers
-
-- **ProductController** -- Main checkout logic: displays product pages with
-  upsells and config options, processes order submission (user validation,
-  domain selection, payment collection), handles dynamic pricing calculations
-  and domain availability checks
-- **AuthenticateController** -- User login returning authentication tokens
-
-### Frontend
-
-- **Blade templates** with Bootstrap 5 and jQuery
-- Stripe.js for payment processing
-- Google Tag Manager for conversion tracking
-- Chatwoot for live chat
-- PAP scripts for affiliate tracking
-
-### Supported Products
-
-The routing configuration maps URL paths to specific WHMCS product IDs,
-covering A2 Hosting's shared, VPS, and dedicated hosting tiers.
+The frontend uses Blade templates with Bootstrap 5, Stripe.js for payment
+processing, and integrations for analytics tracking, affiliate attribution
+(Post Affiliate Pro), and live chat.
 

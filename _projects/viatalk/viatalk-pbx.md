@@ -1,21 +1,23 @@
 ---
-title:   ViaTalk PBX
+title: ViaTalk PBX
 company: ViaTalk, LLC
-period:  Aug 2008
-date:    2008-08-01
+role: Solo Developer
+period: Aug 2008
+date: 2008-08-01
 tags:
-  - Asterisk
-  - CodeIgniter
-  - CSS
-  - JavaScript
-  - jQuery
-  - Linux
-  - MySQL
   - PHP
-  - SOAP
+  - CodeIgniter
+  - Asterisk
+  - MySQL
+  - Linux
+  - JavaScript
   - VoIP
-  - XML-RPC
 project_type: work
+tier: 2
+excerpt: >-
+  Multi-tenant VoIP call center handling 500-1000 daily support calls across
+  three companies — full-stack ownership from Linux hardening to Asterisk
+  dialplans to the web dashboard.
 ---
 
 ViaTalk PBX was a multi-tenant VoIP call center management system serving
@@ -69,15 +71,6 @@ The daemon architecture solved the problem of bridging real-time Asterisk
 state with web-based management - it maintained cached representations of
 queue members, agent status, and SIP peer availability, invalidating web
 caches when state changed.
-
-### Database Design
-
-- **pbx_core** - queue cache, agent status, login queue, priority settings,
-  callback pause state
-- **cdr** - standard Asterisk call detail records with userfield extensions
-  for correlating queue entries with agent handling
-- **voip_production** - remote database integration with ViaTalk's main
-  customer system
 
 ## Technical Challenges
 

@@ -1,18 +1,22 @@
 ---
-title:   2adays.com
+title: 2adays.com
 company: 2aDays, LLC
-period:  Dec 2016
-date:    2016-12-01
+role: Contract Developer
+period: Dec 2016
+date: 2016-12-01
 tags:
-  - API
-  - Automation
-  - Billing
-  - Consulting
-  - Rails
-  - Recurly
   - Ruby
+  - Rails
+  - MySQL
+  - Redis
+  - Recurly
   - Sidekiq
 project_type: work
+tier: 2
+excerpt: >-
+  Coach rating platform for college recruiting — built and shipped a full
+  Rails application in 6 weeks working nights and weekends, designed for
+  clean handoff.
 ---
 
 I developed the Rails application for 2adays.com, a website that helps student
@@ -52,17 +56,6 @@ everything I do with Rails went into this one:
   took over maintenance has done so with ease.
 
 ## Technical Overview
-
-### Stack
-
-- **Backend:** Ruby 2.3.2, Rails 5.0.1
-- **Database:** MySQL 5.7 / MariaDB 10.1
-- **Caching:** Redis 3.2.6 (API responses, blog feed, view fragments)
-- **Frontend:** Bootstrap 4 (alpha), jQuery 3, Turbolinks 5, CoffeeScript, SCSS
-- **File Storage:** Paperclip with AWS S3 (production), ImageMagick for processing
-- **Testing:** RSpec, Capybara, Poltergeist (PhantomJS), FactoryGirl, VCR/WebMock
-- **Server:** Phusion Passenger, Vagrant (Ubuntu 16.04) for provisioning
-- **Audit:** PaperTrail for model versioning
 
 ### Architecture
 

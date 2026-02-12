@@ -1,14 +1,19 @@
 ---
-title:   Storytime
+title: Storytime
 company: A2 Hosting, Inc
-period:  Aug 2024
-date:    2024-08-03
+role: Director of Development
+period: Aug 2024
+date: 2024-08-03
 tags:
-  - Jira
   - Ruby
   - CLI
+  - Jira
   - API
 project_type: work
+tier: 2
+excerpt: >-
+  Ruby CLI tool to automate JIRA sprint reporting — reduced weekly report
+  generation from 15-20 minutes of manual work to seconds.
 ---
 
 Storytime is a Ruby CLI tool I built to extract, analyze, and report on JIRA
@@ -35,14 +40,6 @@ entire workflow.
   different audiences and integrations
 - **Board/Sprint Navigation** - List boards, find sprints by ID/name/date, open
   directly in JIRA
-
-## Tech Stack
-
-- Ruby with dry-cli for command structure
-- HTTP gem for API communication
-- TTY::Table for terminal rendering
-- Kramdown for Markdown-to-HTML conversion
-- Docker support for easy distribution
 
 ## Architecture
 

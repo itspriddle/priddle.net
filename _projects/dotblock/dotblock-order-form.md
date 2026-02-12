@@ -1,22 +1,23 @@
 ---
-title:   DotBlock Order Form
+title: DotBlock Order Form
 company: DotBlock.com, Inc
-period:  Aug 2010
-date:    2010-08-01
+role: Lead Developer
+period: Aug 2010
+date: 2010-08-01
 tags:
-  - Capistrano
-  - CSS
-  - Javascript
-  - jQuery
-  - MySQL
-  - PHP
-  - Rails
   - Ruby
-  - RubyGems
-  - SolusVM
+  - Rails
+  - jQuery
+  - PHP
+  - MySQL
   - WHMCS
+  - SolusVM
   - XMPP
 project_type: work
+tier: 2
+excerpt: >-
+  Rails-based VPS order form for DotBlock with real-time pricing, WHMCS
+  billing integration, and automated PBX callbacks on new sales.
 ---
 
 DotBlock Order Form is the customer-facing order application for

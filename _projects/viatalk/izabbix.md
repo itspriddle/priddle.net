@@ -1,20 +1,21 @@
 ---
-title:   iZabbix
+title: iZabbix
 company: ViaTalk, LLC
-period:  Oct 2010
-date:    2010-10-01
+role: Solo Developer
+period: Oct 2010
+date: 2010-10-01
 tags:
-  - Apple Push Notifications
+  - JavaScript
   - Appcelerator Titanium
-  - Javascript
-  - Linux
-  - MySQL
   - Ruby
-  - RubyGems
   - Rails
   - XMPP
-  - Jabber
+  - Apple Push Notifications
 project_type: work
+tier: 2
+excerpt: >-
+  iPhone app for VoIP engineers to receive real-time Zabbix monitoring alerts,
+  backed by a Rails API with XMPP bot and Apple Push Notifications.
 ---
 
 iZabbix is an iPhone application used internally by VoIP engineers to receive

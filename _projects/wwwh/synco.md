@@ -1,20 +1,26 @@
 ---
-title:   Synco
+title: Synco
 company: World Wide Web Hosting, LLC
-period:  May 2011
-date:    2011-05-01
+role: Senior Developer
+period: May 2011 - Sep 2015
+date: 2011-05-01
 tags:
-  - Javascript
-  - Linux
-  - MySQL
   - Ruby
-  - RubyGems
   - Rails
+  - MySQL
+  - Linux
+  - SolusVM
+  - cPanel
 project_type: work
+tier: 2
+excerpt: >-
+  Legacy billing system for Site5 — optimized a 10-minute page load to under
+  1 minute, led security hardening, and built VPS provisioning features across
+  4+ years.
 ---
 
 Synco is a legacy Ruby on Rails billing and customer management system used by
-Site5, a brand of World Wide Web Hosting. It served as both the customer-facing
+Site5 (a brand of World Wide Web Hosting, rebranded ~2013-2014). It served as both the customer-facing
 portal (order forms, service management, support tickets) and the staff admin
 interface (customer management, provisioning, mass mailing, billing). I joined this project after its initial development and worked on it for 4+
 years (2011--2015). I was responsible for performance optimization, security

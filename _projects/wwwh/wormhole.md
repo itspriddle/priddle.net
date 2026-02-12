@@ -1,18 +1,21 @@
 ---
-title:   Wormhole
+title: Wormhole
 company: World Wide Web Hosting, LLC
-period:  Jan 2013
-date:    2013-01-01
+role: Lead Developer
+period: Jan 2013
+date: 2013-01-01
 tags:
-  - MySQL
-  - PHP
-  - PostgreSQL
-  - Rails
-  - Rails Engines
   - Ruby
-  - RubyGems
+  - Rails
+  - MySQL
+  - PostgreSQL
   - WHMCS
+  - GPG
 project_type: work
+tier: 2
+excerpt: >-
+  CLI utility and Ruby library for migrating ~10,000 customers from legacy
+  WHMCS billing systems into Helix, with encrypted transfer of sensitive data.
 ---
 
 Wormhole is a custom built CLI utility and Ruby library used to securely

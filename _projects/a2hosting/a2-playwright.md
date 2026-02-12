@@ -1,8 +1,9 @@
 ---
-title:   A2 Playwright
+title: A2 Playwright
 company: A2 Hosting, Inc
-period:  Aug - Oct 2024
-date:    2024-08-21
+role: Director of Development
+period: Aug 2024 - Sep 2024
+date: 2024-08-21
 tags:
   - CI/CD
   - End-to-End Testing
@@ -12,6 +13,10 @@ tags:
   - Playwright
   - Slack
 project_type: work
+tier: 1
+excerpt: >-
+  End-to-end browser testing framework for A2 Hosting's critical web
+  applications, with CI/CD pipeline integration and Slack alerting on failures.
 ---
 
 A2 Playwright is an end-to-end browser testing framework I built for A2

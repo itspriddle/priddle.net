@@ -1,15 +1,19 @@
 ---
-title:   MWP Lazy Upgrader
+title: MWP Lazy Upgrader
 company: Pressed, LLC
-period:  Dec 2016
-date:    2016-12-19
+role: Senior Developer
+period: Dec 2016
+date: 2016-12-19
 tags:
-  - Automation
-  - Bash
   - PHP
   - WordPress
+  - Bash
   - WP-CLI
 project_type: work
+tier: 2
+excerpt: >-
+  WordPress plugin that cut plugin upgrade times on network filesystems from
+  over 2 minutes to 30 seconds using symlinks and deferred background writes.
 ---
 
 MWP Lazy Upgrader is a custom WordPress plugin that improves performance for

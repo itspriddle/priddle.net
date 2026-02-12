@@ -1,21 +1,24 @@
 ---
-title:   inglenookrealtyinc.com
+title: Inglenook Realty Website and CMS
 company: Inglenook Realty, Inc
-period:  May 2005
-date:    2005-05-01
+role: Contract Developer
+period: May 2005
+date: 2005-05-01
 tags:
-  - CodeIgniter
-  - Consulting
-  - CSS
-  - Design
-  - Javascript
-  - jQuery
-  - MySQL
   - PHP
+  - CodeIgniter
+  - MySQL
+  - jQuery
 project_type: work
+tier: 3
+excerpt: >-
+  Custom CMS and website for a local real estate agency, with ongoing
+  upgrades over several years.
 ---
 
-I developed the company website and content management system using
-CodeIgniter and MySQL. I worked directly with the client to fine tune the
-website exactly to their specifications, and performed several upgrades to
-meet the changing needs of their customers and the real estate market.
+I built the website and a custom content management system for Inglenook Realty
+using CodeIgniter and MySQL. The CMS let the client manage property listings
+and site content without needing technical knowledge. I worked directly with
+the client to fine-tune the site to their specifications and performed several
+rounds of upgrades over the years as their needs and the real estate market
+evolved.

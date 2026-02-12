@@ -1,21 +1,22 @@
 ---
-title:   letscallsanta.com
+title: Let's Call Santa
 company: ViaTalk, LLC
-period:  Dec 2008
-date:    2008-12-01
+role: Co-Developer
+period: Dec 2008
+date: 2008-12-01
 tags:
-  - Asterisk
-  - CodeIgniter
-  - CSS
-  - Javascript
-  - jQuery
-  - Linux
-  - MySQL
   - PHP
+  - CodeIgniter
   - Ruby
   - Rails
+  - Asterisk
+  - jQuery
   - VoIP
 project_type: work
+tier: 2
+excerpt: >-
+  Holiday phone line where kids called Santa and left voicemails — built
+  without asking anyone, shipped as an official ViaTalk promotion.
 ---
 
 letscallsanta.com was a free holiday service that let children call Santa's

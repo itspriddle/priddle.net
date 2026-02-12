@@ -65,14 +65,14 @@ lucide:
 defaults:
   -
     scope:
-      path: "_projects/*"
+      path: "_projects"
       type: "projects"
     values:
       layout: "project"
-      permalink: /work/:name/
+      permalink: /work/:parent/:name/
   -
     scope:
-      path: "_projects/oss/*"
+      path: "_projects/oss"
       type: "projects"
     values:
       layout: "project"
