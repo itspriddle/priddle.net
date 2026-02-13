@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css" rel="stylesheet">
+body,td,th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFF;
+}
+body {
+	background: #011C60;
+	margin: 0;
+}
+table.calendar {
+	border: 0;
+	margin: 7px;
+}
+	table.calendar th.day,
+	  table.calendar td.day {
+		width: 30px;
+		height: 24px;
+		background-color: #00133C;
+		color: #FFF;
+		font-size: 10px;
+		font-weight: bold;
+		padding: 0;
+		background-repeat: no-repeat;
+		text-align: center;
+	}
+
+	table.calendar th.day {
+		background-image: url(images/calendar/th.bg.gif);
+	}
+	table.calendar td.day {
+		background-image: url(images/calendar/td.bg.gif);
+	}
+	table.calendar td.blank {
+		background-image: none;
+		border: 1px solid #4792F8;
+	}
+	table.calendar td#caption {
+		height: 24px;
+		line-height: 24px;
+		color: #FFF;
+		background: no-repeat url(images/calendar/caption.gif) center;
+		font-size: 10px;
+		font-weight: bold;
+		padding: 0;
+		margin: 0;
+	}
+
+		table.calendar td#caption .prev  a,
+		  table.calendar td#caption .next  a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		table.calendar td#caption  a:link {
+			color: #FFFFFF;
+			text-decoration: none;
+		}
+		table.calendar td#caption  a:visited {
+			color: #FFFFFF;
+			text-decoration: none;
+		}
+		table.calendar td#caption  a:hover {
+			color: #FFFFFF;
+			text-decoration: none;
+		}
+		table.calendar td#caption  a:active {
+			color: #FFFFFF;
+			text-decoration: none;
+		}
+
+		table.calendar table.header td {
+			background: none;
+			width: auto;
+			height: 24px;
+			text-align: center;
+		}
+		table.calendar .prev,
+		  table.calendar .month,
+		  table.calendar .next {
+		  	font-size: 10px;
+		  }
+
+</style>
+</head>
+<body>
+<div id="calendar"></div>
+<script type="text/javascript">
+var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+function generateCalendar(year, month) {
+  var firstDay = new Date(year, month, 1).getDay();
+  var daysInMonth = new Date(year, month + 1, 0).getDate();
+  var title = monthNames[month] + '\u00a0' + year;
+
+  var prevMonth = month === 0 ? 11 : month - 1;
+  var prevYear = month === 0 ? year - 1 : year;
+  var nextMonth = month === 11 ? 0 : month + 1;
+  var nextYear = month === 11 ? year + 1 : year;
+
+  var prevLabel = monthNames[prevMonth].substring(0, 3);
+  var nextLabel = monthNames[nextMonth].substring(0, 3);
+
+  // Build calendar using DOM methods
+  var calDiv = document.getElementById('calendar');
+  calDiv.textContent = '';
+
+  var table = document.createElement('table');
+  table.border = '0';
+  table.cellSpacing = '2';
+  table.cellPadding = '0';
+  table.className = 'calendar';
+
+  // Caption row
+  var captionRow = table.insertRow();
+  var captionTd = document.createElement('td');
+  captionTd.colSpan = 7;
+  captionTd.id = 'caption';
+  captionRow.appendChild(captionTd);
+
+  var headerTable = document.createElement('table');
+  headerTable.width = '222';
+  headerTable.border = '0';
+  headerTable.cellSpacing = '0';
+  headerTable.cellPadding = '0';
+  headerTable.className = 'header';
+  var headerRow = headerTable.insertRow();
+
+  var prevTh = document.createElement('th');
+  prevTh.className = 'prev';
+  prevTh.width = '56';
+  var prevA = document.createElement('a');
+  prevA.href = '#';
+  prevA.onclick = function(pm, py) { return function(e) { e.preventDefault(); cal_navigate(pm, py); }; }(prevMonth, prevYear);
+  prevA.innerHTML = '&laquo;&nbsp;' + prevLabel;
+  prevTh.appendChild(prevA);
+  headerRow.appendChild(prevTh);
+
+  var monthTh = document.createElement('th');
+  monthTh.className = 'month';
+  monthTh.width = '110';
+  monthTh.textContent = title;
+  headerRow.appendChild(monthTh);
+
+  var nextTh = document.createElement('th');
+  nextTh.className = 'next';
+  nextTh.width = '56';
+  var nextA = document.createElement('a');
+  nextA.href = '#';
+  nextA.onclick = function(nm, ny) { return function(e) { e.preventDefault(); cal_navigate(nm, ny); }; }(nextMonth, nextYear);
+  nextA.innerHTML = nextLabel + '&nbsp;&raquo;';
+  nextTh.appendChild(nextA);
+  headerRow.appendChild(nextTh);
+
+  captionTd.appendChild(headerTable);
+
+  // Day name header row
+  var dayHeaderRow = table.insertRow();
+  for (var i = 0; i < 7; i++) {
+    var th = document.createElement('th');
+    th.className = 'day';
+    th.abbr = dayNames[i];
+    th.textContent = dayNames[i];
+    dayHeaderRow.appendChild(th);
+  }
+
+  // Day cells
+  var row = table.insertRow();
+  var weekday = 0;
+
+  // Empty cells before first day
+  for (var i = 0; i < firstDay; i++) {
+    var td = document.createElement('td');
+    td.className = 'day';
+    td.innerHTML = '&nbsp;';
+    row.appendChild(td);
+    weekday++;
+  }
+
+  for (var day = 1; day <= daysInMonth; day++) {
+    if (weekday === 7) {
+      weekday = 0;
+      row = table.insertRow();
+    }
+    var td = document.createElement('td');
+    td.className = 'day';
+    td.textContent = day;
+    row.appendChild(td);
+    weekday++;
+  }
+
+  // Empty cells after last day
+  if (weekday !== 7) {
+    for (var i = 7 - weekday; i > 0; i--) {
+      var td = document.createElement('td');
+      td.className = 'day';
+      td.innerHTML = '&nbsp;';
+      row.appendChild(td);
+    }
+  }
+
+  calDiv.appendChild(table);
+}
+
+function cal_navigate(month, year) {
+  generateCalendar(year, month);
+}
+
+// Show current month on load
+var now = new Date();
+cal_navigate(now.getMonth(), now.getFullYear());
+</script>
+</body>
+</html>
