@@ -30,7 +30,8 @@
     <div class="content-inner">
       <h2>the <span>boneyard</span> </h2>
       <p>The boneyard is our spot to remember our long lost layouts. There're quite a few, but you can really see how we've progressed as designers. </p>
-      <p><em>The image gallery was powered by a dynamic server that is no longer online.</em></p>
+      <div id="boneyard-gallery"></div>
+      <div id="boneyard-pager"></div>
     </div>
   </div>
   </div>
@@ -114,6 +115,98 @@ function navigate(page) {
   var el = document.getElementById('page-' + page);
   if (el) {
     el.style.display = 'block';
+  }
+  if (page === 'boneyard') {
+    renderBoneyard(0);
+  }
+}
+
+// Boneyard gallery
+var boneyardFiles = [
+  {f:"011205.png",s:285.47},{f:"071604.png",s:68.13},{f:"071704.png",s:38.62},{f:"081605.png",s:41.11},{f:"081803.png",s:141.22},{f:"082103.png",s:164.82},{f:"090403.png",s:131.19},{f:"BCARD.png",s:140.37},{f:"COLOR3.png",s:433.63},{f:"Experimentation 101.png",s:100.64},{f:"Josh01.png",s:172.18},{f:"Josh01b.png",s:178.22},{f:"Swooptie.png",s:90.5},{f:"Tony005-a.png",s:133.04},{f:"Tony005.png",s:128.03},{f:"Tony006.png",s:142.82},{f:"Tony01.png",s:152.45},{f:"Tony010P_c.png",s:84.33},{f:"Tony02.png",s:171.12},{f:"Tony02b.png",s:171.14},{f:"Tony03.png",s:169.21},{f:"Tony03b.png",s:163.02},{f:"Tony03m.png",s:151.32},{f:"Tony03ma.png",s:142.58},{f:"Tony03mb.png",s:137.2},{f:"Tony03mbc.png",s:117.5},{f:"Tony04.png",s:152.52},{f:"Tony04b.png",s:155.29},{f:"Untitled-011506.png",s:35.24},{f:"Untitled-080405.png",s:108.94},{f:"Untitled-091405.png",s:323.59},{f:"Untitled-1.png",s:205.09},{f:"Untitled-110705.png",s:57.65},{f:"Untitled-122005.png",s:39.44},{f:"Untitled-4.png",s:58.99},{f:"WebLayout.png",s:982.51},{f:"asshole.png",s:57.27},{f:"auriesville.png",s:351.18},{f:"cda_b2.png",s:241.52},{f:"cdacolors.png",s:720.99},{f:"cdacolors2.png",s:366.85},{f:"crawford-1.png",s:76.27},{f:"crawford-2.png",s:808.99},{f:"crawford-3.png",s:840.52},{f:"dev01.png",s:88.83},{f:"dnd1.png",s:364.15},{f:"dnd2.2.png",s:514.5},{f:"dnd2.21.png",s:228.8},{f:"dnd2.png",s:305.2},{f:"dndexpanded.png",s:296.49},{f:"dndexpandedtest.png",s:309.27},{f:"dndindex.png",s:36.66},{f:"dndnc-1.png",s:279.47},{f:"dndnc-1b.png",s:193.67},{f:"dndnc-1c.png",s:192.88},{f:"dndnc-red-1.png",s:284.29},{f:"dndnc-red-2.png",s:323.05},{f:"dndnc-splash-1.png",s:42.5},{f:"dndnc-splash-2.png",s:52.02},{f:"dnet01.png",s:130.23},{f:"dnet02.1.png",s:186.76},{f:"dnet03.1.png",s:167.64},{f:"evilgenius-2.png",s:38.62},{f:"evilgenius3.png",s:361.43},{f:"honeycreeper.png",s:535.17},{f:"inglenook023.png",s:1928.92},{f:"inglenook023_j.png",s:1989.97},{f:"inglenook023j.png",s:1755.35},{f:"inglenook023k.png",s:587.67},{f:"inglenook023z.png",s:966.9},{f:"inglenook025k.png",s:889.78},{f:"inglenook026a.png",s:1085.4},{f:"inglenook026a23.png",s:899.67},{f:"inglenook_a1.png",s:90.72},{f:"inglenook_a2.png",s:83.02},{f:"inglenook_a3.png",s:538.16},{f:"inglenook_a3a.png",s:575.8},{f:"inglenook_p1.png",s:83.12},{f:"inglenook_p2.png",s:492.78},{f:"inglenook_p3.png",s:184.77},{f:"jantinc.png",s:147.28},{f:"joshtony_02..png",s:186.62},{f:"joshtony_02.png",s:180.52},{f:"layout_test1.png",s:64.84},{f:"layout_test2.png",s:66.89},{f:"mx-1.png",s:242.61},{f:"mx-2.png",s:179.34},{f:"mx-3.png",s:167.71},{f:"mx-4.png",s:115.12},{f:"mx-5.png",s:109.95},{f:"mx.88x31.png",s:34.38},{f:"mx.mods.chicks.klum.png",s:1006.15},{f:"mx.mods.chicks.png",s:605.98},{f:"mx.mods.chicks.tweeden.png",s:836.41},{f:"mx.mods.gbook-1.png",s:38.35},{f:"mx.mods.gbook-2.png",s:66.17},{f:"mx.mods.pictures.png",s:35.43},{f:"mx.mods.portfolio.png",s:128.83},{f:"mx.secondary-1.png",s:37.12},{f:"mx.secondary-2.png",s:41.58},{f:"mx.secondary.about-1.png",s:45.61},{f:"mx.secondary.id.ashley.png",s:144.58},{f:"mx.secondary.id.brit.png",s:161.54},{f:"mx.secondary.id.brny.png",s:173.38},{f:"mx.secondary.id.carly.png",s:173.25},{f:"mx.secondary.id.eidolon.png",s:200.37},{f:"mx.secondary.id.jamie-1.png",s:160.0},{f:"mx.secondary.id.jamie-2.png",s:162.9},{f:"mx.secondary.id.jzbday.png",s:184.25},{f:"mx.secondary.id.kate.png",s:167.57},{f:"mx.secondary.id.katie.png",s:164.25},{f:"mx.secondary.id.mike.png",s:161.38},{f:"mx.secondary.id.ryanm.png",s:169.42},{f:"mx.secondary.id.ryanwb.png",s:218.69},{f:"mx.secondary.id.sean.png",s:311.69},{f:"mx.splash.png",s:622.9},{f:"mxo.png",s:36.17},{f:"mxo2.png",s:62.93},{f:"mxo_3.png",s:699.46},{f:"mxo_avatars.png",s:233.89},{f:"mxo_avatars2.png",s:890.09},{f:"nc-2.png",s:170.52},{f:"nc-2b.png",s:169.17},{f:"ncphoenix_sliced.png",s:470.17},{f:"nevercraft.one-sliced.png",s:346.68},{f:"nevercraft.v2.png",s:448.47},{f:"phoenix_afterbirth.png",s:851.19},{f:"port.png",s:1289.02},{f:"prototype1.1.png",s:352.62},{f:"prototype1.png",s:69.75},{f:"prototype2.png",s:46.24},{f:"skrattle01.png",s:197.99},{f:"thefrog.png",s:50.28},{f:"v09.1b.png",s:125.4},{f:"v3-1.png",s:537.04},{f:"v3-2.png",s:509.33},{f:"v3.png",s:668.09},{f:"v3.sliced2.png",s:521.21},{f:"zero 2.6 index.png",s:352.57},{f:"zero 3 (mudvayne) working1.png",s:44.66},{f:"zero 3 (mudvayne).png",s:1004.5},{f:"zero 3 (sex and rock).png",s:131.58},{f:"zero test(blue).png",s:1342.79},{f:"zero test(blue.sliced).png",s:1524.13},{f:"zero test.png",s:1287.42},{f:"zero.mx.p2.png",s:58.33},{f:"zero.mx.p2.t2.png",s:70.31},{f:"zero1-b.png",s:475.15},{f:"zero1.png",s:462.15},{f:"zero3_content.png",s:56.13},{f:"zeromx.png",s:73.39},{f:"zeromx_splash.png",s:50.9},{f:"zeromxnew.png",s:141.31},{f:"zeromxnewtest.png",s:197.47}
+];
+var PER_PAGE = 6;
+
+function formatSize(n) {
+  var s = n.toFixed(2);
+  return s.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function renderBoneyard(start) {
+  var gallery = document.getElementById('boneyard-gallery');
+  var pager = document.getElementById('boneyard-pager');
+  var showAll = (start === 'show_all');
+  var s = showAll ? 0 : (parseInt(start, 10) || 0);
+  var end = showAll ? boneyardFiles.length : Math.min(s + PER_PAGE, boneyardFiles.length);
+
+  // Clear gallery
+  while (gallery.firstChild) gallery.removeChild(gallery.firstChild);
+  while (pager.firstChild) pager.removeChild(pager.firstChild);
+
+  var table = document.createElement('table');
+  table.border = '0';
+  table.cellPadding = '0';
+  table.cellSpacing = '10';
+  table.id = 'pngs';
+  table.style.margin = 'auto';
+
+  var row;
+  for (var i = s, t = 1; i < end; i++, t++) {
+    if (t > 3) t = 1;
+    if (t === 1) row = table.insertRow();
+    var file = boneyardFiles[i];
+    var encoded = encodeURIComponent(file.f);
+    var alt = file.f + ' - ' + formatSize(file.s) + ' kb';
+    var td = row.insertCell();
+    var a = document.createElement('a');
+    a.href = './archives/' + encoded;
+    var img = document.createElement('img');
+    img.src = './archives/thumbs/' + encoded;
+    img.alt = alt;
+    a.appendChild(img);
+    td.appendChild(a);
+    if (t === 3 && i + 1 < end) { /* row closed by insertRow */ }
+  }
+  // Pad remaining cells
+  if (row && row.cells.length < 3) {
+    for (var pad = row.cells.length; pad < 3; pad++) {
+      var emptyTd = row.insertCell();
+      emptyTd.textContent = '\u00a0';
+    }
+  }
+  gallery.appendChild(table);
+
+  // Pagination
+  if (!showAll) {
+    var totalPages = Math.ceil(boneyardFiles.length / PER_PAGE);
+    var curPage = s / PER_PAGE;
+    var pDiv = document.createElement('div');
+    pDiv.style.fontSize = '8pt';
+    pDiv.style.textAlign = 'center';
+
+    var strong = document.createElement('strong');
+    var viewAll = document.createElement('a');
+    viewAll.href = '#';
+    viewAll.onclick = function(e) { e.preventDefault(); renderBoneyard('show_all'); };
+    viewAll.textContent = 'View All';
+    strong.appendChild(viewAll);
+    pDiv.appendChild(strong);
+    pDiv.appendChild(document.createElement('br'));
+
+    for (var p = 0; p < totalPages; p++) {
+      if (curPage !== p) {
+        var pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.className = 'by';
+        pageLink.onclick = (function(pg) { return function(e) { e.preventDefault(); renderBoneyard(PER_PAGE * pg); }; })(p);
+        pageLink.textContent = '[ ' + (p + 1) + ' ]';
+        pDiv.appendChild(pageLink);
+        pDiv.appendChild(document.createTextNode('\u00a0'));
+      } else {
+        pDiv.appendChild(document.createTextNode('[ ' + (p + 1) + ' ]\u00a0'));
+      }
+    }
+    pager.appendChild(pDiv);
   }
 }
 
