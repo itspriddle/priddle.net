@@ -1,0 +1,28 @@
+.dropdown{
+position:absolute;
+visibility: hidden;
+border:1px solid #874D13;
+border-bottom-width: 0;
+/*font:normal 12px Verdana;*/
+line-height: 18px;
+z-index: 100;
+background-color: #B89067;
+width: 129px;
+}
+
+.dropdown a{
+width: 100%;
+display: block;
+text-indent: 3px;
+border-bottom: 1px solid #874D13;
+padding: 1px 0;
+text-decoration: none;
+font-weight: bold;
+text-indent: 5px;
+color: #874D13;
+}
+
+.dropdown a:hover{ /*hover background color*/
+background-color: #874D13;
+color: white;
+}

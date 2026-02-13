@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>PBX Admin - Blacklist</title>
+<link type="text/css" rel="stylesheet" href="css/master.css" />
+</head>
+<body>
+<div class="demo-nav">
+	<a href="index.html">Index</a>
+	<a href="queue-viatalk.html">VT General</a>
+	<a href="queue-hostrocket.html">HostRocket</a>
+	<a href="admin.html">Admin</a>
+	<a class="active" href="admin-blacklist.html">Blacklist</a>
+	<a href="admin-flagged-calls.html">Flagged Calls</a>
+	<a href="admin-users.html">Users</a>
+</div>
+<div id="master" class="viatalk" style="position: absolute; top: -1px;">
+
+	<div id="navigation">
+		<p><a href="admin.html">Main</a> &bull;
+			<a href="admin-blacklist.html">Blacklist</a> &bull;
+			<a href="admin-flagged-calls.html">Flagged Calls</a> &bull;
+			<a href="#">Training Calls</a> &bull;
+			<a href="#">CDRs</a> &bull;
+			<a href="admin-users.html">Users</a> &bull;
+			<a href="#">ViaTalk Problem Reports</a> &bull;
+			<a href="#">Login Logs</a>
+		</p>
+		<p class="options"><a href="index.html">Queues</a> &bull; <a href="#">Logout</a></p>
+	</div>
+
+	<div id="content">
+		<div class="table_wrapper">
+			<h2 class="header">Blacklist</h2>
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<th style="width: 140px">Name</th>
+						<th style="width: 100px">Number</th>
+						<th style="width: 65px">Office</th>
+						<th style="width: 140px">Type</th>
+						<th style="width: 140px">Added By</th>
+						<th>Notes</th>
+						<th style="width: 70px">Delete</th>
+					</tr>
+					<tr class="odd">
+						<td>Telemarketer</td>
+						<td>8005550109</td>
+						<td>Via:Talk</td>
+						<td>HANGUP</td>
+						<td>Nick on 08/15/2008</td>
+						<td>Repeated spam calls</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+					<tr class="even">
+						<td>Collections Scam</td>
+						<td>9005550247</td>
+						<td>Via:Talk</td>
+						<td>VOICEMAIL (x8001)</td>
+						<td>Mike on 08/12/2008</td>
+						<td>Fake collections agency</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+					<tr class="odd">
+						<td>Robo Dialer</td>
+						<td>2125550358</td>
+						<td>HostRocket</td>
+						<td>HANGUP</td>
+						<td>Ray on 08/10/2008</td>
+						<td>Automated dialer</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+					<tr class="even">
+						<td>Harassing Caller</td>
+						<td>7185550463</td>
+						<td>Via:Talk</td>
+						<td>VOICEMAIL (x8002)</td>
+						<td>Nick on 08/08/2008</td>
+						<td>Abusive to agents</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+					<tr class="odd">
+						<td>Unknown Spam</td>
+						<td>3055550571</td>
+						<td>HostRocket</td>
+						<td>HANGUP</td>
+						<td>Jen on 08/05/2008</td>
+						<td>Multiple hangup calls</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+					<tr class="even">
+						<td>Survey Company</td>
+						<td>4085550689</td>
+						<td>Via:Talk</td>
+						<td>HANGUP</td>
+						<td>Pete on 08/01/2008</td>
+						<td>Unwanted surveys</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p><a href="#">Add Blacklist &raquo;</a></p>
+		<br style="clear: both" />
+	</div>
+	<div id="footer">
+		<ul id="ninja">
+			<li>Made by the ninja in <abbr title="RAM: 3.1MB">0.0145</abbr> seconds</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

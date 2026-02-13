@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Creative Dance Arts &mdash; Gallery</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle">
+</head>
+<body>
+
+<div id="top">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="faculty.html">Faculty</a></li>
+      <li class="logo">&nbsp;</li>
+      <li class="right"><a href="members.html">Members</a></li>
+      <li class="right"><a href="links.html">Links</a></li>
+      <li class="right"><a href="events.html">Events</a></li>
+      <li class="right active"><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div id="container" class="container">
+  <div class="content">
+
+    <div class="row">
+      <div class="span16 columns">
+        <div class="page-header-img gallery-header"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span16 columns">
+        <div id="news">
+          <div class="header">Gallery</div>
+          <div class="content">
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="images/slide02.jpg" alt="Performance"></div>
+              <div class="gallery-item"><img src="images/slide03.jpg" alt="Performance"></div>
+              <div class="gallery-item"><img src="images/slide04.jpg" alt="Performance"></div>
+              <div class="gallery-item"><img src="images/about-our-pledge.jpg" alt="Studio"></div>
+              <div class="gallery-item"><img src="images/about-our-location.jpg" alt="Location"></div>
+              <div class="gallery-item"><img src="images/about-dress-code.jpg" alt="Class"></div>
+              <div class="gallery-item"><img src="images/about-our-policies.jpg" alt="Studio"></div>
+              <div class="gallery-item"><img src="images/our-dress-code.jpg" alt="Dress Code"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <footer>
+    <div class="container">
+      <div class="links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="members.html">Members</a></li>
+        </ul>
+      </div>
+      <div class="vcard">
+        <p class="copyright">&copy; 2015 Creative Dance Arts</p>
+        <div class="address">
+          <p>2037 Route 9</p>
+          <p>Round Lake, NY 12151</p>
+        </div>
+        <div class="telephone">
+          <p>Tel:<span>(518) 383-9967</span></p>
+          <p>Support:<a href="#" onclick="document.getElementById('contact-modal').classList.add('show');return false;">Email Us</a></p>
+        </div>
+      </div>
+      <div id="social">
+        <p>Follow, watch, and friend us on:</p>
+        <ul class="social-icons">
+          <li><a href="#"><span class="youtube"></span></a></li>
+          <li><a href="#"><span class="facebook"></span></a></li>
+        </ul>
+      </div>
+      <div class="accreditation">
+        <img src="images/cbbb-badge-vert.png" alt="BBB Accreditation">
+      </div>
+      <div class="get-directions">
+        <p>For detailed directions please enter your street address below and click the go button</p>
+        <form action="https://maps.google.com/maps" method="get" target="_blank">
+          <input type="text" class="user-address" name="saddr" placeholder="Enter your address">
+          <input type="hidden" name="daddr" value="2037 Route 9 Round Lake, NY 12151">
+          <input type="submit" class="btn" value="Go">
+        </form>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Email Creative Dance Arts</h3>
+      <span class="close" onclick="document.getElementById('contact-modal').classList.remove('show');">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p>Have questions? Email any of our staff members for help!</p>
+      <ul>
+        <li>For class info, email <a href="mailto:dance@creativedancearts.org">Patti Friedman, Artistic Director</a></li>
+        <li>For general info, email <a href="mailto:info@creativedancearts.org">Laurie Fitsik, Information Coordinator</a></li>
+        <li>For website help, email <a href="mailto:webmaster@creativedancearts.org">Joshua Priddle, Webmaster</a></li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" onclick="document.getElementById('contact-modal').classList.remove('show');return false;">Close</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

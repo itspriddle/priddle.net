@@ -1,0 +1,484 @@
+/**
+ * PBX CSS - 08/2008 by Joshua Priddle <josh.priddle@hostrocket.com>
+ *
+ * Thanks for stealing!
+ */
+
+/* @group Common */
+
+fieldset {
+	border: 0;
+}
+
+form#login {
+	width: 300px;
+	margin: 30px auto;
+}
+
+p.submit {
+	padding-top: 6px;
+	border-top: 1px solid #DDD;
+}
+
+body {
+	background-color: #fff;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0;
+	width: 100%;
+	min-width: 1000px;
+}
+
+#master {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#master #top {
+	height: 109px;
+	width: 100%;
+}
+
+#master #header {
+	height: 79px;
+	margin: 0;
+	padding: 0;
+	width: 160px;
+	background-color: #F00;
+}
+
+#master #header span {
+	display: none;
+}
+
+#master #navigation {
+	background: url(../images/common/navigation-bg.jpg) repeat-x;
+	margin: 0;
+	height: 28px;
+	width: 100%;
+}
+
+#master #navigation p {
+	margin: 0;
+	padding: 5px;
+	color: #fff;
+	font-size: 8pt;
+	font-weight: 700;
+	text-indent: 5px;
+	float: left;
+}
+
+#master #navigation p.options {
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+}
+
+#master #navigation a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#master #navigation a:hover {
+	text-decoration: underline;
+}
+
+#master div.table_wrapper {
+	margin-bottom: 20px;
+}
+
+#master div.table_wrapper h2 {
+	color: #fff;
+	height: 25px;
+	line-height: 25px;
+	margin: 0;
+	padding: 0;
+	font-size: 8pt;
+	text-indent: 10px;
+}
+
+#master div.table_wrapper table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#master div.table_wrapper table tbody tr th {
+	height: 25px;
+	text-align: left;
+	text-indent: 10px;
+	font-size: 8pt;
+}
+
+#master div.table_wrapper table tbody tr td {
+	height: 25px;
+	background-color: transparent;
+	text-indent: 10px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 8pt;
+}
+
+#content {
+	clear: both;
+	padding: 10px 20px;
+}
+
+#content #left {
+	width: 30%;
+	float: left;
+}
+
+#content #right {
+	float: right;
+	width: 69%;
+}
+
+ul#ninja {
+	background: transparent url(../images/common/ninja-logo.png) no-repeat 0 0;
+	height: 25px;
+	list-style: none;
+	margin: 5px auto;
+	padding: 0;
+	width: 260px;
+}
+
+ul#ninja li {
+	display: block;
+	float: left;
+	font-weight: 700;
+	font-size: 8pt;
+	line-height: 28px;
+	margin-left: 25px;
+}
+
+/* @end */
+
+/* @group HostRocket */
+
+#master.hostrocket {
+	background-color: #F6F8EC;
+}
+
+#master.hostrocket a:link,
+#master.hostrocket a:active,
+#master.hostrocket a:visited {
+	color: #4e7c34;
+	text-decoration: none;
+}
+
+#master.hostrocket a:hover {
+	color: #4e7c34;
+	text-decoration: underline;
+}
+
+#master.hostrocket #top {
+	background: url(../images/hostrocket/header-bg.jpg) repeat-x top;
+}
+
+#master.hostrocket #header {
+	width: 190px;
+	height: 80px;
+	background: url(../images/hostrocket/logo.jpg) no-repeat left center;
+}
+
+#master.hostrocket div.table_wrapper {
+	border-left: 1px solid #D1DB9D;
+	border-right: 1px solid #D1DB9D;
+}
+
+#master.hostrocket div.table_wrapper h2 {
+	background: url(../images/hostrocket/table-header-bg.jpg) repeat-x;
+}
+
+#master.hostrocket div.table_wrapper table tbody tr th {
+	background-color: #BDDCA8;
+	border-top: 1px solid #D1DB9D;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+#master.hostrocket div.table_wrapper table tbody tr td {
+	background-color: #fff;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+#master.hostrocket div.table_wrapper table tbody tr.odd td {
+	background-color: #E0F1D0;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+#master.hostrocket div.table_wrapper table tbody tr:hover td {
+	background-color: #B6DE8E;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+/* @end */
+
+/* @group GoFono */
+
+#master.gofono {
+	background-color: #F6F8EC;
+}
+
+#master.gofono a:link,
+#master.gofono a:active,
+#master.gofono a:visited {
+	color: #4e7c34;
+	text-decoration: none;
+}
+
+#master.gofono a:hover {
+	color: #4e7c34;
+	text-decoration: underline;
+}
+
+#master.gofono #top {
+	background: url(../images/hostrocket/header-bg.jpg) repeat-x top;
+}
+
+#master.gofono #header {
+	width: 190px;
+	height: 80px;
+	background: url(../images/gofono/logo.jpg) no-repeat left center;
+}
+
+#master.gofono div.table_wrapper {
+	border-left: 1px solid #D1DB9D;
+	border-right: 1px solid #D1DB9D;
+}
+
+#master.gofono div.table_wrapper h2 {
+	background: url(../images/hostrocket/table-header-bg.jpg) repeat-x;
+}
+
+#master.gofono div.table_wrapper table tbody tr th {
+	background-color: #BDDCA8;
+	border-top: 1px solid #D1DB9D;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+#master.gofono div.table_wrapper table tbody tr td {
+	background-color: #fff;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+#master.gofono div.table_wrapper table tbody tr.odd td {
+	background-color: #E0F1D0;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+#master.gofono div.table_wrapper table tbody tr:hover td {
+	background-color: #B6DE8E;
+	border-bottom: 1px solid #D1DB9D;
+}
+
+/* @end */
+
+/* @group ViaTalk */
+
+#master.viatalk {
+}
+
+#master.viatalk a:link,
+#master.viatalk a:active,
+#master.viatalk a:visited {
+	color: #2A4A97;
+	text-decoration: none;
+}
+
+#master.viatalk a:hover {
+	color: #2A4A97;
+	text-decoration: underline;
+}
+
+#master.viatalk #top {
+	background: url(../images/viatalk/header-bg.jpg) repeat-x top;
+}
+
+#master.viatalk #header {
+	width: 154px;
+	height: 79px;
+	background: url(../images/viatalk/logo.jpg) no-repeat center center;
+}
+
+#master.viatalk div.table_wrapper {
+	border-left: 1px solid #BEC9D5;
+	border-right: 1px solid #BEC9D5;
+}
+
+#master.viatalk div.table_wrapper h2 {
+	background: url(../images/viatalk/table-header-bg.jpg) repeat-x;
+}
+
+#master.viatalk div.table_wrapper table tbody tr th {
+	background-color: #D5E2F3;
+	border-top: 1px solid #BEC9D5;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+#master.viatalk div.table_wrapper table tbody tr td {
+	background-color: #fff;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+#master.viatalk div.table_wrapper table tbody tr.odd td {
+	background-color: #E9F0F9;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+#master.viatalk div.table_wrapper table tbody tr:hover td {
+	background-color: #B7D5F8;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+p {
+	font-size: 8pt;
+}
+
+a.agent_link {
+	color: #000 !important;
+	text-decoration: none;
+}
+
+tr.loggedin td,
+tr.loggedin td a.agent_link {
+	font-weight: bold;
+}
+
+tr.idle td,
+tr.idle td a.agent_link {
+	font-style: italic;
+	font-weight: normal;
+}
+
+tr.loggedoff td,
+tr.loggedoff td .agent_link {
+	color: #666 !important;
+}
+
+tr.prio td,
+tr.prio td a.agent_link {
+	color: #598538;
+}
+
+tr.disabled td {
+	color: #900;
+}
+
+abbr {
+	border-bottom: 1px dotted #000;
+}
+
+/* @end */
+
+#warnings {
+	margin: 0px 0 15px 0;
+	font-size: 10pt;
+}
+
+#warnings .warning {
+	background: #FBE6F2;
+	border: 1px solid #D893A1;
+	color: #000;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#warnings .success {
+	background: #B6DE8E;
+	border: 1px solid #8BA609;
+	color: #000;
+	margin: 5px 0 1px 0;
+	padding: 5px;
+}
+
+#warnings p {
+	margin: 0;
+	padding: 0;
+}
+
+div.server_id {
+	width: 7px;
+	height: 7px;
+	background-image: url(../images/common/server-dots.png);
+	background-position: 0px 0px;
+}
+
+div.server_id span {
+	display: none;
+	width: 7px;
+	height: 7px;
+	line-height: 7px;
+	font-size: 1px;
+	padding: 0;
+	margin: 0;
+}
+
+#vt_daily_server_stats {
+	width: 100%;
+}
+
+#vt_daily_server_stats ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+#vt_daily_server_stats ul li {
+	font-size: 8pt;
+	width: 25%;
+	display: block;
+	float: left;
+	padding: 5px 0 5px 0;
+}
+
+#vt_daily_problem_stats ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+#vt_daily_problem_stats ul li {
+	font-size: 8pt;
+	width: 33%;
+	display: block;
+	float: left;
+	padding: 5px 0 5px 0;
+}
+
+a#agent_flagged_calls.anchor:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+h2.header abbr {
+	color: #fff;
+	border-bottom-color: #fff;
+	border-bottom-style: solid;
+	cursor: pointer;
+}
+
+/* Demo nav helper */
+.demo-nav {
+	background: #333;
+	padding: 8px 15px;
+	font-size: 9pt;
+	text-align: center;
+}
+.demo-nav a {
+	color: #ccc !important;
+	text-decoration: none;
+	margin: 0 8px;
+}
+.demo-nav a:hover {
+	color: #fff !important;
+}
+.demo-nav a.active {
+	color: #fff !important;
+	border-bottom: 2px solid #fff;
+	padding-bottom: 2px;
+}

@@ -1,0 +1,497 @@
+/*
+	Created by Joshua Priddle for Inglenook Realty
+
+	-- Steal and die -- */
+
+body {
+	background-color: #211101;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+html, body {
+	height: 100%;
+	margin-bottom: 0;
+}
+
+#overall {
+	margin: auto;
+	width: 714px;
+	height: 100%;
+	color: #FFFFFF;
+}
+
+#top {
+	width: 714px;
+	height: 379px;
+	margin: auto;
+	padding: 0 0 10px 0;
+}
+	#top .hidden {
+		display: none;
+	}
+	
+	#top .left {
+		float: left;
+	}
+	#top .head {
+		width: 714px;
+		height: 74px;
+		background-image: url(../images/v1.top.jpg);
+		float: left;
+		clear: left;
+		
+	}
+	
+	#top .main {
+		width: 560px;
+		height: 264px;
+		background-image: url(../images/v1.main.jpg);
+		float: left; 
+		clear: left;
+	}
+	#top .map {
+ 		width: 150px;
+		height: 35px;
+		float: right;
+		display: block;
+	}
+	#top .map a {
+ 		display: block;
+		height: 35px;
+		border: 0;
+	}
+	#top .bottom {
+		width: 560px;
+		height: 41px;
+		background-image: url(../images/v1.bot.jpg);
+		float: left; 
+		clear: left;
+	}
+		a.goback {
+			display: block;
+			width: 121px;
+			height: 41px;
+			text-decoration: none;
+		}
+		a.goback:link,
+		a.goback:visited,
+		a.goback:active {
+			background-image: url(../images/v1.back1.jpg);
+		}
+		a.goback:hover {
+			background-image: url(../images/v1.back2.jpg);
+		}
+		
+		a.goback span {
+			display: none;
+		}
+	
+	#top #navigation {
+		width: 154px;
+		height: 305px;
+		background-image: url(../images/v1.nav.bg.jpg);
+		float: right;
+		
+	}
+	
+	#top #navigation ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+		#navigation ul li {
+			width: 154px;
+			/*height: 24px;
+			line-height: 24px;*/
+			/*background-image: url(../images/v1.nav.link.bg.jpg);*/
+			font-family: "Lucida Sans", Arial, Helvetica, sans-serif;
+			font-size: 1em;
+			font-weight: bold;
+			margin: 3px 0 3px 0;
+			color: #FFFFFF;
+		}
+		
+			#navigation li a {
+				text-decoration: none;
+				position: relative;
+				left: 8px;
+				
+			}
+				#navigation li a:link {
+					color: #3C1F02;
+					text-decoration: none;
+				}
+				
+				#navigation li a:visited {
+					color: #3C1F02;
+					text-decoration: none;
+				}
+				
+				#navigation li a:active {
+					color: #3C1F02;
+					text-decoration: none;				
+				}
+				
+				#navigation li a:hover {
+					color: #FFFFFF;
+					text-decoration: none;
+				}
+
+
+#main {
+	color: #FFFFFF;
+	width: 714px;
+	background-color: #3C1F02;
+}
+
+	#main h1 {
+		font-size: 100%;
+	}
+	
+	#main h2 {
+		font-size: 11pt;
+	}
+	
+	#main h3 {
+		font-size: 10pt;
+	}
+	
+	#main p,
+	#main div.content_body,
+	#main div.listing-desc,
+	#main div.content_item,
+	#main div.content_body ul li  {
+		font-size: 10pt;
+	}
+		
+	#main table#gallery a {
+		text-decoration: none;
+	}
+		#main table#gallery td {
+			font-size: 70%;
+			width: 25%;
+		}
+	
+	#__main li {
+		font-size: 70%;
+	}
+	
+	#main form {
+		
+	}
+		#main form input {
+			font-size: 80%;
+			font-family: Arial, Helvetica, sans-serif;
+		/*	border: 1px solid #F2B679;
+			background-color: #864D13;
+			color: #F2B679;
+		*/	
+		}
+
+		
+		#contact select,
+		#contact input {
+			font-size: 80%;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		
+			
+		
+		#main form textarea {
+			font-size: 80%;
+			font-family: Arial, Helvetica, sans-serif;
+		/*	border: 1px solid #F2B679;
+			background-color: #864D13;
+			color: #F2B679;
+		*/
+		}
+		
+		
+	
+	#main a {
+		background: inherit;
+		color: #F2B679;
+	}
+	
+	#main a:link {
+		text-decoration: underline;
+	}
+	
+	#main a:visited {
+		text-decoration: underline;
+	}
+	
+	#main a:hover {
+		text-decoration: none;
+	}
+	
+	#main a:active {
+		text-decoration: underline;
+	}
+		
+	#main .top {
+		background-image: url(../images/v1.main.top.gif);
+		height: 21px;
+	}
+	
+	#main .left {
+		width: 210px;
+		float: left;
+		padding-left: 10px;
+	}
+	
+		#main .left p {
+			text-align: right;
+			margin: 0 0 15px 0;
+			padding: 0;
+		}
+		
+			/*#main .left p:first-line {
+				font-weight: bold;
+			}*/
+		
+		#main .left h2 {
+			text-align: right;
+			margin: 0;
+			
+		}
+		#main h2 {
+			margin: 0;
+		}
+	
+	#main .right {
+		width: 470px;
+		float: right;
+		padding-right: 10px;
+	}
+	
+		#main .right h2 {
+			text-align: left;
+			margin: 0;
+		}
+		
+		#main .right p,
+		#main .right .content_body {
+			text-align: left;
+			margin: 0 0 15px 0;
+			padding: 0;
+		}
+		
+			/*#main .right p:first-line {
+				font-weight: bold;
+			}*/
+	
+	#main .footer {
+		clear: both;
+		text-align: center;
+		padding: 20px 0 20px 0;
+	}
+	#main .footer p {
+		font-size: 60%;
+	}
+	
+		#main .footer a img {
+			border: 0;
+		}
+
+	/*#main .listing-avatar {
+		float: left;
+	}
+	#main .listing-info {
+		float: right;
+		clear: left;
+	}*/
+	
+	img.avatar {
+		margin: 3px;
+		border: 0;
+	}
+	span.more {
+		font-size: 90%;
+	}
+	ul.links {
+		list-style: none;
+	}
+	ul.links li {
+		line-height: 1.5;
+	}
+
+#main .full_content {
+	margin: 0;
+	padding: 0 10px 10px 10px;
+}
+
+#listing {
+	margin: 0 20px 20px 20px;
+}
+#listing h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 120%; 
+}
+#listing #listing-media {
+	float: right;
+	width: 290px;
+}
+
+#listing .listing-gallery {
+
+}
+
+#listing .listing-gallery a img {
+	border: 1px solid #F2B679;
+}
+
+#listing .listing-overview {
+	float: left;
+	clear: none;
+	width: 300px;
+}
+#listing .listing-details {
+	clear: both;
+	width: 300px;
+}
+#listing .listing-details dl {
+	font-size: 80%;
+}
+#listing .listing-details dt {
+	position: relative;
+	float: left;
+	font-weight: bold;
+}
+#listing .listing-details dd {
+	position: relative;
+	margin: 0 0 0 110px;
+}
+
+#listing .entry {
+	width: 654px;
+	padding: 10px;
+	color: #000;
+}
+#listing .entry h3 {
+	margin-top: 0;
+}
+
+#listing .entry p {
+	margin-top: 0
+}
+
+#listing .entry a {
+	color: #000;
+}
+
+#listing .lightbg {
+	background-color: #CCAF91;
+}
+
+#listing .darkbg {
+	background-color: #B79067;
+}
+
+#listing .avatar {
+	float: left;
+	width: 200px;
+}
+
+#listing .mini-desc {
+	float: right;
+	width: 450px;
+}
+
+#more_info {
+	float: right;
+	width: 45%;
+}
+
+#listing #more_info_form {
+	
+}
+
+#listing #more_info_form #phone1, 
+#listing #more_info_form #phone2 {
+	width: 20%;
+}
+
+
+#listing #more_info_form #phone3 {
+	width: 35%;
+}
+#listing fieldset {
+	border: 0;
+}
+
+#listing legend {
+	font-size: 100%;
+	color: #fff;
+}
+
+#listing p,
+#listing .description {
+	font-size: 10pt;
+}
+
+#listing #more_info_form input {
+	font-size: 10pt;
+	font-weight: normal;
+	width: 80%;
+}
+
+#listing #more_info_form select {
+	font-size: 10pt;
+	font-weight: normal;
+	width: 80%;
+}
+
+#listing #more_info_form textarea {
+	font-size: 10pt;
+	font-weight: normal;
+	width: 80%;
+}
+
+
+
+#listing #more_info_form #Submit {
+	width: 100px;
+}
+
+form#contact {
+	margin: 0;
+	padding: 0;
+}
+
+#contact legend {
+	margin-bottom: 3px;
+	font-size: 10pt;
+	font-weight: bold;
+}
+#contact fieldset {
+	border: 0;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+#searchlistings {
+	margin-bottom: 20px;
+}
+
+#searchlistings fieldset {
+	float: left;
+	margin: 20px 20px 20px 0;
+}
+
+#searchlistings p.submit {
+	clear: both;
+}
+
+#searchlistings ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#searchlistings ul li {
+	margin-bottom: 6px;
+}

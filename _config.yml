@@ -77,3 +77,8 @@ defaults:
     values:
       layout: "project"
       permalink: /oss/:name/
+  -
+    scope:
+      path: "vault"
+    values:
+      sitemap: false

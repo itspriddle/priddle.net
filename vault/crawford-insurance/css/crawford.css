@@ -1,0 +1,109 @@
+/*
+	Crawford Insurance Agency
+	www.crawfordinsagency.com
+	Merged Stylesheet (IE + NS)
+*/
+
+body {
+	background-color: #6677AA;
+	margin: 0;
+}
+
+body, td, th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+.blue {
+	color: #6677AA;
+}
+
+.title {
+	padding-left: 5px;
+	padding-top: 1px;
+}
+
+.border {
+	border: 1px solid #8899BB;
+}
+
+.input {
+	width: 207px;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	background-color: #8899bb;
+	border: 1px solid #8899BB;
+	color: #FFFFFF;
+}
+
+.dates {
+	width: 32%;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	background-color: #8C96BD;
+	color: #FFFFFF;
+}
+
+.secondary {
+	padding: 6px;
+}
+
+#content {
+	overflow: auto;
+}
+
+#contentmain {
+	height: 104px;
+	width: 539px;
+	padding-right: 6px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#contentquotes {
+	height: 294px;
+	width: 539px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+a:active {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:link.blue {
+	color: #6677AA;
+	text-decoration: none;
+}
+
+a:visited.blue {
+	text-decoration: none;
+	color: #6677AA;
+}
+
+a:hover.blue {
+	text-decoration: underline;
+	color: #003366;
+}
+
+a:active.blue {
+	text-decoration: none;
+	color: #6677AA;
+}

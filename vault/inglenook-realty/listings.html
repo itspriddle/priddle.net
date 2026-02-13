@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Inglenook Realty: Listings</title>
+<link rel="stylesheet" type="text/css" href="css/v1.main.css" />
+<style type="text/css">
+#top .head { background-image: url(images/v1.top.jpg); }
+#top .main { background-image: url(images/v1.main.jpg); }
+#top .bottom { background-image: url(images/v1.bot.jpg); }
+#top #navigation { background-image: url(images/v1.nav.bg.jpg); }
+#main .top { background-image: url(images/v1.main.top.gif); }
+a.goback:link, a.goback:visited, a.goback:active { background-image: url(images/v1.back1.jpg); }
+a.goback:hover { background-image: url(images/v1.back2.jpg); }
+#navigation ul li { font-size: 12px; }
+</style>
+<link rel="shortcut icon" href="images/favicon.ico" />
+</head>
+<body>
+<div id="overall">
+	<div id="top">
+		<div class="head">
+			<h1 class="hidden">Inglenook Realty</h1>
+			<p class="hidden">P.O. Box 280 Galway, NY 12074<br />
+			1525 St. Hwy 29 Galway, NY 12074<br />
+			Phone 518.882.6236<br />
+			Cell 518.365.5137</p>
+			<div class="map">
+				<a href="#"><span class="hidden">Get Driving Directions</span></a>
+			</div>
+		</div>
+		<div class="left">
+			<div class="main">
+				<p class="hidden"><strong>Inglenook Realty</strong>
+		        strives for excellence in
+		        all phases of real estate.</p>
+			</div>
+			<div class="bottom">
+				<a href="javascript:history.go(-1)" class="goback"><span>Go Back</span></a>
+			</div>
+		</div>
+		<div id="navigation">
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="listings.html">Listings</a></li>
+				<li><a href="agents.html">Agents</a></li>
+				<li><a href="mls.html">MLS Search</a></li>
+				<li><a href="calculator.html">Mortgage Calculator</a></li>
+				<li><a href="links.html">Links of Interest</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="main">
+		<div class="top"></div>
+		<div class="full_content">
+
+<div id="listing">
+	<h2>Search Listings</h2>
+	<p>Use the form below to search our listings. </p>
+	<form name="searchlistings" id="searchlistings" method="post" action="#">
+		<fieldset>
+			<legend>Listing Type</legend>
+			<ul>
+				<li><label><input type="checkbox" name="type[]" value="single" /> Single Family</label></li>
+				<li><label><input type="checkbox" name="type[]" value="multi" /> Multi Family</label></li>
+				<li><label><input type="checkbox" name="type[]" value="land" /> Land</label></li>
+				<li><label><input type="checkbox" name="type[]" value="commercial" /> Commercial</label></li>
+				<li><label><input type="checkbox" name="type[]" value="rental" /> Rental</label></li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>Location</legend>
+			<select name="location" id="location" size="6">
+				<option value="">Any</option>
+				<option value="Galway, NY">Galway, NY</option>
+				<option value="Saratoga Springs, NY">Saratoga Springs, NY</option>
+				<option value="Ballston Spa, NY">Ballston Spa, NY</option>
+				<option value="Amsterdam, NY">Amsterdam, NY</option>
+				<option value="Johnstown, NY">Johnstown, NY</option>
+				<option value="Broadalbin, NY">Broadalbin, NY</option>
+			</select>
+		</fieldset>
+
+		<fieldset>
+			<legend>Price</legend>
+			<ul>
+				<li><label for="price-max">Maximum</label><br />$<input type="text" name="price-max" id="price-max" maxlength="4" size="4" />,000</li>
+				<li><label for="price-min">Minimum</label><br />$<input type="text" name="price-min" id="price-min" maxlength="4" size="4" />,000</li>
+			</ul>
+		</fieldset>
+		<p class="submit"><input type="submit" name="submit" value="Search" /></p>
+	</form>
+	<br style="clear: both" />
+	<h2>Browse Listings</h2>
+	<p>You can browse our <a href="listings-browse.html">single family</a>,
+		<a href="listings-browse.html">multi family</a>,
+		<a href="listings-browse.html">land</a>,
+		<a href="listings-browse.html">commercial</a>, or
+		<a href="listings-browse.html">rental</a> listings.
+		You can also browse <a href="listings-browse.html">all</a> of our
+		listings at once to find just what you're looking for.</p>
+</div>
+
+		</div>
+		<div class="footer">
+			<p><a href="home.html">Home</a> &bull; <a href="listings.html">Listings</a> &bull; <a href="agents.html">Agents</a> &bull; <a href="mls.html">MLS Search</a> &bull; <a href="calculator.html">Mortgage Calculator</a> &bull; <a href="links.html">Links of Interest</a> &bull; <a href="contact.html">Contact Us</a></p>
+			<p>All Content &copy;2008 Inglenook Realty Inc; Unless otherwise stated.</p>
+			<p><img src="images/buttons/bynevercraft.gif" width="152" height="5" alt="Designed by Nevercraft.net" /></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
