@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard :: Helix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="index.html"><img src="images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="profile.html">Josh Priddle</a> | <a href="login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li class="current"><a href="index.html">Dashboard</a></li>
+        <li><a href="orders/index.html">Orders</a></li>
+        <li><a href="accounts/index.html">Accounts</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="domain-services/index.html">Domains</a></li>
+        <li><a href="reports/invoices.html">Reports</a></li>
+        <li><a href="partners/sign-ups.html">Partners</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="search">
+          <form action="search.html" method="get">
+            Search
+            <input type="text" name="q" placeholder="Search..." maxlength="50">
+          </form>
+        </li>
+      </ul>
+    </header>
+    <div id="content">
+      <h1>Dashboard</h1>
+
+      <div class="row">
+        <div class="span3">
+          <div id="metrics">
+            <h3>Metrics</h3>
+            <ul>
+              <li><a href="#">Sign Ups</a></li>
+              <li><a href="#">Emeril</a></li>
+              <li><a href="#">Backups</a></li>
+              <li><a href="#">Partner Panel API Usage</a></li>
+            </ul>
+          </div>
+          <div id="current-user-sessions">
+            <h3>Active Sessions</h3>
+            <ul class="nav nav-list">
+              <li>Josh Priddle <small class="muted">2 min ago</small></li>
+              <li>Sarah Chen <small class="muted">5 min ago</small></li>
+              <li>Mike Torres <small class="muted">12 min ago</small></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="span8">
+          <!-- Pending / Failure Queues -->
+          <table class="table table-condensed table-bordered">
+            <tr><th class="title">Pending Queue</th></tr>
+            <tr>
+              <td>
+                Orders (3) Services (5)
+                [<a href="orders/index.html">View all</a>]
+              </td>
+            </tr>
+            <tr><th class="title">Failure Queue</th></tr>
+            <tr>
+              <td>
+                Services (1)
+                [<a href="services/index.html">View all</a>]
+              </td>
+            </tr>
+            <tr><th class="title">Expired Domain Services</th></tr>
+            <tr><td>2 [<a href="domain-services/index.html">View all</a>]</td></tr>
+            <tr><th class="title">Scheduled for Termination</th></tr>
+            <tr>
+              <td>
+                <strong>Services:</strong> 4 [<a href="services/index.html">View all</a>]<br>
+                <strong>Domain Services:</strong> 1 [<a href="domain-services/index.html">View all</a>]
+              </td>
+            </tr>
+          </table>
+
+          <!-- Order Queue -->
+          <table class="table table-condensed table-bordered">
+            <tr><th class="title">Order Queue</th></tr>
+            <tr><td>3 [<a href="orders/index.html">View all</a>]</td></tr>
+            <tr><th class="title">Oldest Order</th></tr>
+            <tr><td><a href="orders/show.html">acmecorp.com</a> (Pressed)</td></tr>
+          </table>
+
+          <!-- Overdue / Pending Invoices -->
+          <table class="table table-condensed table-bordered">
+            <tr><th class="title">Overdue Invoices</th></tr>
+            <tr>
+              <td class="alert-danger">
+                3 ($144.97) [<a href="invoices/index.html">View all</a>]
+              </td>
+            </tr>
+            <tr><th class="title">Pending Invoices</th></tr>
+            <tr>
+              <td>
+                7 ($412.93) [<a href="invoices/index.html">View all</a>]
+              </td>
+            </tr>
+          </table>
+
+          <!-- Cancellation Requests -->
+          <table class="table table-condensed table-bordered">
+            <tr><th class="title">Pending Cancellation Requests</th></tr>
+            <tr>
+              <td>2 [<a href="services/index.html">View all</a>]</td>
+            </tr>
+          </table>
+
+          <!-- Active Staff -->
+          <table class="table table-condensed table-bordered">
+            <tr><th class="title" colspan="2">Active Staff</th></tr>
+            <tr>
+              <td rowspan="2"><a href="staffs/show.html">Josh Priddle</a></td>
+            </tr>
+            <tr>
+              <td>Session #4821: <a href="#">/services/10482</a> (2 minutes ago)</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><a href="staffs/show.html">Sarah Chen</a></td>
+            </tr>
+            <tr>
+              <td>Session #4820: <a href="#">/accounts/2841</a> (5 minutes ago)</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><a href="staffs/show.html">Mike Torres</a></td>
+            </tr>
+            <tr>
+              <td>Session #4819: <a href="#">/orders/7233</a> (12 minutes ago)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Copyright &copy; 2018</span> <a href="#">Pressed</a>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/helix.js"></script>
+</body>
+</html>

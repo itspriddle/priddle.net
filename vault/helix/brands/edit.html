@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Brand Pressed :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li class="current"><a href="../settings.html">Settings</a></li>
+        <li class="search">
+          <form action="../search.html" method="get">
+            Search
+            <input type="text" name="q" placeholder="Search..." maxlength="50">
+          </form>
+        </li>
+      </ul>
+    </header>
+    <div id="content">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Brands</a> <span class="divider">/</span></li>
+        <li><a href="show.html">Pressed</a> <span class="divider">/</span></li>
+        <li class="active">Edit</li>
+      </ul>
+
+      <h1>Edit Brand Pressed</h1>
+
+      <form class="form-horizontal" action="show.html" method="get">
+        <div class="control-group">
+          <label class="control-label" for="brand_name">Name</label>
+          <div class="controls">
+            <input type="text" id="brand_name" value="Pressed">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_domain">Domain</label>
+          <div class="controls">
+            <input type="text" id="brand_domain" value="pressed.net">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_status">Status</label>
+          <div class="controls">
+            <select id="brand_status">
+              <option selected>Active</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_support_email">Support Email</label>
+          <div class="controls">
+            <input type="text" id="brand_support_email" value="support@pressed.net">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_billing_email">Billing Email</label>
+          <div class="controls">
+            <input type="text" id="brand_billing_email" value="billing@pressed.net">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_payment_gateway">Payment Gateway</label>
+          <div class="controls">
+            <select id="brand_payment_gateway">
+              <option selected>Stripe</option>
+              <option>Authorize.net</option>
+              <option>PayPal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_ssl_provider">SSL Provider</label>
+          <div class="controls">
+            <select id="brand_ssl_provider">
+              <option selected>Let's Encrypt</option>
+              <option>Comodo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_default_location">Default Location</label>
+          <div class="controls">
+            <select id="brand_default_location">
+              <option selected>US East</option>
+              <option>US West</option>
+              <option>EU West</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="brand_notes">Notes</label>
+          <div class="controls">
+            <textarea id="brand_notes" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <a href="show.html" class="btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Copyright &copy; 2018</span> <a href="#">Pressed</a>
+  </div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

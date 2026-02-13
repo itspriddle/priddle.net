@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Service #1042 :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li class="current"><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li><a href="../settings.html">Settings</a></li>
+        <li class="search"><form action="../search.html" method="get">Search <input type="text" name="q" placeholder="Search..." maxlength="50"></form></li>
+      </ul>
+      <ul id="subnav">
+        <li><a href="index.html">List</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="index.html?status=terminated">Review Finalized</a></li>
+      </ul>
+    </header>
+    <div id="content">
+      <div class="breadcrumbs">
+        <a href="index.html">Services</a> / <a href="show.html">Service #1042</a> / Edit
+      </div>
+
+      <h1>Edit Service #1042</h1>
+
+      <form class="form-horizontal" action="show.html" method="get">
+        <div class="control-group">
+          <label class="control-label" for="service_name">Name</label>
+          <div class="controls">
+            <input type="text" id="service_name" name="service[name]" value="acmecorp.com">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="service_brand">Brand</label>
+          <div class="controls">
+            <select id="service_brand" name="service[brand]">
+              <option value="pressed" selected>Pressed</option>
+              <option value="a2hosting">A2 Hosting</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="service_product">Product</label>
+          <div class="controls">
+            <select id="service_product" name="service[product]">
+              <option value="personal">Personal</option>
+              <option value="professional" selected>Professional</option>
+              <option value="business">Business</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="service_domain">Domain</label>
+          <div class="controls">
+            <input type="text" id="service_domain" name="service[domain]" value="acmecorp.com">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="service_ip">IP Address</label>
+          <div class="controls">
+            <input type="text" id="service_ip" name="service[ip_address]" value="10.0.1.42">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="service_term_length">Term Length</label>
+          <div class="controls">
+            <select id="service_term_length" name="service[term_length]">
+              <option value="1">1 month</option>
+              <option value="3">3 months</option>
+              <option value="6">6 months</option>
+              <option value="12" selected>12 months</option>
+              <option value="24">24 months</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="service_auto_renew">Auto Renew</label>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" id="service_auto_renew" name="service[auto_renew]" value="1" checked> Automatically renew at term end
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Update Service</button>
+          <a href="show.html" class="btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="copyright"><span>Copyright &copy; 2018</span> <a href="#">Pressed</a></div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

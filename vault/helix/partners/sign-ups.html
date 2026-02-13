@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Partner Sign Ups :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li><a href="../reports/invoices.html">Reports</a></li>
+        <li class="current"><a href="../partners/sign-ups.html">Partners</a></li>
+        <li><a href="../settings.html">Settings</a></li>
+        <li class="search"><form action="../search.html" method="get">Search <input type="text" name="q" placeholder="Search..." maxlength="50"></form></li>
+      </ul>
+      <ul id="subnav">
+        <li class="current"><a href="sign-ups.html">Sign Ups</a></li>
+        <li><a href="payouts.html?pending=1">Pending Payouts</a></li>
+        <li><a href="payouts.html">Payouts</a></li>
+        <li><a href="cancellations.html">Cancellations</a></li>
+        <li><a href="review-queue.html">Review Queue</a></li>
+        <li><a href="ledger-items.html">Ledger Items</a></li>
+      </ul>
+    </header>
+    <div id="content">
+      <h1>Partner Sign Ups</h1>
+
+      <form class="form-inline" style="margin-bottom: 20px;">
+        <label>Brand</label>
+        <select class="form-control">
+          <option>All</option>
+          <option>Pressed</option>
+          <option>A2 Hosting</option>
+        </select>
+        <label>From</label>
+        <input type="text" class="form-control" placeholder="YYYY-MM-DD">
+        <label>To</label>
+        <input type="text" class="form-control" placeholder="YYYY-MM-DD">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <hr>
+
+      <table class="table table-striped table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="id"><a href="#" class="sort_desc">ID</a></th>
+            <th><a href="#">Partner</a></th>
+            <th><a href="#">Brand</a></th>
+            <th><a href="#">Customer</a></th>
+            <th><a href="#">Service</a></th>
+            <th><a href="#">Commission</a></th>
+            <th><a href="#">Created At</a></th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>601</td>
+            <td>TechSolutions LLC</td>
+            <td>Pressed</td>
+            <td>Jane Smith</td>
+            <td>Pro Hosting - Monthly</td>
+            <td>$15.00</td>
+            <td>Jan 12, 2018</td>
+            <td class="actions"><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>602</td>
+            <td>WebPro Agency</td>
+            <td>A2 Hosting</td>
+            <td>Mike Johnson</td>
+            <td>Business Hosting - Annual</td>
+            <td>$25.00</td>
+            <td>Jan 14, 2018</td>
+            <td class="actions"><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>603</td>
+            <td>Digital First Inc</td>
+            <td>Pressed</td>
+            <td>Sarah Williams</td>
+            <td>Starter Hosting - Monthly</td>
+            <td>$5.00</td>
+            <td>Jan 18, 2018</td>
+            <td class="actions"><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>604</td>
+            <td>TechSolutions LLC</td>
+            <td>A2 Hosting</td>
+            <td>David Chen</td>
+            <td>Pro Hosting - Monthly</td>
+            <td>$15.00</td>
+            <td>Jan 20, 2018</td>
+            <td class="actions"><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>605</td>
+            <td>CloudHost Partners</td>
+            <td>Pressed</td>
+            <td>Emily Brown</td>
+            <td>Business Hosting - Monthly</td>
+            <td>$20.00</td>
+            <td>Jan 22, 2018</td>
+            <td class="actions"><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>606</td>
+            <td>WebPro Agency</td>
+            <td>Pressed</td>
+            <td>Tom Anderson</td>
+            <td>Starter Hosting - Annual</td>
+            <td>$10.00</td>
+            <td>Jan 25, 2018</td>
+            <td class="actions"><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <span class="current btn btn-small">1</span>
+        <a href="#" class="btn btn-small">2</a>
+        <a href="#" class="btn btn-small">3</a>
+        <span class="gap btn btn-small">&hellip;</span>
+        <a href="#" class="btn btn-small">8</a>
+        <a href="#" class="btn btn-small">Next</a>
+        <a href="#" class="btn btn-small">Last</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Copyright &copy; 2018</span> <a href="#">Pressed</a>
+  </div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

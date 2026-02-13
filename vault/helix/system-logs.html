@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>System Logs :: Helix</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="index.html"><img src="images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="profile.html">Josh Priddle</a> | <a href="login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="orders/index.html">Orders</a></li>
+        <li><a href="accounts/index.html">Accounts</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="domain-services/index.html">Domains</a></li>
+        <li><a href="reports/invoices.html">Reports</a></li>
+        <li><a href="partners/sign-ups.html">Partners</a></li>
+        <li class="current"><a href="settings.html">Settings</a></li>
+        <li class="search"><form action="search.html" method="get">Search <input type="text" name="q" placeholder="Search..." maxlength="50"></form></li>
+      </ul>
+    </header>
+    <div id="content">
+      <div class="breadcrumbs">
+        <a href="settings.html">Settings</a> / System Logs
+      </div>
+
+      <h1>System Logs</h1>
+
+      <p><a href="#" onclick="document.querySelector('.search-form').style.display = document.querySelector('.search-form').style.display === 'none' ? 'block' : 'none'; return false;"><i class="fa fa-filter"></i> Filter Logs</a></p>
+
+      <form class="form-horizontal search-form well" style="display: none;">
+        <div class="row-fluid">
+          <div class="span4">
+            <div class="control-group">
+              <label class="control-label" for="status">Status</label>
+              <div class="controls">
+                <select id="status" name="status">
+                  <option value="">All</option>
+                  <option value="pending">Pending</option>
+                  <option value="running">Running</option>
+                  <option value="completed">Completed</option>
+                  <option value="failed">Failed</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="control-group">
+              <label class="control-label" for="type">Type</label>
+              <div class="controls">
+                <select id="type" name="type">
+                  <option value="">All</option>
+                  <option value="provision">Provision</option>
+                  <option value="backup">Backup</option>
+                  <option value="dns">DNS</option>
+                  <option value="email">Email</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <a href="system-logs.html" class="btn">Reset</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th class="id"><a href="system-logs.html?sort=id" class="sort_desc">ID</a></th>
+            <th><a href="system-logs.html?sort=type">Type</a></th>
+            <th>Resource</th>
+            <th><a href="system-logs.html?sort=status">Status</a></th>
+            <th><a href="system-logs.html?sort=started">Started</a></th>
+            <th>Completed</th>
+            <th>Duration</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5010</td>
+            <td>ActivateServiceWorker</td>
+            <td>Service #1042</td>
+            <td><span class="label label-active">Completed</span></td>
+            <td>Dec 15, 2017 3:42 PM</td>
+            <td>Dec 15, 2017 3:42 PM</td>
+            <td>3s</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5009</td>
+            <td>BackupWorker</td>
+            <td>Backup #8001</td>
+            <td><span class="label label-active">Completed</span></td>
+            <td>Dec 15, 2017 3:00 AM</td>
+            <td>Dec 15, 2017 3:00 AM</td>
+            <td>45s</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5008</td>
+            <td>DnsUpdateWorker</td>
+            <td>Service #1041</td>
+            <td><span class="label label-important">Failed</span></td>
+            <td>Dec 15, 2017 2:30 PM</td>
+            <td>Dec 15, 2017 2:30 PM</td>
+            <td>12s</td>
+            <td class="actions"><a href="#">View</a> | <a href="#" class="btn btn-small btn-success">Mark Successful</a></td>
+          </tr>
+          <tr>
+            <td>5007</td>
+            <td>SendEmailWorker</td>
+            <td>Invoice #3892</td>
+            <td><span class="label label-active">Completed</span></td>
+            <td>Dec 15, 2017 2:18 PM</td>
+            <td>Dec 15, 2017 2:18 PM</td>
+            <td>2s</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5006</td>
+            <td>RenewServiceWorker</td>
+            <td>Service #1038</td>
+            <td><span class="label label-info">Running</span></td>
+            <td>Dec 15, 2017 1:45 PM</td>
+            <td>-</td>
+            <td>-</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5005</td>
+            <td>ActivateServiceWorker</td>
+            <td>Service #1039</td>
+            <td><span class="label label-active">Completed</span></td>
+            <td>Dec 14, 2017 9:30 AM</td>
+            <td>Dec 14, 2017 9:30 AM</td>
+            <td>5s</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5004</td>
+            <td>BackupWorker</td>
+            <td>Backup #7998</td>
+            <td><span class="label label-active">Completed</span></td>
+            <td>Dec 14, 2017 3:00 AM</td>
+            <td>Dec 14, 2017 3:00 AM</td>
+            <td>38s</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5003</td>
+            <td>DnsUpdateWorker</td>
+            <td>Service #1040</td>
+            <td><span class="label label-active">Completed</span></td>
+            <td>Dec 13, 2017 4:55 PM</td>
+            <td>Dec 13, 2017 4:55 PM</td>
+            <td>8s</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5002</td>
+            <td>SendEmailWorker</td>
+            <td>Invoice #3890</td>
+            <td><span class="label">Pending</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td class="actions"><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>5001</td>
+            <td>RenewServiceWorker</td>
+            <td>Service #1036</td>
+            <td><span class="label label-important">Failed</span></td>
+            <td>Dec 12, 2017 10:45 AM</td>
+            <td>Dec 12, 2017 10:45 AM</td>
+            <td>15s</td>
+            <td class="actions"><a href="#">View</a> | <a href="#" class="btn btn-small btn-success">Mark Successful</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="copyright"><span>Copyright &copy; 2018</span> <a href="#">Pressed</a></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/helix.js"></script>
+</body>
+</html>

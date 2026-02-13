@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>API Users :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li class="current"><a href="../settings.html">Settings</a></li>
+        <li class="search">
+          <form action="../search.html" method="get">
+            Search
+            <input type="text" name="q" placeholder="Search..." maxlength="50">
+          </form>
+        </li>
+      </ul>
+    </header>
+    <div id="content">
+      <h1>API Users</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>API Key</th>
+            <th>Rate Limit</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Partner API</td>
+            <td>Pressed</td>
+            <td>pk_live_xxxx...xxxx</td>
+            <td>1000/hr</td>
+            <td><span class="label label-success">Active</span></td>
+            <td>Jan 2016</td>
+            <td><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Backup Service</td>
+            <td>Pressed</td>
+            <td>pk_live_yyyy...yyyy</td>
+            <td>500/hr</td>
+            <td><span class="label label-success">Active</span></td>
+            <td>Mar 2016</td>
+            <td><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Monitoring</td>
+            <td>A2 Hosting</td>
+            <td>pk_live_zzzz...zzzz</td>
+            <td>200/hr</td>
+            <td><span class="label label-success">Active</span></td>
+            <td>Jun 2017</td>
+            <td><a href="#" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Copyright &copy; 2018</span> <a href="#">Pressed</a>
+  </div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

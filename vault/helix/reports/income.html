@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Income Report :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li class="current"><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li><a href="../settings.html">Settings</a></li>
+        <li class="search"><form action="../search.html" method="get">Search <input type="text" name="q" placeholder="Search..." maxlength="50"></form></li>
+      </ul>
+      <ul id="subnav">
+        <li><a href="invoices.html">Invoices</a></li>
+        <li><a href="taxes.html">Taxes</a></li>
+        <li><a href="trials.html">Trials</a></li>
+        <li class="current"><a href="income.html">Income</a></li>
+        <li><a href="deferred-revenue.html">Deferred Revenue</a></li>
+        <li><a href="sign-ups.html">Sign Ups</a></li>
+      </ul>
+    </header>
+    <div id="content">
+      <h1>Income Report</h1>
+
+      <form class="form-inline" style="margin-bottom: 20px;">
+        <label>Start Date <input type="text" name="start_date" placeholder="2018-01-01"></label>
+        <label>End Date <input type="text" name="end_date" placeholder="2018-03-31"></label>
+        <label>Group By
+          <select name="group_by">
+            <option>Month</option>
+            <option>Quarter</option>
+            <option>Year</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>New Revenue</th>
+            <th>Recurring Revenue</th>
+            <th>Total Revenue</th>
+            <th>Refunds</th>
+            <th>Net Income</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jan 2018</td>
+            <td>$2,450.00</td>
+            <td>$18,200.00</td>
+            <td>$20,650.00</td>
+            <td>$320.00</td>
+            <td>$20,330.00</td>
+          </tr>
+          <tr>
+            <td>Feb 2018</td>
+            <td>$1,890.00</td>
+            <td>$18,450.00</td>
+            <td>$20,340.00</td>
+            <td>$180.00</td>
+            <td>$20,160.00</td>
+          </tr>
+          <tr>
+            <td>Mar 2018</td>
+            <td>$3,210.00</td>
+            <td>$18,700.00</td>
+            <td>$21,910.00</td>
+            <td>$450.00</td>
+            <td>$21,460.00</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>$7,550.00</strong></td>
+            <td><strong>$55,350.00</strong></td>
+            <td><strong>$62,900.00</strong></td>
+            <td><strong>$950.00</strong></td>
+            <td><strong>$61,950.00</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="copyright"><span>Copyright &copy; 2018</span> <a href="#">Pressed</a></div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

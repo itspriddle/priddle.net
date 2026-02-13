@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Backups :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li class="current"><a href="../settings.html">Settings</a></li>
+        <li class="search"><form action="../search.html" method="get">Search <input type="text" name="q" placeholder="Search..." maxlength="50"></form></li>
+      </ul>
+    </header>
+    <div id="content">
+      <h1>Backups</h1>
+
+      <form class="form-inline search-form" method="get">
+        <label>Brand
+          <select name="brand">
+            <option value="">All</option>
+            <option>Pressed</option>
+            <option>A2 Hosting</option>
+          </select>
+        </label>
+        <label>Service <input type="text" name="service" placeholder="Service name..."></label>
+        <label>Status
+          <select name="status">
+            <option value="">All</option>
+            <option>Complete</option>
+            <option>In Progress</option>
+            <option>Failed</option>
+          </select>
+        </label>
+        <label>From <input type="text" name="date_from" placeholder="MM/DD/YYYY"></label>
+        <label>To <input type="text" name="date_to" placeholder="MM/DD/YYYY"></label>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <table class="table table-striped table-bordered table-condensed">
+        <thead>
+          <tr>
+            <th class="id"><a href="#" class="sort_desc">ID</a></th>
+            <th>Service</th>
+            <th>Brand</th>
+            <th>Size</th>
+            <th>Status</th>
+            <th>Started At</th>
+            <th>Completed At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8821</td>
+            <td>acmecorp.com</td>
+            <td>Pressed</td>
+            <td>245 MB</td>
+            <td><span class="label label-success">Complete</span></td>
+            <td>Mar 10, 2018 2:00 AM</td>
+            <td>Mar 10, 2018 2:15 AM</td>
+            <td class="actions"><a href="show.html" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>8820</td>
+            <td>myblog.example.net</td>
+            <td>A2 Hosting</td>
+            <td>1.2 GB</td>
+            <td><span class="label label-success">Complete</span></td>
+            <td>Mar 10, 2018 1:00 AM</td>
+            <td>Mar 10, 2018 1:32 AM</td>
+            <td class="actions"><a href="show.html" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>8819</td>
+            <td>shopfront.example.com</td>
+            <td>Pressed</td>
+            <td>512 MB</td>
+            <td><span class="label label-info">In Progress</span></td>
+            <td>Mar 10, 2018 3:00 AM</td>
+            <td>&mdash;</td>
+            <td class="actions"><a href="show.html" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>8818</td>
+            <td>techstartup.io</td>
+            <td>A2 Hosting</td>
+            <td>890 MB</td>
+            <td><span class="label label-important">Failed</span></td>
+            <td>Mar 9, 2018 2:00 AM</td>
+            <td>Mar 9, 2018 2:05 AM</td>
+            <td class="actions"><a href="show.html" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>8817</td>
+            <td>greenleaf-wellness.com</td>
+            <td>Pressed</td>
+            <td>320 MB</td>
+            <td><span class="label label-success">Complete</span></td>
+            <td>Mar 9, 2018 1:00 AM</td>
+            <td>Mar 9, 2018 1:18 AM</td>
+            <td class="actions"><a href="show.html" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+          <tr>
+            <td>8816</td>
+            <td>sunrise-bakery.com</td>
+            <td>A2 Hosting</td>
+            <td>1.5 GB</td>
+            <td><span class="label label-info">In Progress</span></td>
+            <td>Mar 10, 2018 3:30 AM</td>
+            <td>&mdash;</td>
+            <td class="actions"><a href="show.html" class="btn btn-info btn-mini">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <span class="current btn btn-small">1</span>
+        <a href="index.html?page=2" class="btn btn-small">2</a>
+        <a href="index.html?page=3" class="btn btn-small">3</a>
+        <a href="index.html?page=4" class="btn btn-small">4</a>
+        <a href="index.html?page=2" class="btn btn-small">Next</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright"><span>Copyright &copy; 2018</span> <a href="#">Pressed</a></div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

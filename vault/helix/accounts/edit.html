@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Account acmecorp.com :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li class="current"><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li><a href="../settings.html">Settings</a></li>
+        <li class="search">
+          <form action="../search.html" method="get">
+            Search
+            <input type="text" name="q" placeholder="Search..." maxlength="50">
+          </form>
+        </li>
+      </ul>
+    </header>
+    <div id="content">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Accounts</a> <span class="divider">/</span></li>
+        <li><a href="show.html">acmecorp.com</a> <span class="divider">/</span></li>
+        <li class="active">Edit</li>
+      </ul>
+
+      <h1>Edit Account acmecorp.com</h1>
+
+      <form class="form-horizontal" action="show.html" method="get">
+        <div class="control-group">
+          <label class="control-label" for="account_domain">Domain</label>
+          <div class="controls">
+            <input type="text" id="account_domain" value="acmecorp.com">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_brand">Brand</label>
+          <div class="controls">
+            <select id="account_brand">
+              <option selected>Pressed</option>
+              <option>A2 Hosting</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_status">Status</label>
+          <div class="controls">
+            <select id="account_status">
+              <option selected>Active</option>
+              <option>Suspended</option>
+              <option>Terminated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_billing_email">Billing Email</label>
+          <div class="controls">
+            <input type="text" id="account_billing_email" value="billing@acmecorp.example.com">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_address1">Address Line 1</label>
+          <div class="controls">
+            <input type="text" id="account_address1" value="123 Main St">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_address2">Address Line 2</label>
+          <div class="controls">
+            <input type="text" id="account_address2" value="">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_city">City</label>
+          <div class="controls">
+            <input type="text" id="account_city" value="Anytown">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_state">State</label>
+          <div class="controls">
+            <input type="text" id="account_state" value="CA">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_zip">Zip</label>
+          <div class="controls">
+            <input type="text" id="account_zip" value="90210">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_country">Country</label>
+          <div class="controls">
+            <select id="account_country">
+              <option value="US" selected>US</option>
+              <option value="CA">CA</option>
+              <option value="GB">GB</option>
+              <option value="AU">AU</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="account_notes">Notes</label>
+          <div class="controls">
+            <textarea id="account_notes" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <a href="show.html" class="btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>Copyright &copy; 2018 Pressed</span>
+  </div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Invoice Reports :: Helix</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/helix.css">
+</head>
+<body>
+  <div id="master" class="container">
+    <header id="header" class="hidden-print">
+      <div id="top">
+        <div id="logo"><a href="../index.html"><img src="../images/helix-logo.png" alt="Helix"></a></div>
+        <div id="welcome">Welcome <a href="../profile.html">Josh Priddle</a> | <a href="../login.html">Sign out</a> &raquo;</div>
+      </div>
+      <ul id="nav">
+        <li><a href="../index.html">Dashboard</a></li>
+        <li><a href="../orders/index.html">Orders</a></li>
+        <li><a href="../accounts/index.html">Accounts</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../domain-services/index.html">Domains</a></li>
+        <li class="current"><a href="../reports/invoices.html">Reports</a></li>
+        <li><a href="../partners/sign-ups.html">Partners</a></li>
+        <li><a href="../settings.html">Settings</a></li>
+        <li class="search"><form action="../search.html" method="get">Search <input type="text" name="q" placeholder="Search..." maxlength="50"></form></li>
+      </ul>
+      <ul id="subnav">
+        <li class="current"><a href="invoices.html">Invoices</a></li>
+        <li><a href="taxes.html">Taxes</a></li>
+        <li><a href="trials.html">Trials</a></li>
+        <li><a href="income.html">Income</a></li>
+        <li><a href="deferred-revenue.html">Deferred Revenue</a></li>
+        <li><a href="sign-ups.html">Sign Ups</a></li>
+      </ul>
+    </header>
+    <div id="content">
+      <h1>Invoice Reports</h1>
+
+      <form class="form-inline" style="margin-bottom: 20px;">
+        <label>Start Date <input type="text" name="start_date" placeholder="2018-01-01"></label>
+        <label>End Date <input type="text" name="end_date" placeholder="2018-03-31"></label>
+        <label>Brand
+          <select name="brand">
+            <option value="">All</option>
+            <option>Pressed</option>
+            <option>A2 Hosting</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn">Export CSV</button>
+      </form>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Count</th>
+            <th>Subtotal</th>
+            <th>Tax</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pressed</td>
+            <td>142</td>
+            <td>$12,450.00</td>
+            <td>$623.00</td>
+            <td>$13,073.00</td>
+          </tr>
+          <tr>
+            <td>A2 Hosting</td>
+            <td>89</td>
+            <td>$8,210.00</td>
+            <td>$411.00</td>
+            <td>$8,621.00</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>231</strong></td>
+            <td><strong>$20,660.00</strong></td>
+            <td><strong>$1,034.00</strong></td>
+            <td><strong>$21,694.00</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="copyright"><span>Copyright &copy; 2018</span> <a href="#">Pressed</a></div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/helix.js"></script>
+</body>
+</html>
