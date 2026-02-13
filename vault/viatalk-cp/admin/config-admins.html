@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Administrator Accounts</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main" style="width: 100%">
+        <div class="block">
+          <div class="content">
+            <h2>Administrator Accounts</h2>
+            <div class="inner">
+              <table class="table" width="100%">
+                <tr>
+                  <th>Username</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Last Login</th>
+                  <th class="last">Actions</th>
+                </tr>
+                <tr>
+                  <td>jpriddle</td>
+                  <td>Josh Priddle</td>
+                  <td>jpriddle@viatalk.com</td>
+                  <td>Super Admin</td>
+                  <td>Jan 30, 2009 9:15 AM</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+                <tr>
+                  <td>mroberts</td>
+                  <td>Mike Roberts</td>
+                  <td>mroberts@viatalk.com</td>
+                  <td>Admin</td>
+                  <td>Jan 30, 2009 8:45 AM</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a> <a href="#" class="minibutton"><span>Delete</span></a></td>
+                </tr>
+                <tr>
+                  <td>sconnor</td>
+                  <td>Sarah Connor</td>
+                  <td>sconnor@viatalk.com</td>
+                  <td>Support</td>
+                  <td>Jan 29, 2009 4:30 PM</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a> <a href="#" class="minibutton"><span>Delete</span></a></td>
+                </tr>
+                <tr>
+                  <td>jdoe</td>
+                  <td>Jane Doe</td>
+                  <td>jdoe@viatalk.com</td>
+                  <td>Support</td>
+                  <td>Jan 28, 2009 2:10 PM</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a> <a href="#" class="minibutton"><span>Delete</span></a></td>
+                </tr>
+              </table>
+
+              <h3>Add Administrator</h3>
+              <form action="#" method="post" class="form">
+                <div class="group">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" class="text_field" style="width: 200px" />
+                </div>
+                <div class="group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" class="text_field" style="width: 300px" />
+                </div>
+                <div class="group">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" class="text_field" style="width: 300px" />
+                </div>
+                <div class="group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" class="text_field" style="width: 200px" />
+                </div>
+                <div class="group">
+                  <label for="role">Role</label>
+                  <select id="role" name="role">
+                    <option value="support">Support</option>
+                    <option value="admin">Admin</option>
+                    <option value="super_admin">Super Admin</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <input type="submit" value="Add Administrator" class="button" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

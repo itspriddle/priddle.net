@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ViaTalk Control Panel</title>
+<style>
+body { background: #f5f5f5; }
+.demo-index { max-width: 800px; margin: 40px auto; font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+.demo-index h1 { font-size: 14pt; color: #333; margin-bottom: 5px; }
+.demo-index p.subtitle { font-size: 9pt; color: #999; margin-top: 0; }
+.demo-index .section { background: #fff; border: 1px solid #ddd; margin-bottom: 20px; }
+.demo-index .section h2 { background: #2A4A97; color: #fff; font-size: 10pt; padding: 8px 15px; margin: 0; }
+.demo-index .section h2.teal { background: #007BA7; }
+.demo-index .section h2.green { background: #4e7c34; }
+.demo-index .section h3 { font-size: 9pt; font-weight: bold; color: #555; padding: 8px 15px 0; margin: 0; }
+.demo-index .section ul { list-style: none; padding: 0; margin: 0; }
+.demo-index .section ul li { padding: 10px 15px; border-bottom: 1px solid #eee; font-size: 9pt; }
+.demo-index .section ul li:last-child { border-bottom: 0; }
+.demo-index .section ul li a { text-decoration: none; color: #2A4A97; }
+.demo-index .section ul li a.teal { color: #007BA7; }
+.demo-index .section ul li a.green { color: #4e7c34; }
+.demo-index .section ul li a:hover { text-decoration: underline; }
+.demo-index .section ul li span { color: #999; font-size: 8pt; margin-left: 10px; }
+</style>
+</head>
+<body>
+
+<div class="demo-index">
+	<h1>ViaTalk Control Panel</h1>
+	<p class="subtitle">Static mockup of cp.viatalk.com &mdash; circa 2007&ndash;2009</p>
+
+	<div class="section">
+		<h2>Client Control Panel</h2>
+
+		<h3>Dashboard</h3>
+		<ul>
+			<li><a href="cp/index.html">Main Menu</a> <span>Feature icons grouped into Voicemail, Privacy, and Advanced</span></li>
+			<li><a href="cp/login.html">Login Page</a> <span>CP login screen</span></li>
+		</ul>
+
+		<h3>Voicemail</h3>
+		<ul>
+			<li><a href="cp/voicemail-inbox.html">Voicemail Inbox</a> <span>Folder list and message table</span></li>
+			<li><a href="cp/voicemail-settings.html">Voicemail Settings</a> <span>Enable/disable, password, email notifications</span></li>
+		</ul>
+
+		<h3>Call Detail Records</h3>
+		<ul>
+			<li><a href="cp/cdr.html">Call Logs</a> <span>Search form and results table with pagination</span></li>
+			<li><a href="cp/cdr-options.html">CDR Routing Options</a> <span>Forward/voicemail/blacklist options popup</span></li>
+		</ul>
+
+		<h3>Call Routing</h3>
+		<ul>
+			<li><a href="cp/forwards.html">Forward Settings</a> <span>Forward All, Network Outage, Internet Forward</span></li>
+			<li><a href="cp/custom-call-routing.html">Custom Call Routing</a> <span>Custom routes table with add form</span></li>
+			<li><a href="cp/ring-seconds.html">Ring Seconds</a> <span>Ring duration dropdown</span></li>
+		</ul>
+
+		<h3>Call Features</h3>
+		<ul>
+			<li><a href="cp/simultaneous-ring.html">Simultaneous Ring</a> <span>Two simul-ring number fields</span></li>
+			<li><a href="cp/call-hunt.html">Call Hunt</a> <span>Ordered hunt list with enable/disable</span></li>
+			<li><a href="cp/speed-dial.html">Speed Dial</a> <span>Speed dial codes table</span></li>
+			<li><a href="cp/distinctive-ring.html">Distinctive Ring</a> <span>Ring patterns per caller</span></li>
+			<li><a href="cp/do-not-disturb.html">Do Not Disturb</a> <span>DND schedule table</span></li>
+			<li><a href="cp/call-alarm.html">Call Alarm</a> <span>Alarm entries with date/time/message</span></li>
+			<li><a href="cp/call-privacy.html">Call Privacy</a> <span>Private CID toggle and exception list</span></li>
+			<li><a href="cp/whitelist.html">Whitelist</a> <span>Numbers that bypass DND</span></li>
+			<li><a href="cp/anonymous-call-block.html">Anonymous Call Block</a> <span>ACB mode selector</span></li>
+			<li><a href="cp/international-calls.html">International Call Options</a> <span>International calling toggle</span></li>
+		</ul>
+
+		<h3>Advanced Features</h3>
+		<ul>
+			<li><a href="cp/custom-caller-id.html">Custom Caller ID</a> <span>Custom CNAM table</span></li>
+			<li><a href="cp/e911.html">E911 Address</a> <span>E911 address form</span></li>
+			<li><a href="cp/e911-verify.html">E911 Verification</a> <span>Address confirmation</span></li>
+			<li><a href="cp/softphone.html">Softphone Configuration</a> <span>SIP credentials for X-ten/Firefly/EyeBeam</span></li>
+			<li><a href="cp/broadcast.html">Call Broadcast</a> <span>Broadcast member list and add form</span></li>
+		</ul>
+
+		<h3>Line Two</h3>
+		<ul>
+			<li><a href="cp/line-two.html">Free Second Line</a> <span>Second line eligibility/status</span></li>
+			<li><a href="cp/broadcast-upgrade.html">Broadcast Upgrade</a> <span>Slot upgrade pricing</span></li>
+		</ul>
+
+		<h3>Contacts</h3>
+		<ul>
+			<li><a href="cp/contacts.html">Contact Manager</a> <span>Left panel list, right panel groups</span></li>
+			<li><a href="cp/contact-show.html">Contact Detail</a> <span>Full contact card</span></li>
+			<li><a href="cp/contact-new.html">New Contact</a> <span>New contact form</span></li>
+			<li><a href="cp/contact-edit.html">Edit Contact</a> <span>Edit contact form (pre-filled)</span></li>
+		</ul>
+
+		<h3>Account Info</h3>
+		<ul>
+			<li><a href="cp/my-info.html">My Info</a> <span>Account, billing, password, referral</span></li>
+			<li><a href="cp/my-info-edit.html">Edit Account</a> <span>Edit account form</span></li>
+			<li><a href="cp/my-info-billing.html">Edit Billing</a> <span>Credit card form</span></li>
+		</ul>
+
+		<h3>Packages</h3>
+		<ul>
+			<li><a href="cp/packages.html">Packages</a> <span>Active packages and additional services</span></li>
+			<li><a href="cp/package-show.html">Package Detail</a> <span>Pricing, cycle, renewal date</span></li>
+			<li><a href="cp/package-renew.html">Package Renewal</a> <span>Promotional renewal offer</span></li>
+		</ul>
+
+		<h3>Transactions</h3>
+		<ul>
+			<li><a href="cp/transactions.html">Transactions</a> <span>Monthly invoice view with month selector</span></li>
+			<li><a href="cp/credits-debits.html">Credits &amp; Debits</a> <span>Full transaction list with running balance</span></li>
+			<li><a href="cp/invoice.html">Invoice</a> <span>Formal invoice detail</span></li>
+			<li><a href="cp/invoice-due.html">Invoice Due</a> <span>Unpaid invoice view</span></li>
+		</ul>
+
+		<h3>Tickets</h3>
+		<ul>
+			<li><a href="cp/tickets.html">Tickets</a> <span>Open and closed ticket tables</span></li>
+			<li><a href="cp/ticket-show.html">Ticket Detail</a> <span>Ticket thread with responses</span></li>
+			<li><a href="cp/ticket-new.html">New Ticket</a> <span>New ticket form</span></li>
+		</ul>
+
+		<h3>Other</h3>
+		<ul>
+			<li><a href="cp/feedback.html">Customer Feedback</a> <span>Feedback page</span></li>
+			<li><a href="cp/success-message.html">Success Message</a> <span>Green flash message example</span></li>
+			<li><a href="cp/error-message.html">Error Message</a> <span>Red flash message example</span></li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<h2 class="teal">Admin Panel</h2>
+
+		<h3>Dashboard</h3>
+		<ul>
+			<li><a href="admin/index.html" class="teal">Admin Home</a> <span>Stats overview and sidebar tools</span></li>
+			<li><a href="admin/reports-index.html" class="teal">Reports Menu</a> <span>Links to all report types</span></li>
+		</ul>
+
+		<h3>Client Management</h3>
+		<ul>
+			<li><a href="admin/client-list.html" class="teal">Client List</a> <span>Paginated client table with search</span></li>
+			<li><a href="admin/client-show.html" class="teal">Client Detail</a> <span>Full client info hub page</span></li>
+			<li><a href="admin/client-edit.html" class="teal">Edit Client</a> <span>Edit client form</span></li>
+			<li><a href="admin/client-new.html" class="teal">New Client</a> <span>Create client form</span></li>
+			<li><a href="admin/client-search-results.html" class="teal">Search Results</a> <span>Filtered client list</span></li>
+			<li><a href="admin/client-overdue.html" class="teal">Overdue Accounts</a> <span>Overdue accounts list</span></li>
+			<li><a href="admin/client-call-logs.html" class="teal">Client Call Logs</a> <span>Recent calls for a client</span></li>
+			<li><a href="admin/client-transactions.html" class="teal">Client Transactions</a> <span>Full transaction history</span></li>
+			<li><a href="admin/client-invoice.html" class="teal">Client Invoice</a> <span>Formal invoice detail</span></li>
+			<li><a href="admin/client-change-status.html" class="teal">Change Status</a> <span>Status change form</span></li>
+			<li><a href="admin/client-packages.html" class="teal">Client Packages</a> <span>Package detail for a client</span></li>
+			<li><a href="admin/client-recurring-charges.html" class="teal">Recurring Charges</a> <span>Recurring charge editor</span></li>
+		</ul>
+
+		<h3>Tickets</h3>
+		<ul>
+			<li><a href="admin/ticket-dashboard.html" class="teal">Ticket Dashboard</a> <span>Departments with open/closed counts</span></li>
+			<li><a href="admin/ticket-list.html" class="teal">Ticket List</a> <span>Color-coded ticket table</span></li>
+			<li><a href="admin/ticket-show.html" class="teal">Ticket Detail</a> <span>Thread with notes, respond form</span></li>
+			<li><a href="admin/ticket-new.html" class="teal">New Ticket</a> <span>Create ticket form</span></li>
+			<li><a href="admin/ticket-search.html" class="teal">Ticket Search</a> <span>Ticket search results</span></li>
+		</ul>
+
+		<h3>Reports</h3>
+		<ul>
+			<li><a href="admin/report-daily-accounting.html" class="teal">Daily Accounting</a> <span>Top users and aggregate totals</span></li>
+			<li><a href="admin/report-signups.html" class="teal">Signups Report</a> <span>Calendar view with counts per day</span></li>
+			<li><a href="admin/report-declined-cards.html" class="teal">Declined Cards</a> <span>Failed payment accounts</span></li>
+			<li><a href="admin/report-cancellations.html" class="teal">Cancellations</a> <span>Cancellation reasons breakdown</span></li>
+			<li><a href="admin/report-collections.html" class="teal">Collections</a> <span>Overdue with callback tracking</span></li>
+			<li><a href="admin/report-detail.html" class="teal">Detail Report</a> <span>Credit/debit detail with date filters</span></li>
+			<li><a href="admin/report-money.html" class="teal">Money Report</a> <span>Revenue/profit report</span></li>
+			<li><a href="admin/report-reseller-payout.html" class="teal">Reseller Payout</a> <span>Reseller balance/payout table</span></li>
+		</ul>
+
+		<h3>Signup Queue</h3>
+		<ul>
+			<li><a href="admin/signup-queue.html" class="teal">Signup Queue</a> <span>Pending signups with notes</span></li>
+			<li><a href="admin/signup-pending-upgrades.html" class="teal">Pending Upgrades</a> <span>Pending upgrade requests</span></li>
+		</ul>
+
+		<h3>Reseller Management</h3>
+		<ul>
+			<li><a href="admin/reseller-list.html" class="teal">Reseller List</a> <span>Reseller table with search</span></li>
+			<li><a href="admin/reseller-show.html" class="teal">Reseller Detail</a> <span>Packages, notes, payments</span></li>
+			<li><a href="admin/reseller-edit.html" class="teal">Edit Reseller</a> <span>Edit reseller form</span></li>
+		</ul>
+
+		<h3>Package Management</h3>
+		<ul>
+			<li><a href="admin/package-list.html" class="teal">Package List</a> <span>All packages with pricing</span></li>
+			<li><a href="admin/package-show.html" class="teal">Package Detail</a> <span>Package detail with edit toggle</span></li>
+		</ul>
+
+		<h3>Configuration</h3>
+		<ul>
+			<li><a href="admin/config-index.html" class="teal">Configuration Menu</a> <span>Configuration links</span></li>
+			<li><a href="admin/config-admins.html" class="teal">Admin Users</a> <span>Add/remove admin users</span></li>
+			<li><a href="admin/config-welcome-letter.html" class="teal">Welcome Letter</a> <span>Welcome letter template editor</span></li>
+			<li><a href="admin/config-ip-pool.html" class="teal">IP Pool</a> <span>IP address pool management</span></li>
+		</ul>
+
+		<h3>Knowledge Base</h3>
+		<ul>
+			<li><a href="admin/kb-list.html" class="teal">Knowledge Base</a> <span>Categories with article counts</span></li>
+			<li><a href="admin/kb-article.html" class="teal">KB Article</a> <span>Article view with edit toggle</span></li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<h2 class="green">Order / Signup Forms</h2>
+		<ul>
+			<li><a href="order/index.html" class="green">Order Section Index</a> <span>Links to all order pages</span></li>
+			<li><a href="order/service-area-search.html" class="green">Service Area Search</a> <span>City/state availability check</span></li>
+			<li><a href="order/service-area-results.html" class="green">Service Area Results</a> <span>Results with selectable cities</span></li>
+			<li><a href="order/signup-full-form.html" class="green">Full Signup Form</a> <span>6-section signup page</span></li>
+			<li><a href="order/signup-expanded-plans.html" class="green">Expanded Plans</a> <span>Full pricing grid visible</span></li>
+			<li><a href="order/signup-promo-847.html" class="green">$8.47/mo Promo</a> <span>Promotional pricing variant</span></li>
+			<li><a href="order/signup-promo-189.html" class="green">$189/yr Promo</a> <span>Free year promo variant</span></li>
+			<li><a href="order/signup-tos.html" class="green">Terms of Service</a> <span>TOS overlay visible</span></li>
+			<li><a href="order/signup-confirmation.html" class="green">Confirmation</a> <span>Thank you page</span></li>
+			<li><a href="order/gotfax-signup.html" class="green">GotFax Signup</a> <span>GotFax internet faxing signup</span></li>
+			<li><a href="order/gofono-signup.html" class="green">GoFono Signup</a> <span>GoFono Spanish-language signup</span></li>
+			<li><a href="order/reseller-signup.html" class="green">Reseller Signup</a> <span>White-label reseller signup</span></li>
+			<li><a href="order/reseller-service-area.html" class="green">Reseller Service Area</a> <span>Reseller-branded area search</span></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

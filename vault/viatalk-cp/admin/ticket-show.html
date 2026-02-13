@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Ticket #4521: Cannot make outbound calls</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html" class="active">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main">
+        <div class="block">
+          <div class="content">
+            <h2>Ticket #4521: Cannot make outbound calls</h2>
+            <div class="inner">
+              <dl class="list client-info">
+                <dt>Client:</dt>
+                <dd><a href="client-show.html">John Smith (#54001)</a></dd>
+                <dt>Status:</dt>
+                <dd>Open</dd>
+                <dt>Priority:</dt>
+                <dd><strong>High</strong></dd>
+                <dt>Department:</dt>
+                <dd>Technical Support</dd>
+                <dt>Created:</dt>
+                <dd>January 5, 2009</dd>
+                <dt>Assigned To:</dt>
+                <dd>jpriddle</dd>
+              </dl>
+
+              <hr />
+
+              <h3>Ticket Thread</h3>
+
+              <div style="background: #dffaff; border: 1px solid #8ec4df; padding: 10px; margin: 10px 0;">
+                <p><strong>John Smith</strong> <span class="gray">- Jan 5, 2009 10:23 AM</span></p>
+                <p>I'm unable to make any outbound calls from my phone. When I pick up the handset I get a dial tone, but after dialing a number it just goes silent. This started happening yesterday evening. Incoming calls work fine. I've tried rebooting my ATA device but the problem persists. My internet connection is working normally.</p>
+              </div>
+
+              <div style="background: #ffffcc; border: 1px solid #e0d300; padding: 10px; margin: 10px 0;">
+                <p><strong>jpriddle</strong> <span class="gray">- Jan 5, 2009 11:45 AM (Staff)</span></p>
+                <p>Hi John, thanks for reporting this. I've checked your account and everything looks good on our end. Can you try the following steps:</p>
+                <p>1. Unplug your ATA device from power for 30 seconds<br />
+                2. Unplug the ethernet cable<br />
+                3. Plug the ethernet cable back in<br />
+                4. Plug power back in<br />
+                5. Wait 2 minutes for it to fully boot</p>
+                <p>If outbound calls still don't work after this, please let me know the model of your ATA and I'll look into it further.</p>
+              </div>
+
+              <div style="background: #dffaff; border: 1px solid #8ec4df; padding: 10px; margin: 10px 0;">
+                <p><strong>John Smith</strong> <span class="gray">- Jan 5, 2009 2:10 PM</span></p>
+                <p>I followed all the steps you mentioned. After the reboot, outbound calls worked for about 10 minutes, then stopped again. My ATA is a Linksys PAP2T. The firmware version is 5.1.5. Could there be something wrong with my configuration?</p>
+              </div>
+
+              <div style="background: #ffffcc; border: 1px solid #e0d300; padding: 10px; margin: 10px 0;">
+                <p><strong>jpriddle</strong> <span class="gray">- Jan 6, 2009 9:30 AM (Staff)</span></p>
+                <p>John, I've reviewed your PAP2T configuration and noticed that the codec settings might be causing an issue. I've pushed an updated configuration to your device remotely. Please reboot the ATA one more time and try making outbound calls. I've also upgraded your firmware to 5.1.6 which has some stability fixes. Let me know if this resolves the issue.</p>
+              </div>
+
+              <div style="background: #dffaff; border: 1px solid #8ec4df; padding: 10px; margin: 10px 0;">
+                <p><strong>John Smith</strong> <span class="gray">- Jan 6, 2009 12:15 PM</span></p>
+                <p>That seems to have fixed it! I've made several calls this morning without any issues. Thank you for the quick help. I'll let you know if it happens again.</p>
+              </div>
+
+              <hr />
+
+              <h3>Staff Notes</h3>
+              <div style="background: #f7f7f8; border: 1px solid #eef0f0; padding: 10px; margin: 10px 0;">
+                <p><strong>jpriddle</strong> <span class="gray">- Jan 5, 2009 11:40 AM</span></p>
+                <p>Checked SIP registrations - device is registered and showing online. Outbound proxy looks correct. Suspect codec mismatch or NAT traversal issue.</p>
+              </div>
+              <div style="background: #f7f7f8; border: 1px solid #eef0f0; padding: 10px; margin: 10px 0;">
+                <p><strong>jpriddle</strong> <span class="gray">- Jan 6, 2009 9:25 AM</span></p>
+                <p>Changed codec from G.729 to G.711u. Updated firmware from 5.1.5 to 5.1.6. Enabled STUN for NAT traversal. Monitor for recurrence.</p>
+              </div>
+
+              <hr />
+
+              <h3>Reply</h3>
+              <form action="#" method="post" class="form">
+                <div class="group">
+                  <label class="label" for="response">Response</label>
+                  <textarea name="response" id="response" class="text_area" rows="6"></textarea>
+                </div>
+                <div class="group">
+                  <label class="label" for="status">Status</label>
+                  <select name="status" id="status">
+                    <option value="open">Open</option>
+                    <option value="waiting">Waiting on Customer</option>
+                    <option value="closed">Closed</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label class="label" for="priority">Priority</label>
+                  <select name="priority" id="priority">
+                    <option value="low">Low</option>
+                    <option value="normal">Normal</option>
+                    <option value="high" selected>High</option>
+                    <option value="urgent">Urgent</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <input type="submit" value="Submit Reply" class="button" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Client Info</h3>
+          <div class="content">
+            <div class="sidebar-block">
+              <dl class="list client-info">
+                <dt>Name:</dt>
+                <dd><a href="client-show.html">John Smith</a></dd>
+                <dt>ID:</dt>
+                <dd>54001</dd>
+                <dt>Status:</dt>
+                <dd>Active</dd>
+                <dt>Package:</dt>
+                <dd>VT Unlimited</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <h3>Quick Actions</h3>
+          <div class="content">
+            <ul class="navigation">
+              <li><a href="#">Close Ticket</a></li>
+              <li><a href="#">Flag Ticket</a></li>
+              <li><a href="#">Move Department</a></li>
+              <li><a href="ticket-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

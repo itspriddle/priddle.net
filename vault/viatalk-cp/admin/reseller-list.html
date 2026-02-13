@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Resellers</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html" class="active">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main" style="width: 100%">
+        <div class="block">
+          <div class="content">
+            <h2>Resellers</h2>
+            <div class="inner">
+              <form action="#" method="get" class="form">
+                <div class="group">
+                  <input type="text" name="q" class="text_field" style="width: 300px" placeholder="Search by company, contact, or ID" />
+                  <input type="submit" value="Search" class="button" />
+                </div>
+              </form>
+
+              <table class="table" width="100%">
+                <tr>
+                  <th>ID</th>
+                  <th>Company Name</th>
+                  <th>Contact</th>
+                  <th>Email</th>
+                  <th>Active Clients</th>
+                  <th>Balance</th>
+                  <th>Status</th>
+                  <th class="last">Actions</th>
+                </tr>
+                <tr class="in-use">
+                  <td>R-1001</td>
+                  <td><a href="reseller-show.html">VoIP Solutions Inc</a></td>
+                  <td>Mike Roberts</td>
+                  <td>mike@voipsolutions.com</td>
+                  <td>42</td>
+                  <td>$1,867.50</td>
+                  <td>Active</td>
+                  <td class="last"><a href="reseller-show.html" class="minibutton"><span>View</span></a> <a href="reseller-edit.html" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+                <tr class="in-use">
+                  <td>R-1002</td>
+                  <td><a href="reseller-show.html">TeleCom Direct</a></td>
+                  <td>Sarah Connor</td>
+                  <td>sarah@telecomdirect.com</td>
+                  <td>28</td>
+                  <td>$1,000.80</td>
+                  <td>Active</td>
+                  <td class="last"><a href="reseller-show.html" class="minibutton"><span>View</span></a> <a href="reseller-edit.html" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+                <tr class="in-use">
+                  <td>R-1003</td>
+                  <td><a href="reseller-show.html">PhoneWorks LLC</a></td>
+                  <td>Dave Martinez</td>
+                  <td>dave@phoneworks.com</td>
+                  <td>15</td>
+                  <td>$447.50</td>
+                  <td>Active</td>
+                  <td class="last"><a href="reseller-show.html" class="minibutton"><span>View</span></a> <a href="reseller-edit.html" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+                <tr class="in-use">
+                  <td>R-1004</td>
+                  <td><a href="reseller-show.html">Digital Voice Co</a></td>
+                  <td>Lisa Chang</td>
+                  <td>lisa@digitalvoice.com</td>
+                  <td>35</td>
+                  <td>$1,518.75</td>
+                  <td>Active</td>
+                  <td class="last"><a href="reseller-show.html" class="minibutton"><span>View</span></a> <a href="reseller-edit.html" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+                <tr class="in-use">
+                  <td>R-1005</td>
+                  <td><a href="reseller-show.html">NetCall Systems</a></td>
+                  <td>Kevin Park</td>
+                  <td>kevin@netcallsystems.com</td>
+                  <td>20</td>
+                  <td>$717.60</td>
+                  <td>Active</td>
+                  <td class="last"><a href="reseller-show.html" class="minibutton"><span>View</span></a> <a href="reseller-edit.html" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+                <tr class="cancelled">
+                  <td>R-1006</td>
+                  <td><a href="reseller-show.html">SIP Services Ltd</a></td>
+                  <td>Amy Brooks</td>
+                  <td>amy@sipservices.com</td>
+                  <td>0</td>
+                  <td>$0.00</td>
+                  <td>Suspended</td>
+                  <td class="last"><a href="reseller-show.html" class="minibutton"><span>View</span></a> <a href="reseller-edit.html" class="minibutton"><span>Edit</span></a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

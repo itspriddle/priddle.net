@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Client: John Smith (#54001)</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html" class="active">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main">
+        <div class="secondary-navigation">
+          <ul>
+            <li class="first"><a href="client-show.html" class="active">Account Info</a></li>
+            <li><a href="client-packages.html">Packages</a></li>
+            <li><a href="client-transactions.html">Transactions</a></li>
+            <li><a href="client-call-logs.html">Call Logs</a></li>
+            <li><a href="ticket-list.html">Tickets</a></li>
+            <li><a href="#">Notes</a></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+
+        <div class="block">
+          <div class="content">
+            <h2>Client: John Smith (#54001)</h2>
+            <div class="inner">
+              <dl class="list client-info">
+                <dt>Name:</dt>
+                <dd>John Smith</dd>
+                <dt>Email:</dt>
+                <dd>john.smith@example.com</dd>
+                <dt>Phone:</dt>
+                <dd>(555) 555-1001</dd>
+                <dt>Address:</dt>
+                <dd>123 Main Street, Anytown, NY 10001</dd>
+                <dt>Status:</dt>
+                <dd>Active</dd>
+                <dt>Signup Date:</dt>
+                <dd>March 15, 2008</dd>
+                <dt>Package:</dt>
+                <dd>VT Unlimited</dd>
+                <dt>Billing Cycle:</dt>
+                <dd>Monthly</dd>
+                <dt>Next Bill Date:</dt>
+                <dd>March 1, 2009</dd>
+                <dt>Card on File:</dt>
+                <dd>Visa ****1234</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="content">
+            <h2>Recent Transactions</h2>
+            <div class="inner">
+              <table class="table">
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Debit</th>
+                  <th>Credit</th>
+                  <th class="last">Balance</th>
+                </tr>
+                <tr>
+                  <td>Feb 1, 2009</td>
+                  <td>Monthly Service - VT Unlimited</td>
+                  <td>$24.95</td>
+                  <td></td>
+                  <td class="last">$24.95</td>
+                </tr>
+                <tr>
+                  <td>Feb 1, 2009</td>
+                  <td>Payment - Visa ****1234</td>
+                  <td></td>
+                  <td>$24.95</td>
+                  <td class="last">$0.00</td>
+                </tr>
+                <tr>
+                  <td>Jan 1, 2009</td>
+                  <td>Monthly Service - VT Unlimited</td>
+                  <td>$24.95</td>
+                  <td></td>
+                  <td class="last">$24.95</td>
+                </tr>
+                <tr>
+                  <td>Jan 1, 2009</td>
+                  <td>Payment - Visa ****1234</td>
+                  <td></td>
+                  <td>$24.95</td>
+                  <td class="last">$0.00</td>
+                </tr>
+                <tr>
+                  <td>Dec 1, 2008</td>
+                  <td>Monthly Service - VT Unlimited</td>
+                  <td>$24.95</td>
+                  <td></td>
+                  <td class="last">$24.95</td>
+                </tr>
+              </table>
+              <p><a href="client-transactions.html">View all transactions &raquo;</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="content">
+            <h2>Recent Notes</h2>
+            <div class="inner">
+              <p><strong>Feb 8, 2009</strong> - <em>jpriddle</em><br />
+              Customer called about call quality issues. Advised to reboot ATA device. Issue resolved.</p>
+
+              <p><strong>Jan 22, 2009</strong> - <em>mthompson</em><br />
+              Client requested information about upgrading to annual billing. Sent rate comparison via email.</p>
+
+              <p><strong>Jan 5, 2009</strong> - <em>jpriddle</em><br />
+              New client setup complete. Shipped Linksys PAP2T. Tracking number: 1Z999AA10123456784.</p>
+
+              <hr />
+
+              <h3>Add Note</h3>
+              <form action="#" method="post" class="form">
+                <div class="group">
+                  <label class="label" for="note">Note</label>
+                  <textarea name="note" id="note" class="text_area" rows="4"></textarea>
+                </div>
+                <div class="group">
+                  <input type="submit" value="Add Note" class="button" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Quick Actions</h3>
+          <div class="content">
+            <ul class="navigation">
+              <li><a href="client-edit.html">Edit Client</a></li>
+              <li><a href="client-change-status.html">Change Status</a></li>
+              <li><a href="client-call-logs.html">View Call Logs</a></li>
+              <li><a href="client-invoice.html">View Invoice</a></li>
+              <li><a href="#">Impersonate</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="block">
+          <h3>Account Status</h3>
+          <div class="content">
+            <div class="sidebar-block">
+              <dl class="list client-info">
+                <dt>Status:</dt>
+                <dd>Active</dd>
+                <dt>Package:</dt>
+                <dd>VT Unlimited</dd>
+                <dt>Balance:</dt>
+                <dd class="positive-balance">$0.00</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

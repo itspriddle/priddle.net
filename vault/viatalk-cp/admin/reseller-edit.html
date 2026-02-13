@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Edit Reseller</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html" class="active">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main" style="width: 100%">
+        <div class="block">
+          <div class="content">
+            <h2>Edit Reseller: VoIP Solutions Inc</h2>
+            <div class="inner">
+              <form action="#" method="post" class="form">
+                <div class="group">
+                  <label for="company_name">Company Name</label>
+                  <input type="text" id="company_name" name="company_name" class="text_field" value="VoIP Solutions Inc" style="width: 400px" />
+                </div>
+                <div class="group">
+                  <label for="contact_name">Contact Name</label>
+                  <input type="text" id="contact_name" name="contact_name" class="text_field" value="Mike Roberts" style="width: 400px" />
+                </div>
+                <div class="group">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" class="text_field" value="mike@voipsolutions.com" style="width: 400px" />
+                </div>
+                <div class="group">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" name="phone" class="text_field" value="(555) 555-3001" style="width: 200px" />
+                </div>
+                <div class="group">
+                  <label for="address">Address</label>
+                  <textarea id="address" name="address" rows="3" cols="60">123 Business Ave, Suite 200
+New York, NY 10001</textarea>
+                </div>
+                <div class="group">
+                  <label for="commission_rate">Commission Rate</label>
+                  <select id="commission_rate" name="commission_rate">
+                    <option value="5">5%</option>
+                    <option value="8">8%</option>
+                    <option value="10">10%</option>
+                    <option value="12">12%</option>
+                    <option value="15" selected="selected">15%</option>
+                    <option value="18">18%</option>
+                    <option value="20">20%</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label for="status">Status</label>
+                  <select id="status" name="status">
+                    <option value="active" selected="selected">Active</option>
+                    <option value="suspended">Suspended</option>
+                    <option value="terminated">Terminated</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label for="notes">Notes</label>
+                  <textarea id="notes" name="notes" rows="5" cols="60">Long-time reseller. Excellent track record. Discussed potential rate increase for Q2 2009.</textarea>
+                </div>
+                <div class="group">
+                  <input type="submit" value="Update Reseller" class="button" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

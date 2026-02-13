@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Recurring Charges: John Smith (#54001)</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html" class="active">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main">
+        <div class="block">
+          <div class="content">
+            <h2>Recurring Charges: John Smith (#54001)</h2>
+            <div class="inner">
+              <table class="table">
+                <tr>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Frequency</th>
+                  <th>Next Date</th>
+                  <th>Status</th>
+                  <th class="last">Actions</th>
+                </tr>
+                <tr class="in-use">
+                  <td>VT Unlimited - Monthly Service</td>
+                  <td>$24.95</td>
+                  <td>Monthly</td>
+                  <td>Mar 1, 2009</td>
+                  <td>Active</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a> <a href="#" class="minibutton danger"><span>Remove</span></a></td>
+                </tr>
+                <tr class="in-use">
+                  <td>E911 Emergency Service Fee</td>
+                  <td>$1.50</td>
+                  <td>Monthly</td>
+                  <td>Mar 1, 2009</td>
+                  <td>Active</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a> <a href="#" class="minibutton danger"><span>Remove</span></a></td>
+                </tr>
+                <tr class="in-use">
+                  <td>Universal Service Fund Fee</td>
+                  <td>$0.85</td>
+                  <td>Monthly</td>
+                  <td>Mar 1, 2009</td>
+                  <td>Active</td>
+                  <td class="last"><a href="#" class="minibutton"><span>Edit</span></a> <a href="#" class="minibutton danger"><span>Remove</span></a></td>
+                </tr>
+              </table>
+
+              <hr />
+
+              <h3>Add Recurring Charge</h3>
+              <form action="#" method="post" class="form">
+                <dl class="list recurring-option-form">
+                  <dt>Description:</dt>
+                  <dd><input type="text" name="description" class="text_field" style="width: 300px" /></dd>
+                  <dt>Amount:</dt>
+                  <dd><input type="text" name="amount" class="text_field" style="width: 100px" /></dd>
+                  <dt>Frequency:</dt>
+                  <dd>
+                    <select name="frequency">
+                      <option value="monthly">Monthly</option>
+                      <option value="quarterly">Quarterly</option>
+                      <option value="annually">Annually</option>
+                    </select>
+                  </dd>
+                  <dt>Start Date:</dt>
+                  <dd><input type="text" name="start_date" class="text_field" style="width: 150px" placeholder="MM/DD/YYYY" /></dd>
+                </dl>
+                <p><input type="submit" value="Add Charge" class="button" /></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Quick Actions</h3>
+          <div class="content">
+            <ul class="navigation">
+              <li><a href="client-show.html">View Client</a></li>
+              <li><a href="client-packages.html">Packages</a></li>
+              <li><a href="client-transactions.html">Transactions</a></li>
+              <li><a href="client-invoice.html">View Invoice</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

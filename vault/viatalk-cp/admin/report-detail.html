@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Detail Report</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main" style="width: 100%">
+        <div class="block">
+          <div class="content">
+            <h2>Credit/Debit Detail Report</h2>
+            <div class="inner">
+              <form action="#" method="get" class="form">
+                <div class="group">
+                  <label>Start Date</label>
+                  <input type="text" name="start_date" class="text_field" value="01/01/2009" />
+                </div>
+                <div class="group">
+                  <label>End Date</label>
+                  <input type="text" name="end_date" class="text_field" value="01/31/2009" />
+                </div>
+                <div class="group">
+                  <input type="submit" value="Generate Report" class="button" />
+                </div>
+              </form>
+
+              <table class="table" width="100%">
+                <tr>
+                  <th>Date</th>
+                  <th>Client</th>
+                  <th>Description</th>
+                  <th>Debit</th>
+                  <th class="last">Credit</th>
+                </tr>
+                <tr>
+                  <td>Jan 2, 2009</td>
+                  <td><a href="client-show.html">John Smith</a></td>
+                  <td>Monthly Service - VT Unlimited</td>
+                  <td>$24.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 2, 2009</td>
+                  <td><a href="client-show.html">Jane Doe</a></td>
+                  <td>Monthly Service - VT 500</td>
+                  <td>$14.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 3, 2009</td>
+                  <td><a href="client-show.html">Bob Johnson</a></td>
+                  <td>Monthly Service - VT Business Unlimited</td>
+                  <td>$34.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 5, 2009</td>
+                  <td><a href="client-show.html">Alice Williams</a></td>
+                  <td>Refund - Service Credit</td>
+                  <td>&nbsp;</td>
+                  <td class="last">$12.50</td>
+                </tr>
+                <tr>
+                  <td>Jan 7, 2009</td>
+                  <td><a href="client-show.html">Charlie Brown</a></td>
+                  <td>Annual Service - VT Unlimited</td>
+                  <td>$249.00</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 8, 2009</td>
+                  <td><a href="client-show.html">Diana Prince</a></td>
+                  <td>Monthly Service - VT 500</td>
+                  <td>$14.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 10, 2009</td>
+                  <td><a href="client-show.html">Ed Norton</a></td>
+                  <td>Monthly Service - VT Unlimited</td>
+                  <td>$24.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 12, 2009</td>
+                  <td><a href="client-show.html">Frank Castle</a></td>
+                  <td>Refund - Billing Error</td>
+                  <td>&nbsp;</td>
+                  <td class="last">$24.95</td>
+                </tr>
+                <tr>
+                  <td>Jan 14, 2009</td>
+                  <td><a href="client-show.html">Maria Garcia</a></td>
+                  <td>Monthly Service - VT Business 1500</td>
+                  <td>$24.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 15, 2009</td>
+                  <td><a href="client-show.html">Tom Wilson</a></td>
+                  <td>Monthly Service - GotFax Premium</td>
+                  <td>$9.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 18, 2009</td>
+                  <td><a href="client-show.html">John Smith</a></td>
+                  <td>Add-on - VT Line 2</td>
+                  <td>$4.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 20, 2009</td>
+                  <td><a href="client-show.html">Jane Doe</a></td>
+                  <td>Upgrade - VT 500 to VT Unlimited</td>
+                  <td>$10.00</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 22, 2009</td>
+                  <td><a href="client-show.html">Bob Johnson</a></td>
+                  <td>Refund - Downtime Credit</td>
+                  <td>&nbsp;</td>
+                  <td class="last">$8.25</td>
+                </tr>
+                <tr>
+                  <td>Jan 25, 2009</td>
+                  <td><a href="client-show.html">Alice Williams</a></td>
+                  <td>Monthly Service - VT Unlimited</td>
+                  <td>$24.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Jan 28, 2009</td>
+                  <td><a href="client-show.html">Charlie Brown</a></td>
+                  <td>Monthly Service - GotFax Basic</td>
+                  <td>$4.95</td>
+                  <td class="last">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><strong>Totals</strong></td>
+                  <td><strong>$443.50</strong></td>
+                  <td class="last"><strong>$45.70</strong></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

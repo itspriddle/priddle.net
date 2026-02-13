@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ViaTalk CP - Contacts</title>
+<link type="text/css" rel="stylesheet" href="../css/vt_cp.css" />
+</head>
+<body>
+<table class="liquidheight" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+      <div id="container">
+        <div id="header">
+          <div id="logo"><a href="index.html"><img src="../images/logo2.png" alt="ViaTalk" border="0" /></a></div>
+          <ul id="navtop">
+            <li><a href="#">ViaTalk.com</a></li>
+            <li><a href="#">Referral Program</a></li>
+            <li><a href="#">Network Status</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+          <div id="numberswap">
+            <form action="#">
+              <span>Currently Using #: </span>
+              <select name="currentnum">
+                <option>(555) 555-1234</option>
+                <option>(555) 555-5678</option>
+              </select>
+              <input type="image" src="../images/viatalk/button_change.png" align="absbottom" alt="Change" />
+            </form>
+          </div>
+          <ul id="navmain" class="contacts">
+            <li id="mainmenu"><a href="index.html">Main Menu</a></li>
+            <li id="myinfo"><a href="my-info.html">My Info</a></li>
+            <li id="contacts"><a href="contacts.html">Contacts</a></li>
+            <li id="tickets"><a href="tickets.html">Tickets</a></li>
+            <li id="faq"><a href="#">FAQ</a></li>
+            <li id="packages"><a href="packages.html">Packages</a></li>
+            <li id="transactions"><a href="transactions.html">Transactions</a></li>
+            <li id="feedback"><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+        <div id="content">
+          <ul id="alerts">
+            <li><a href="transactions.html" class="active">Current Invoice</a></li>
+            <li id="right"><a href="voicemail-inbox.html" class="active">3 Voicemails</a></li>
+          </ul>
+          <h1>Contacts</h1>
+          <div id="contact-manager">
+            <div class="widget_main">
+              <div class="leftside">
+                <div class="row">
+                  <div class="fsearch">
+                    <form action="#">
+                      <input type="text" class="searchbox" name="search" value="" size="30" />
+                      <input type="submit" class="searchbut" value="Search" />
+                    </form>
+                  </div>
+                  <div class="selectall">
+                    <input type="checkbox" id="selectall" /> <label for="selectall">Select All</label>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="1" />
+                  <span class="selectname"> <a href="contact-show.html">Brown, Charlie</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="2" />
+                  <span class="selectname"> <a href="contact-show.html">Castle, Frank</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="3" />
+                  <span class="selectname"> <a href="contact-show.html">Doe, Jane</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="4" />
+                  <span class="selectname"> <a href="contact-show.html">Garcia, Maria</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="5" />
+                  <span class="selectname"> <a href="contact-show.html">Johnson, Bob</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="6" />
+                  <span class="selectname"> <a href="contact-show.html">Norton, Ed</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="7" />
+                  <span class="selectname"> <a href="contact-show.html">Prince, Diana</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="8" />
+                  <span class="selectname"> <a href="contact-show.html">Smith, John</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="9" />
+                  <span class="selectname"> <a href="contact-show.html">Williams, Alice</a></span>
+                </div>
+                <div class="row_line">
+                  <input type="checkbox" name="contact[]" value="10" />
+                  <span class="selectname"> <a href="contact-show.html">Williams, David</a></span>
+                </div>
+                <div id="actions_panel">
+                  <form action="#">
+                    <strong>With Selected:</strong>
+                    <select id="action_select" class="dropdwn" name="action">
+                      <option value="">-- Select Action --</option>
+                      <option value="delete">Delete</option>
+                      <option value="export">Export</option>
+                    </select>
+                    <input type="submit" class="submit" value="Go" />
+                  </form>
+                </div>
+              </div>
+              <div class="rightside">
+                <div id="groups">
+                  <strong>Groups</strong>
+                  <ul>
+                    <li><a href="#">Family</a>
+                      <ul class="groups_inner">
+                        <li><a href="contact-show.html">Jane Doe</a></li>
+                        <li><a href="contact-show.html">Bob Johnson</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Friends</a>
+                      <ul class="groups_inner">
+                        <li><a href="contact-show.html">Charlie Brown</a></li>
+                        <li><a href="contact-show.html">Diana Prince</a></li>
+                        <li><a href="contact-show.html">Ed Norton</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Work</a>
+                      <ul class="groups_inner">
+                        <li><a href="contact-show.html">Frank Castle</a></li>
+                        <li><a href="contact-show.html">Alice Williams</a></li>
+                        <li><a href="contact-show.html">Maria Garcia</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <a href="contact-new.html" class="add_contact">+ Add New Contact</a>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div id="contact-manager-bot"></div>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+      <div id="footer">
+        <ul id="navfoot1">
+          <li><a href="index.html">main menu</a></li>
+          <li><a href="my-info.html">my info</a></li>
+          <li><a href="contacts.html">contacts</a></li>
+          <li><a href="tickets.html">tickets</a></li>
+          <li><a href="#">faq</a></li>
+          <li><a href="packages.html">packages</a></li>
+          <li><a href="transactions.html">transactions</a></li>
+          <li><a href="feedback.html">customer feedback</a></li>
+        </ul>
+        <ul id="navfoot2">
+          <li><a href="#">ViaTalk Forums</a>|</li>
+          <li><a href="#">Network Status</a>|</li>
+          <li><a href="#">tos</a>|</li>
+          <li><a href="#">logout</a></li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

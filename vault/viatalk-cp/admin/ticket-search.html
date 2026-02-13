@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Ticket Search</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html" class="active">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main" style="width: 100%">
+        <div class="block">
+          <div class="content">
+            <h2>Ticket Search</h2>
+            <div class="inner">
+              <form action="#" method="get" class="form">
+                <div class="group">
+                  <label class="label" for="keyword">Keyword</label>
+                  <input type="text" name="keyword" id="keyword" class="text_field" style="width: 300px" value="outbound calls" />
+                </div>
+                <div class="group">
+                  <label class="label" for="dept_filter">Department</label>
+                  <select name="dept_filter" id="dept_filter">
+                    <option value="">All Departments</option>
+                    <option value="technical" selected>Technical Support</option>
+                    <option value="billing">Billing</option>
+                    <option value="sales">Sales</option>
+                    <option value="porting">Porting</option>
+                    <option value="management">Management</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label class="label" for="status_filter">Status</label>
+                  <select name="status_filter" id="status_filter">
+                    <option value="">All Statuses</option>
+                    <option value="open">Open</option>
+                    <option value="waiting">Waiting</option>
+                    <option value="closed">Closed</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label class="label">Date Range</label>
+                  <input type="text" name="date_from" class="text_field" style="width: 120px" placeholder="From (MM/DD/YYYY)" value="01/01/2009" />
+                  &nbsp;to&nbsp;
+                  <input type="text" name="date_to" class="text_field" style="width: 120px" placeholder="To (MM/DD/YYYY)" value="02/10/2009" />
+                </div>
+                <div class="group">
+                  <input type="submit" value="Search" class="button" />
+                </div>
+              </form>
+
+              <hr />
+
+              <h3>Search Results</h3>
+              <table class="table">
+                <tr>
+                  <th>Ticket #</th>
+                  <th>Subject</th>
+                  <th>Client</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Department</th>
+                  <th class="last">Last Updated</th>
+                </tr>
+                <tr>
+                  <td><a href="ticket-show.html">4521</a></td>
+                  <td><a href="ticket-show.html">Cannot make outbound calls</a></td>
+                  <td><a href="client-show.html">John Smith</a></td>
+                  <td>Open</td>
+                  <td>High</td>
+                  <td>Technical Support</td>
+                  <td class="last">Feb 10, 2009</td>
+                </tr>
+                <tr>
+                  <td><a href="ticket-show.html">4489</a></td>
+                  <td><a href="ticket-show.html">Outbound calls dropping after 30 seconds</a></td>
+                  <td><a href="client-show.html">Alice Williams</a></td>
+                  <td>Closed</td>
+                  <td>Normal</td>
+                  <td>Technical Support</td>
+                  <td class="last">Feb 3, 2009</td>
+                </tr>
+                <tr>
+                  <td><a href="ticket-show.html">4472</a></td>
+                  <td><a href="ticket-show.html">Outbound calls - one way audio</a></td>
+                  <td><a href="client-show.html">Ed Norton</a></td>
+                  <td>Closed</td>
+                  <td>High</td>
+                  <td>Technical Support</td>
+                  <td class="last">Jan 28, 2009</td>
+                </tr>
+                <tr>
+                  <td><a href="ticket-show.html">4455</a></td>
+                  <td><a href="ticket-show.html">Cannot make outbound international calls</a></td>
+                  <td><a href="client-show.html">Maria Garcia</a></td>
+                  <td>Closed</td>
+                  <td>Normal</td>
+                  <td>Technical Support</td>
+                  <td class="last">Jan 20, 2009</td>
+                </tr>
+                <tr>
+                  <td><a href="ticket-show.html">4438</a></td>
+                  <td><a href="ticket-show.html">Outbound calls to toll-free not working</a></td>
+                  <td><a href="client-show.html">Tom Wilson</a></td>
+                  <td>Closed</td>
+                  <td>Low</td>
+                  <td>Technical Support</td>
+                  <td class="last">Jan 12, 2009</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

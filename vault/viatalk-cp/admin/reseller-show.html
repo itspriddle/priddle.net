@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Reseller Detail</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html" class="active">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main">
+        <div class="block">
+          <div class="content">
+            <h2>Reseller: VoIP Solutions Inc (#R-1001)</h2>
+            <div class="inner">
+              <dl class="list">
+                <dt>Company:</dt>
+                <dd>VoIP Solutions Inc</dd>
+                <dt>Contact:</dt>
+                <dd>Mike Roberts</dd>
+                <dt>Email:</dt>
+                <dd>mike@voipsolutions.com</dd>
+                <dt>Phone:</dt>
+                <dd>(555) 555-3001</dd>
+                <dt>Address:</dt>
+                <dd>123 Business Ave, Suite 200, New York, NY 10001</dd>
+                <dt>Status:</dt>
+                <dd>Active</dd>
+                <dt>Commission Rate:</dt>
+                <dd>15%</dd>
+                <dt>Active Clients:</dt>
+                <dd>42</dd>
+                <dt>Total Revenue:</dt>
+                <dd>$12,450.00</dd>
+                <dt>Balance Due:</dt>
+                <dd>$1,867.50</dd>
+              </dl>
+
+              <h3>Client List</h3>
+              <table class="table" width="100%">
+                <tr>
+                  <th>Client ID</th>
+                  <th>Name</th>
+                  <th>Package</th>
+                  <th>Status</th>
+                  <th class="last">Signup Date</th>
+                </tr>
+                <tr class="in-use">
+                  <td>54001</td>
+                  <td><a href="client-show.html">John Smith</a></td>
+                  <td>VT Unlimited</td>
+                  <td>Active</td>
+                  <td class="last">Aug 15, 2008</td>
+                </tr>
+                <tr class="in-use">
+                  <td>54004</td>
+                  <td><a href="client-show.html">Alice Williams</a></td>
+                  <td>VT 500</td>
+                  <td>Active</td>
+                  <td class="last">Sep 3, 2008</td>
+                </tr>
+                <tr class="in-use">
+                  <td>54006</td>
+                  <td><a href="client-show.html">Diana Prince</a></td>
+                  <td>VT Unlimited</td>
+                  <td>Active</td>
+                  <td class="last">Oct 12, 2008</td>
+                </tr>
+                <tr class="in-use">
+                  <td>54009</td>
+                  <td><a href="client-show.html">Maria Garcia</a></td>
+                  <td>VT Business Unlimited</td>
+                  <td>Active</td>
+                  <td class="last">Nov 5, 2008</td>
+                </tr>
+                <tr class="in-use">
+                  <td>54010</td>
+                  <td><a href="client-show.html">Tom Wilson</a></td>
+                  <td>VT 500</td>
+                  <td>Active</td>
+                  <td class="last">Dec 1, 2008</td>
+                </tr>
+              </table>
+
+              <h3>Recent Payouts</h3>
+              <table class="table" width="100%">
+                <tr>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th class="last">Method</th>
+                </tr>
+                <tr>
+                  <td>Dec 15, 2008</td>
+                  <td>$1,650.00</td>
+                  <td class="last">Check #4521</td>
+                </tr>
+                <tr>
+                  <td>Nov 15, 2008</td>
+                  <td>$1,425.00</td>
+                  <td class="last">Check #4389</td>
+                </tr>
+                <tr>
+                  <td>Oct 15, 2008</td>
+                  <td>$1,200.00</td>
+                  <td class="last">Check #4201</td>
+                </tr>
+              </table>
+
+              <h3>Notes</h3>
+              <div class="round-white">
+                <p><strong>Jan 20, 2009 - jpriddle:</strong> Discussed increasing commission rate to 18% for Q2 based on performance.</p>
+                <p><strong>Dec 10, 2008 - mroberts:</strong> Reseller requested marketing materials for new VT Business plans. Sent via email.</p>
+              </div>
+
+              <h3>Add Note</h3>
+              <form action="#" method="post" class="form">
+                <div class="group">
+                  <textarea name="note" rows="4" cols="60"></textarea>
+                </div>
+                <div class="group">
+                  <input type="submit" value="Add Note" class="button" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Quick Actions</h3>
+          <div class="content">
+            <ul class="navigation">
+              <li><a href="reseller-edit.html">Edit Reseller</a></li>
+              <li><a href="#">Process Payout</a></li>
+              <li><a href="#">Suspend Reseller</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

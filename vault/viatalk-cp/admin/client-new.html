@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Create New Client</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html" class="active">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main">
+        <div class="block">
+          <div class="content">
+            <h2>Create New Client</h2>
+            <div class="inner">
+              <form action="#" method="post" class="form">
+                <dl class="list edit-client-form">
+                  <dt>First Name:</dt>
+                  <dd><input type="text" name="first_name" class="text_field" style="width: 200px" /></dd>
+                  <dt>Last Name:</dt>
+                  <dd><input type="text" name="last_name" class="text_field" style="width: 200px" /></dd>
+                  <dt>Email:</dt>
+                  <dd><input type="text" name="email" class="text_field" style="width: 250px" /></dd>
+                  <dt>Phone:</dt>
+                  <dd><input type="text" name="phone" class="text_field" style="width: 200px" /></dd>
+                  <dt>Address:</dt>
+                  <dd><input type="text" name="address" class="text_field" style="width: 300px" /></dd>
+                  <dt>City:</dt>
+                  <dd><input type="text" name="city" class="text_field" style="width: 200px" /></dd>
+                  <dt>State:</dt>
+                  <dd><input type="text" name="state" class="text_field" style="width: 50px" /></dd>
+                  <dt>Zip:</dt>
+                  <dd><input type="text" name="zip" class="text_field" style="width: 100px" /></dd>
+                  <dt>Tax Exempt:</dt>
+                  <dd><input type="checkbox" name="tax_exempt" class="checkbox" /></dd>
+                  <dt>Notes:</dt>
+                  <dd><textarea name="notes" class="text_area" rows="4" style="width: 300px"></textarea></dd>
+                </dl>
+                <p><input type="submit" value="Create Client" class="button" /></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Quick Actions</h3>
+          <div class="content">
+            <ul class="navigation">
+              <li><a href="client-list.html">Client List</a></li>
+              <li><a href="signup-queue.html">Signup Queue</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

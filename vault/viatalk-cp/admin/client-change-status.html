@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Via:Talk Admin - Change Status: John Smith (#54001)</title>
+<link type="text/css" rel="stylesheet" href="../css/administration.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="index.html">Via:Talk Administration</a></h1>
+      <div id="user-navigation">
+        <ul>
+          <li><a href="client-show.html">Test Account</a></li>
+          <li>Logged in as: <span class="underline">jpriddle</span></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div id="main-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ticket-dashboard.html">Tickets</a></li>
+          <li><a href="client-list.html" class="active">Clients</a></li>
+          <li><a href="signup-queue.html">Signups</a></li>
+          <li><a href="reseller-list.html">Resellers</a></li>
+          <li><a href="package-list.html">Packages</a></li>
+          <li><a href="kb-list.html">KB</a></li>
+          <li><a href="#">Mass Mailer</a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="main">
+        <div class="block">
+          <div class="content">
+            <h2>Change Status: John Smith (#54001)</h2>
+            <div class="inner">
+              <dl class="list user-status-list">
+                <dt>Current Status:</dt>
+                <dd><strong>Active</strong></dd>
+              </dl>
+
+              <hr />
+
+              <form action="#" method="post" class="form">
+                <dl class="list user-status-form">
+                  <dt>New Status:</dt>
+                  <dd>
+                    <select name="status">
+                      <option value="active" selected>Active</option>
+                      <option value="suspended">Suspended</option>
+                      <option value="cancelled">Cancelled</option>
+                      <option value="pending">Pending</option>
+                    </select>
+                  </dd>
+                  <dt>Reason:</dt>
+                  <dd><textarea name="reason" class="text_area" rows="4" style="width: 300px"></textarea></dd>
+                </dl>
+                <p><input type="submit" value="Update Status" class="button" /></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2009 Via:Talk LLC</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Quick Actions</h3>
+          <div class="content">
+            <ul class="navigation">
+              <li><a href="client-show.html">View Client</a></li>
+              <li><a href="client-edit.html">Edit Client</a></li>
+              <li><a href="client-call-logs.html">View Call Logs</a></li>
+              <li><a href="client-transactions.html">Transactions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>
