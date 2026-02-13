@@ -1,0 +1,443 @@
+/**
+ * Trackmaster - 10/2008 by Joshua Priddle <josh.priddle@hostrocket.com>
+ *
+ * Thanks for stealing!
+ */
+
+fieldset
+{
+	border: 0;
+}
+
+form#login
+{
+	width: 300px;
+	margin: 30px auto;
+}
+
+body
+{
+	background-color: #fff;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	margin: 0;
+	width: 100%;
+	min-width: 1000px;
+}
+
+#master
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#content a:link,
+#content a:active,
+#content a:visited
+{
+	color: #2A4A97;
+	text-decoration: none;
+}
+
+#content a:hover
+{
+	color: #2A4A97;
+	text-decoration: underline;
+}
+
+
+#content
+{
+	clear: both;
+	padding: 10px 20px;
+}
+
+#content #left
+{
+	width: 30%;
+	float: left;
+}
+
+#content #center
+{
+	width: 30%;
+	float: left;
+}
+
+#content #right
+{
+	float: right;
+	width: 69%;
+}
+
+ul#ninja
+{
+	background: transparent url(../images/gui/ninja-logo.png) no-repeat 0 0;
+	height: 25px;
+	list-style: none;
+	margin: 5px auto;
+	padding: 0;
+	width: 250px;
+}
+
+ul#ninja li
+{
+	display: block;
+	float: left;
+	font-weight: 700;
+	font-size: 8pt;
+	line-height: 28px;
+	margin-left: 25px;
+}
+
+abbr
+{
+	border-bottom: 1px dotted #000;
+}
+
+#master #top
+{
+	background: url(../images/gui/header-bg.jpg) repeat-x top;
+	height: 98px;
+	width: 100%;
+}
+
+#master #header
+{
+	height: 79px;
+	margin: 0;
+	width: 160px;
+	background: url(../images/gui/logo.jpg) no-repeat center center;
+}
+
+#header span
+{
+	display: none;
+}
+
+#navigation
+{
+	background: url(../images/gui/nav_bg.jpg) repeat-x;
+	height: 30px;
+	width: 100%;
+}
+
+#navigation p
+{
+	margin: 0;
+	padding: 5px;
+	color: #fff;
+	font-size: 8pt;
+	font-weight: 700;
+	text-indent: 5px;
+	float: left;
+}
+
+#navigation p.options
+{
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+}
+
+#navigation a:link,
+#navigation a:active,
+#navigation a:visited
+{
+	color: #fff;
+	text-decoration: none;
+	outline: 0;
+}
+
+#navigation a:hover
+{
+	text-decoration: underline;
+	outline: 0;
+}
+
+#content_header
+{
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+}
+
+#content_header h2
+{
+	font-size: 12pt;
+	margin: 2px;
+	padding: 0;
+	float: left;
+}
+
+#sub_navigation
+{
+	position: relative;
+	font-size: 8pt;
+	font-weight: normal;
+	float: right;
+	text-align: right;
+	margin: 2px;
+}
+
+div.sub_navigation_options
+{
+	position: relative;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	display: none
+}
+
+div.sub_navigation_options div.form
+{
+	position: absolute;
+	right: 0;
+	top: -11px;
+	background-color: #2A4A97;
+	width: auto;
+	margin: 0px;
+	padding: 6px;
+	outline: none;
+	-webkit-border-bottom-right-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-bottomright: 2px;
+	-moz-border-radius-bottomleft: 2px;
+}
+
+div.sub_navigation_options form
+{
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	background-color: #D5E2F3;
+	margin: 0;
+	width: auto;
+	padding: 4px;
+}
+
+div.sub_navigation_options form p
+{
+	margin: 2px;
+	width: auto;
+	padding: 0;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div.sub_navigation_options form p span
+{
+	margin: 0 6px 0 6px;
+}
+
+div.sub_navigation_options form p.header
+{
+	border-bottom: 1px solid #FFF;
+}
+
+div.sub_navigation_options form input,
+div.sub_navigation_options form select
+{
+	font-size: 8pt;
+}
+div.sub_navigation_options fieldset
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+div.table_wrapper
+{
+	margin-bottom: 20px;
+	border-left: 1px solid #BEC9D5;
+	border-right: 1px solid #BEC9D5;
+}
+
+div.table_wrapper h3
+{
+	color: #fff;
+	height: 25px;
+	line-height: 25px;
+	margin: 0;
+	padding: 0;
+	font-size: 8pt;
+	text-indent: 10px;
+	background: url(../images/gui/table-header-bg.jpg) repeat-x;
+}
+
+div.table_wrapper table
+{
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+div.table_wrapper thead tr .header
+{
+	background-image: url(../images/tablesorter/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+div.table_wrapper thead tr .header:hover
+{
+	background-color: #B7D5F8;
+}
+
+div.table_wrapper table thead tr .headerSortUp
+{
+	background-image: url(../images/tablesorter/asc.gif);
+}
+
+div.table_wrapper table thead tr .headerSortDown
+{
+	background-image: url(../images/tablesorter/desc.gif);
+}
+
+
+div.table_wrapper table thead tr th
+{
+	height: 25px;
+	text-align: left;
+	text-indent: 10px;
+	font-size: 8pt;
+	background-color: #D5E2F3;
+	border-top: 1px solid #BEC9D5;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+div.table_wrapper table tfoot tr th
+{
+	height: 25px;
+	text-align: left;
+	text-indent: 10px;
+	font-size: 8pt;
+	border-top: 1px solid #BEC9D5;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+div.table_wrapper table tbody tr td,
+div.table_wrapper table tfoot tr td
+{
+	height: 25px;
+	background-color: transparent;
+	text-indent: 10px;
+	font-size: 8pt;
+	background-color: #fff;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+div.table_wrapper table tbody tr.odd td
+{
+	background-color: #E9F0F9;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+div.table_wrapper table tbody tr:hover td
+{
+	background-color: #B7D5F8;
+	border-bottom: 1px solid #BEC9D5;
+}
+
+td.edit a,
+td.drop a
+{
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	text-indent: 0;
+	vertical-align: center;
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	border: 0;
+}
+
+td.edit a:link,
+td.drop a:link,
+td.edit a:active,
+td.drop a:active,
+td.edit a:visited,
+td.drop a:visited
+{
+	color: #2A4A97;
+	text-decoration: none;
+}
+
+td.edit a:hover
+{
+	color: #FFF !important;
+	background-color: #2A4A97;
+	text-decoration: none !important;
+}
+
+td.drop a:hover
+{
+	color: #FFF !important;
+	background-color: #F00;
+	text-decoration: none !important;
+}
+
+#footer
+{
+	padding: 10px;
+	margin: auto;
+	border-top: 1px solid #E0E0E0;
+	height: 40px;
+}
+
+br.clear
+{
+	clear: both;
+	font-size: 1px;
+	display: block;
+	height: 1px;
+}
+
+#warnings
+{
+	margin: 15px 0 15px 0;
+	font-size: 10pt;
+}
+
+#warnings .warning
+{
+	background: #FBE6F2;
+	border: 1px solid #D893A1;
+	color: #000;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#warnings .success
+{
+	background: #B6DE8E;
+	border: 1px solid #8BA609;
+	color: #000;
+	margin: 5px 0 1px 0;
+	padding: 5px;
+}
+
+#warnings p
+{
+	margin: 0;
+	padding: 0;
+}
+
+tr.sales_call td {
+	background: #B6DE8E !important;
+}
+
+#dslr_users tr.disabled td
+{
+    background: #FBE6F2;
+    color: #000;
+}

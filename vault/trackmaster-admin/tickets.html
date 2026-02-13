@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trackmaster &raquo; Ticket Stats</title>
+<link type="text/css" rel="stylesheet" href="css/master.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tablesorter.js"></script>
+<script type="text/javascript" src="js/tablesorter_parsers.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a[rel*=show]').click(function() {
+		$("#" + this.rel.match(/show\[(\w+)\]/)[1]).toggle();
+		return false;
+	});
+	$(".tablesorter").tablesorter();
+	$(".tablesorter").each(function() {
+		var odd = false;
+		$(this).find("tbody tr").each(function() {
+			if (odd) $(this).addClass("odd");
+			odd = !odd;
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div id="master">
+	<div id="top">
+		<h1 id="header"><span>Trackmaster</span></h1>
+		<div id="navigation">
+			<p>
+				<a href="main.html">Main</a> &middot;
+				<a href="cdrs.html">PBX CDRs</a> &middot;
+				<a href="tickets.html">Ticket Stats</a> &middot;
+				<a href="porting-shipping.html">Shipping Stats</a> &middot;
+				<a href="porting-shipping.html">Porting Stats</a> &middot;
+				<a href="users.html">Manage Users</a> &middot;
+				<a href="dslr.html">DSLR User List</a> &middot;
+				<a href="schedule.html">Employee Schedule</a>
+			</p>
+			<p class="options"><a href="login.html">Logout</a></p>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div id="content_header">
+			<h2>Ticket Stats for January 29, 2009</h2>
+			<div id="sub_navigation">
+				<a href="#" rel="show[sub_navigation_options]">Change Date</a>
+			</div>
+			<br class="clear" />
+		</div>
+
+		<div id="sub_navigation_options" class="sub_navigation_options">
+			<div class="form">
+				<form id="sub_navigation_form" action="#" method="post">
+					<p><span>Date</span>
+						<select name="date[month]"><option>January</option></select>
+						<select name="date[day]"><option>29</option></select>
+						<select name="date[year]"><option>2009</option></select>
+						<input type="submit" name="submit" value="Go &raquo;" />
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<!-- Dan Mitchell -->
+		<div class="table_wrapper">
+			<h3>Dan Mitchell &mdash; 26 actions</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th style="width:40px;">#</th><th>Department</th><th>Action</th><th>Title</th></tr></thead>
+				<tbody>
+					<tr><td>48291</td><td>General Support</td><td>Replied</td><td>Cannot make outbound calls after firmware update</td></tr>
+					<tr><td>48305</td><td>General Support</td><td>Replied</td><td>Choppy audio on all extensions</td></tr>
+					<tr><td>48312</td><td>Billing</td><td>Closed</td><td>Incorrect charge on November invoice</td></tr>
+					<tr><td>48291</td><td>General Support</td><td>Replied</td><td>Cannot make outbound calls after firmware update</td></tr>
+					<tr><td>48320</td><td>Porting</td><td>Moved</td><td>Port request for 585-555-0142</td></tr>
+					<tr><td>48333</td><td>General Support</td><td>Opened</td><td>New customer setup - 3 lines</td></tr>
+					<tr><td>48340</td><td>General Support</td><td>Replied</td><td>E911 address update request</td></tr>
+					<tr><td>48351</td><td>Billing</td><td>Closed</td><td>Refund request for downtime</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Karen Webb -->
+		<div class="table_wrapper">
+			<h3>Karen Webb &mdash; 20 actions</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th style="width:40px;">#</th><th>Department</th><th>Action</th><th>Title</th></tr></thead>
+				<tbody>
+					<tr><td>48287</td><td>General Support</td><td>Replied</td><td>Voicemail not recording messages</td></tr>
+					<tr><td>48293</td><td>Sales</td><td>Closed</td><td>Quote request for 10-line business plan</td></tr>
+					<tr><td>48301</td><td>General Support</td><td>Replied</td><td>Caller ID showing wrong number</td></tr>
+					<tr><td>48315</td><td>Porting</td><td>Moved</td><td>Port request for 716-555-0198</td></tr>
+					<tr><td>48322</td><td>General Support</td><td>Opened</td><td>Need help configuring Linksys PAP2T</td></tr>
+					<tr><td>48338</td><td>Abuse</td><td>Replied</td><td>Spam calls originating from account</td></tr>
+					<tr><td>48345</td><td>General Support</td><td>Closed</td><td>Call forwarding not working</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Steve Russo -->
+		<div class="table_wrapper">
+			<h3>Steve Russo &mdash; 17 actions</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th style="width:40px;">#</th><th>Department</th><th>Action</th><th>Title</th></tr></thead>
+				<tbody>
+					<tr><td>48289</td><td>General Support</td><td>Replied</td><td>One-way audio after router change</td></tr>
+					<tr><td>48298</td><td>Billing</td><td>Closed</td><td>Cancel account - moving to new provider</td></tr>
+					<tr><td>48310</td><td>General Support</td><td>Replied</td><td>Fax line not connecting</td></tr>
+					<tr><td>48318</td><td>General Support</td><td>On Hold</td><td>Intermittent registration drops</td></tr>
+					<tr><td>48325</td><td>Porting</td><td>Opened</td><td>Port-in from Vonage - 2 numbers</td></tr>
+					<tr><td>48342</td><td>General Support</td><td>Replied</td><td>Need QoS settings for Netgear router</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="footer">
+			<ul id="ninja">
+				<li>Made by the ninja in <abbr title="RAM: 4.25MB">0.2104</abbr> seconds</li>
+			</ul>
+		</div>
+		<br class="clear" />
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trackmaster &raquo; Manage Users</title>
+<link type="text/css" rel="stylesheet" href="css/master.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tablesorter.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".tablesorter").tablesorter();
+	$(".tablesorter").each(function() {
+		var odd = false;
+		$(this).find("tbody tr").each(function() {
+			if (odd) $(this).addClass("odd");
+			odd = !odd;
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div id="master">
+	<div id="top">
+		<h1 id="header"><span>Trackmaster</span></h1>
+		<div id="navigation">
+			<p>
+				<a href="main.html">Main</a> &middot;
+				<a href="cdrs.html">PBX CDRs</a> &middot;
+				<a href="tickets.html">Ticket Stats</a> &middot;
+				<a href="porting-shipping.html">Shipping Stats</a> &middot;
+				<a href="porting-shipping.html">Porting Stats</a> &middot;
+				<a href="users.html">Manage Users</a> &middot;
+				<a href="dslr.html">DSLR User List</a> &middot;
+				<a href="schedule.html">Employee Schedule</a>
+			</p>
+			<p class="options"><a href="login.html">Logout</a></p>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div id="content_header">
+			<h2>Manage Users</h2>
+			<div id="sub_navigation">
+				<a href="#">Add User</a> &middot;
+				<a href="#">Manage Administrators</a>
+			</div>
+			<br class="clear" />
+		</div>
+
+		<div class="table_wrapper">
+			<h3>Administrators</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Last Login</th>
+						<th style="width:40px;">Edit</th>
+						<th style="width:40px;">Drop</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Josh Priddle</td>
+						<td>jpriddle</td>
+						<td>01/29/2009 8:02am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Dan Mitchell</td>
+						<td>dmitchell</td>
+						<td>01/29/2009 7:55am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Karen Webb</td>
+						<td>kwebb</td>
+						<td>01/28/2009 4:48pm</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Steve Russo</td>
+						<td>srusso</td>
+						<td>01/29/2009 8:58am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Jeff Coleman</td>
+						<td>jcoleman</td>
+						<td>01/27/2009 9:12am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="table_wrapper">
+			<h3>Users</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Last Login</th>
+						<th style="width:40px;">Edit</th>
+						<th style="width:40px;">Drop</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Laura Chen</td>
+						<td>lchen</td>
+						<td>01/29/2009 8:05am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Mike Brennan</td>
+						<td>mbrennan</td>
+						<td>01/29/2009 9:52am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Rick Torres</td>
+						<td>rtorres</td>
+						<td>01/29/2009 11:58am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Amy Dalton</td>
+						<td>adalton</td>
+						<td>01/29/2009 8:55am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+					<tr>
+						<td>Tom Sadler</td>
+						<td>tsadler</td>
+						<td>01/29/2009 9:48am</td>
+						<td class="edit"><a href="#">Edit</a></td>
+						<td class="drop"><a href="#">Drop</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="footer">
+			<ul id="ninja">
+				<li>Made by the ninja in <abbr title="RAM: 4.25MB">0.0812</abbr> seconds</li>
+			</ul>
+		</div>
+		<br class="clear" />
+	</div>
+</div>
+</body>
+</html>

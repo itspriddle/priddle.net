@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trackmaster &raquo; Employee Schedule</title>
+<link type="text/css" rel="stylesheet" href="css/master.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tablesorter.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".tablesorter").each(function() {
+		var odd = false;
+		$(this).find("tbody tr").each(function() {
+			if (odd) $(this).addClass("odd");
+			odd = !odd;
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div id="master">
+	<div id="top">
+		<h1 id="header"><span>Trackmaster</span></h1>
+		<div id="navigation">
+			<p>
+				<a href="main.html">Main</a> &middot;
+				<a href="cdrs.html">PBX CDRs</a> &middot;
+				<a href="tickets.html">Ticket Stats</a> &middot;
+				<a href="porting-shipping.html">Shipping Stats</a> &middot;
+				<a href="porting-shipping.html">Porting Stats</a> &middot;
+				<a href="users.html">Manage Users</a> &middot;
+				<a href="dslr.html">DSLR User List</a> &middot;
+				<a href="schedule.html">Employee Schedule</a>
+			</p>
+			<p class="options"><a href="login.html">Logout</a></p>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div id="content_header">
+			<h2>Employee Schedule</h2>
+			<br class="clear" />
+		</div>
+
+		<div class="table_wrapper">
+			<h3>Week of January 25 &ndash; January 31, 2009</h3>
+			<table cellspacing="0">
+				<thead>
+					<tr>
+						<th>Sunday</th>
+						<th>Monday</th>
+						<th>Tuesday</th>
+						<th>Wednesday</th>
+						<th>Thursday</th>
+						<th>Friday</th>
+						<th>Saturday</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Rick Torres<br />12:00pm - 9:00pm</td>
+						<td>Dan Mitchell<br />8:00am - 5:00pm</td>
+						<td>Dan Mitchell<br />8:00am - 5:00pm</td>
+						<td>Dan Mitchell<br />8:00am - 5:00pm</td>
+						<td>Dan Mitchell<br />8:00am - 5:00pm</td>
+						<td>Dan Mitchell<br />8:00am - 5:00pm</td>
+						<td>Mike Brennan<br />10:00am - 7:00pm</td>
+					</tr>
+					<tr>
+						<td>Mike Brennan<br />10:00am - 7:00pm</td>
+						<td>Karen Webb<br />8:00am - 5:00pm</td>
+						<td>Karen Webb<br />8:00am - 5:00pm</td>
+						<td>Karen Webb<br />8:00am - 5:00pm</td>
+						<td>Karen Webb<br />8:00am - 5:00pm</td>
+						<td>Karen Webb<br />8:00am - 5:00pm</td>
+						<td>Rick Torres<br />12:00pm - 9:00pm</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Steve Russo<br />9:00am - 6:00pm</td>
+						<td>Steve Russo<br />9:00am - 6:00pm</td>
+						<td>Steve Russo<br />9:00am - 6:00pm</td>
+						<td>Steve Russo<br />9:00am - 6:00pm</td>
+						<td>Steve Russo<br />9:00am - 6:00pm</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Laura Chen<br />8:00am - 5:00pm</td>
+						<td>Laura Chen<br />8:00am - 5:00pm</td>
+						<td>Laura Chen<br />8:00am - 5:00pm</td>
+						<td>Laura Chen<br />8:00am - 5:00pm</td>
+						<td>Laura Chen<br />8:00am - 5:00pm</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Mike Brennan<br />10:00am - 7:00pm</td>
+						<td>Mike Brennan<br />10:00am - 7:00pm</td>
+						<td>Mike Brennan<br />10:00am - 7:00pm</td>
+						<td>Mike Brennan<br />10:00am - 7:00pm</td>
+						<td>Rick Torres<br />12:00pm - 9:00pm</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Jeff Coleman<br />8:00am - 5:00pm</td>
+						<td>Jeff Coleman<br />8:00am - 5:00pm</td>
+						<td>Jeff Coleman<br />8:00am - 5:00pm</td>
+						<td>Jeff Coleman<br />8:00am - 5:00pm</td>
+						<td>Jeff Coleman<br />8:00am - 5:00pm</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Amy Dalton<br />9:00am - 6:00pm</td>
+						<td>Amy Dalton<br />9:00am - 6:00pm</td>
+						<td>Amy Dalton<br />9:00am - 6:00pm</td>
+						<td>Amy Dalton<br />9:00am - 6:00pm</td>
+						<td>Amy Dalton<br />9:00am - 6:00pm</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Tom Sadler<br />10:00am - 7:00pm</td>
+						<td>Tom Sadler<br />10:00am - 7:00pm</td>
+						<td>Tom Sadler<br />10:00am - 7:00pm</td>
+						<td>Tom Sadler<br />10:00am - 7:00pm</td>
+						<td>Tom Sadler<br />10:00am - 7:00pm</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>Rick Torres<br />12:00pm - 9:00pm</td>
+						<td>Rick Torres<br />12:00pm - 9:00pm</td>
+						<td>Rick Torres<br />12:00pm - 9:00pm</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="footer">
+			<ul id="ninja">
+				<li>Made by the ninja in <abbr title="RAM: 4.25MB">0.0948</abbr> seconds</li>
+			</ul>
+		</div>
+		<br class="clear" />
+	</div>
+</div>
+</body>
+</html>

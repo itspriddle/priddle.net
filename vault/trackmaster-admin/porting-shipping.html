@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trackmaster &raquo; Shipping &amp; Porting Stats</title>
+<link type="text/css" rel="stylesheet" href="css/master.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tablesorter.js"></script>
+<script type="text/javascript" src="js/tablesorter_parsers.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a[rel*=show]').click(function() {
+		$("#" + this.rel.match(/show\[(\w+)\]/)[1]).toggle();
+		return false;
+	});
+	$(".tablesorter").tablesorter();
+	$(".tablesorter").each(function() {
+		var odd = false;
+		$(this).find("tbody tr").each(function() {
+			if (odd) $(this).addClass("odd");
+			odd = !odd;
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div id="master">
+	<div id="top">
+		<h1 id="header"><span>Trackmaster</span></h1>
+		<div id="navigation">
+			<p>
+				<a href="main.html">Main</a> &middot;
+				<a href="cdrs.html">PBX CDRs</a> &middot;
+				<a href="tickets.html">Ticket Stats</a> &middot;
+				<a href="porting-shipping.html">Shipping Stats</a> &middot;
+				<a href="porting-shipping.html">Porting Stats</a> &middot;
+				<a href="users.html">Manage Users</a> &middot;
+				<a href="dslr.html">DSLR User List</a> &middot;
+				<a href="schedule.html">Employee Schedule</a>
+			</p>
+			<p class="options"><a href="login.html">Logout</a></p>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div id="content_header">
+			<h2>Shipping &amp; Porting Stats for January 29, 2009</h2>
+			<div id="sub_navigation">
+				<a href="#" rel="show[sub_navigation_options]">Change Date</a>
+			</div>
+			<br class="clear" />
+		</div>
+
+		<div id="sub_navigation_options" class="sub_navigation_options">
+			<div class="form">
+				<form id="sub_navigation_form" action="#" method="post">
+					<p><span>Date</span>
+						<select name="date[month]"><option>January</option></select>
+						<select name="date[day]"><option>29</option></select>
+						<select name="date[year]"><option>2009</option></select>
+						<input type="submit" name="submit" value="Go &raquo;" />
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<!-- Shipping Stats -->
+		<div class="table_wrapper">
+			<h3>Shipping by Agent</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th>Agent</th><th>Jobs</th></tr></thead>
+				<tbody>
+					<tr><td>Amy Dalton</td><td>8</td></tr>
+					<tr><td>Tom Sadler</td><td>5</td></tr>
+					<tr><td>Rick Torres</td><td>3</td></tr>
+				</tbody>
+				<tfoot><tr><th>Total</th><td>16</td></tr></tfoot>
+			</table>
+		</div>
+
+		<!-- Shipping Detail: Amy Dalton -->
+		<div class="table_wrapper">
+			<h3>Amy Dalton &mdash; Shipping</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th style="width:30px;">#</th><th>Date</th><th>Time</th><th>Action</th><th>Notes</th></tr></thead>
+				<tbody>
+					<tr><td>1</td><td>01/29/2009</td><td>8:22am</td><td>Shipped</td><td>Grandstream GXP-2000 to Rochester, NY</td></tr>
+					<tr><td>2</td><td>01/29/2009</td><td>8:45am</td><td>Shipped</td><td>Linksys PAP2T to Buffalo, NY</td></tr>
+					<tr><td>3</td><td>01/29/2009</td><td>9:12am</td><td>Shipped</td><td>Polycom IP 330 to Syracuse, NY</td></tr>
+					<tr><td>4</td><td>01/29/2009</td><td>10:05am</td><td>Shipped</td><td>Grandstream HT-502 to Albany, NY</td></tr>
+					<tr><td>5</td><td>01/29/2009</td><td>10:38am</td><td>RMA Received</td><td>Defective Linksys SPA-942 returned</td></tr>
+					<tr><td>6</td><td>01/29/2009</td><td>11:22am</td><td>Shipped</td><td>Replacement SPA-942 to Utica, NY</td></tr>
+					<tr><td>7</td><td>01/29/2009</td><td>1:15pm</td><td>Shipped</td><td>Grandstream GXP-2000 x2 to Binghamton, NY</td></tr>
+					<tr><td>8</td><td>01/29/2009</td><td>2:40pm</td><td>Shipped</td><td>Linksys PAP2T to Ithaca, NY</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Porting Stats -->
+		<div class="table_wrapper">
+			<h3>Porting by Agent</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th>Agent</th><th>Jobs</th></tr></thead>
+				<tbody>
+					<tr><td>Laura Chen</td><td>6</td></tr>
+					<tr><td>Steve Russo</td><td>4</td></tr>
+					<tr><td>Karen Webb</td><td>2</td></tr>
+				</tbody>
+				<tfoot><tr><th>Total</th><td>12</td></tr></tfoot>
+			</table>
+		</div>
+
+		<!-- Porting Detail: Laura Chen -->
+		<div class="table_wrapper">
+			<h3>Laura Chen &mdash; Porting</h3>
+			<table class="tablesorter" cellspacing="0">
+				<thead><tr><th style="width:30px;">#</th><th>Date</th><th>Time</th><th>Action</th><th>Notes</th></tr></thead>
+				<tbody>
+					<tr><td>1</td><td>01/29/2009</td><td>8:15am</td><td>Submitted FOC</td><td>Port-in 585-555-0142 from Windstream</td></tr>
+					<tr><td>2</td><td>01/29/2009</td><td>9:02am</td><td>FOC Received</td><td>585-555-0188 confirmed for 02/05</td></tr>
+					<tr><td>3</td><td>01/29/2009</td><td>10:30am</td><td>Submitted FOC</td><td>Port-in 716-555-0233 from Verizon</td></tr>
+					<tr><td>4</td><td>01/29/2009</td><td>11:45am</td><td>Port Complete</td><td>315-555-0177 active on Via:Talk</td></tr>
+					<tr><td>5</td><td>01/29/2009</td><td>1:20pm</td><td>Rejected</td><td>716-555-0198 - CSR mismatch, resubmitting</td></tr>
+					<tr><td>6</td><td>01/29/2009</td><td>2:55pm</td><td>Submitted FOC</td><td>Port-in 716-555-0198 resubmitted to TW Telecom</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="footer">
+			<ul id="ninja">
+				<li>Made by the ninja in <abbr title="RAM: 4.25MB">0.1634</abbr> seconds</li>
+			</ul>
+		</div>
+		<br class="clear" />
+	</div>
+</div>
+</body>
+</html>

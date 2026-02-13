@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trackmaster &raquo; Admin Login</title>
+<style type="text/css">
+*:focus
+{
+	outline: 0;
+}
+
+#login
+{
+	margin: 150px auto;
+	width: 400px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#login h2
+{
+	background: url(images/gui/login-logo.png) no-repeat right top;
+	display: block;
+	float: left;
+	height: 90px;
+	margin: 0 4px 0 0;
+	padding: 0;
+	width: 161px;
+}
+
+#login h2 span
+{
+	display: none;
+}
+
+#login form
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 235px;
+	height: 90px;
+	background: #fff url(images/gui/login-bg.png) no-repeat left top;
+}
+
+#login form ul
+{
+	list-style: none;
+	padding: 10px 0 0 0;
+	margin: 0;
+}
+
+#login form ul li.input
+{
+	width: 225px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	background: url(images/gui/login-input-bg.png) no-repeat right top;
+}
+
+#login form ul li.input input
+{
+	width: 140px;
+	height: 20px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	color: #fff;
+	margin-right: 5px;
+}
+
+#login form ul li.submit
+{
+	width: 225px;
+	height: 20px;
+	background: transparent url(images/gui/login-submit-bg.png) no-repeat right top;
+	border: 0;
+	text-align: right;
+}
+
+#login form ul li.submit input
+{
+	width: 212px;
+	height: 20px;
+	margin: 0 0 0 4px;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	background: transparent;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #fff;
+}
+
+#login label
+{
+	font-size: 8pt;
+	margin-right: 5px;
+	color: #fff;
+	font-weight: bold;
+}
+
+#login div.warning
+{
+	clear: both;
+	margin: 0;
+	padding: 0;
+	width: 400px;
+	height: 34px;
+	background: url(images/gui/login-warning-bg.png) no-repeat left bottom;
+}
+
+#login div.warning p
+{
+	font: bold 8pt/34px Helvetica, Arial, sans-serif;
+	color: #fff;
+	margin: 0;
+	padding: 4px 0 0 0;
+	width: 400px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function focusit() {
+		document.getElementById('user_name').focus();
+	}
+	window.onload = focusit;
+</script>
+</head>
+<body>
+
+	<div id="login">
+		<h2><span>Trackmaster Admin Login</span></h2>
+		<form id="login_form" name="login" method="post" action="#">
+			<ul>
+				<li class="input"><label>Username</label> <input id="user_name" name="login[user_name]" type="text" /></li>
+				<li class="input"><label>Password</label> <input id="user_pass" name="login[user_pass]" type="password" /></li>
+				<li class="submit"><input name="submit" type="submit" value="Login" /></li>
+			</ul>
+		</form>
+		<div class="warning"></div>
+	</div>
+</body>
+</html>

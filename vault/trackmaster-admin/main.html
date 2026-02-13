@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trackmaster &raquo; Overview</title>
+<link type="text/css" rel="stylesheet" href="css/master.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tablesorter.js"></script>
+<script type="text/javascript" src="js/tablesorter_parsers.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a[rel*=show]').click(function() {
+		$("#" + this.rel.match(/show\[(\w+)\]/)[1]).toggle();
+		return false;
+	});
+	$(".tablesorter").tablesorter();
+	$(".tablesorter").each(function() {
+		var odd = false;
+		$(this).find("tbody tr").each(function() {
+			if (odd) $(this).addClass("odd");
+			odd = !odd;
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div id="master">
+	<div id="top">
+		<h1 id="header"><span>Trackmaster</span></h1>
+		<div id="navigation">
+			<p>
+				<a href="main.html">Main</a> &middot;
+				<a href="cdrs.html">PBX CDRs</a> &middot;
+				<a href="tickets.html">Ticket Stats</a> &middot;
+				<a href="porting-shipping.html">Shipping Stats</a> &middot;
+				<a href="porting-shipping.html">Porting Stats</a> &middot;
+				<a href="users.html">Manage Users</a> &middot;
+				<a href="dslr.html">DSLR User List</a> &middot;
+				<a href="schedule.html">Employee Schedule</a>
+			</p>
+			<p class="options"><a href="login.html">Logout</a></p>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div id="content_header">
+			<h2>Trackmaster Overview for January 29, 2009</h2>
+			<div id="sub_navigation">
+				<a href="#" rel="show[sub_navigation_options]">Change Date</a>
+			</div>
+			<br class="clear" />
+		</div>
+
+		<div id="sub_navigation_options" class="sub_navigation_options">
+			<div class="form">
+				<form id="sub_navigation_form" action="#" method="post">
+					<p><span>Date</span>
+						<select name="date[month]"><option>January</option></select>
+						<select name="date[day]"><option>29</option></select>
+						<select name="date[year]"><option>2009</option></select>
+						<input type="submit" name="submit" value="Go &raquo;" />
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<table id="main_stats" style="width: 100%;" cellpadding="0">
+			<tr>
+				<!-- LEFT COLUMN: PBX CDR Stats -->
+				<td style="width: 300px; vertical-align: top;">
+
+					<div class="table_wrapper">
+						<h3>PBX CDRs: Tech Support</h3>
+						<table class="tablesorter" cellspacing="0">
+							<thead><tr><th>Agent</th><th>Total</th><th>Avg Length</th></tr></thead>
+							<tbody>
+								<tr><td><a href="cdrs.html">Dan Mitchell</a></td><td>47</td><td>4:32</td></tr>
+								<tr><td><a href="cdrs.html">Karen Webb</a></td><td>42</td><td>5:11</td></tr>
+								<tr><td><a href="cdrs.html">Steve Russo</a></td><td>38</td><td>6:04</td></tr>
+								<tr><td><a href="cdrs.html">Laura Chen</a></td><td>35</td><td>4:58</td></tr>
+								<tr><td><a href="cdrs.html">Mike Brennan</a></td><td>31</td><td>5:45</td></tr>
+								<tr><td><a href="cdrs.html">Rick Torres</a></td><td>28</td><td>7:12</td></tr>
+							</tbody>
+							<tfoot><tr><th>Total</th><td>221</td><td>5:37</td></tr></tfoot>
+						</table>
+					</div>
+
+					<div class="table_wrapper">
+						<h3>PBX CDRs: Sales/Billing</h3>
+						<table class="tablesorter" cellspacing="0">
+							<thead><tr><th>Agent</th><th>Total</th><th>Avg Length</th></tr></thead>
+							<tbody>
+								<tr><td><a href="cdrs.html">Jeff Coleman</a></td><td>34</td><td>3:22</td></tr>
+								<tr><td><a href="cdrs.html">Amy Dalton</a></td><td>29</td><td>4:05</td></tr>
+								<tr><td><a href="cdrs.html">Tom Sadler</a></td><td>22</td><td>3:48</td></tr>
+							</tbody>
+							<tfoot><tr><th>Total</th><td>85</td><td>3:45</td></tr></tfoot>
+						</table>
+					</div>
+
+				</td>
+				<td style="width: 15px;"></td>
+
+				<!-- CENTER COLUMN: Ticket Stats -->
+				<td style="width: 450px; vertical-align: top;">
+
+					<div class="table_wrapper">
+						<h3>Tickets by Department</h3>
+						<table class="tablesorter" cellspacing="0">
+							<thead><tr><th>Department</th><th>Open @ 8am</th><th>Open Now</th><th>Diff</th></tr></thead>
+							<tbody>
+								<tr><td>General Support</td><td>42</td><td>38</td><td style="color:green;">-4</td></tr>
+								<tr><td>Sales</td><td>15</td><td>12</td><td style="color:green;">-3</td></tr>
+								<tr><td>Billing</td><td>23</td><td>25</td><td style="color:red;">+2</td></tr>
+								<tr><td>Porting</td><td>8</td><td>6</td><td style="color:green;">-2</td></tr>
+								<tr><td>Abuse</td><td>3</td><td>3</td><td>0</td></tr>
+							</tbody>
+							<tfoot><tr><th>Total</th><td>91</td><td>84</td><td style="color:green;">-7</td></tr></tfoot>
+						</table>
+					</div>
+
+					<div class="table_wrapper">
+						<h3>Tickets by Agent</h3>
+						<table class="tablesorter" cellspacing="0">
+							<thead><tr><th>Agent</th><th>R</th><th>C</th><th>O</th><th>H</th><th>M</th><th>Total</th></tr></thead>
+							<tbody>
+								<tr><td><a href="tickets.html">Dan Mitchell</a></td><td>12</td><td>8</td><td>3</td><td>1</td><td>2</td><td>26</td></tr>
+								<tr><td><a href="tickets.html">Karen Webb</a></td><td>9</td><td>6</td><td>4</td><td>0</td><td>1</td><td>20</td></tr>
+								<tr><td><a href="tickets.html">Steve Russo</a></td><td>8</td><td>5</td><td>2</td><td>2</td><td>0</td><td>17</td></tr>
+								<tr><td><a href="tickets.html">Laura Chen</a></td><td>7</td><td>4</td><td>1</td><td>0</td><td>3</td><td>15</td></tr>
+								<tr><td><a href="tickets.html">Jeff Coleman</a></td><td>5</td><td>3</td><td>2</td><td>1</td><td>0</td><td>11</td></tr>
+								<tr><td><a href="tickets.html">Amy Dalton</a></td><td>4</td><td>2</td><td>1</td><td>0</td><td>1</td><td>8</td></tr>
+							</tbody>
+							<tfoot><tr><th>Total</th><td>45</td><td>28</td><td>13</td><td>4</td><td>7</td><td>97</td></tr></tfoot>
+						</table>
+					</div>
+
+				</td>
+				<td style="width: 15px;"></td>
+
+				<!-- RIGHT COLUMN: Shipping, Porting, Schedule -->
+				<td style="vertical-align: top;">
+
+					<div class="table_wrapper">
+						<h3>Shipping Stats</h3>
+						<table class="tablesorter" cellspacing="0">
+							<thead><tr><th>Agent</th><th>Jobs</th></tr></thead>
+							<tbody>
+								<tr><td><a href="porting-shipping.html">Amy Dalton</a></td><td>8</td></tr>
+								<tr><td><a href="porting-shipping.html">Tom Sadler</a></td><td>5</td></tr>
+								<tr><td><a href="porting-shipping.html">Rick Torres</a></td><td>3</td></tr>
+							</tbody>
+							<tfoot><tr><th>Total</th><td>16</td></tr></tfoot>
+						</table>
+					</div>
+
+					<div class="table_wrapper">
+						<h3>Porting Stats</h3>
+						<table class="tablesorter" cellspacing="0">
+							<thead><tr><th>Agent</th><th>Jobs</th></tr></thead>
+							<tbody>
+								<tr><td><a href="porting-shipping.html">Laura Chen</a></td><td>6</td></tr>
+								<tr><td><a href="porting-shipping.html">Steve Russo</a></td><td>4</td></tr>
+								<tr><td><a href="porting-shipping.html">Karen Webb</a></td><td>2</td></tr>
+							</tbody>
+							<tfoot><tr><th>Total</th><td>12</td></tr></tfoot>
+						</table>
+					</div>
+
+					<div class="table_wrapper">
+						<h3>Today's Schedule</h3>
+						<table cellspacing="0">
+							<thead><tr><th>Name</th><th>Hours</th></tr></thead>
+							<tbody>
+								<tr><td>Dan Mitchell</td><td>8:00am - 5:00pm</td></tr>
+								<tr><td>Karen Webb</td><td>8:00am - 5:00pm</td></tr>
+								<tr><td>Steve Russo</td><td>9:00am - 6:00pm</td></tr>
+								<tr><td>Laura Chen</td><td>8:00am - 5:00pm</td></tr>
+								<tr><td>Mike Brennan</td><td>10:00am - 7:00pm</td></tr>
+								<tr><td>Rick Torres</td><td>12:00pm - 9:00pm</td></tr>
+								<tr><td>Jeff Coleman</td><td>8:00am - 5:00pm</td></tr>
+								<tr><td>Amy Dalton</td><td>9:00am - 6:00pm</td></tr>
+								<tr><td>Tom Sadler</td><td>10:00am - 7:00pm</td></tr>
+							</tbody>
+						</table>
+					</div>
+
+				</td>
+			</tr>
+		</table>
+
+		<div id="footer">
+			<ul id="ninja">
+				<li>Made by the ninja in <abbr title="RAM: 4.25MB">0.1892</abbr> seconds</li>
+			</ul>
+		</div>
+		<br class="clear" />
+	</div>
+</div>
+</body>
+</html>
