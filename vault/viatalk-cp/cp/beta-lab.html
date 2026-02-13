@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ViaTalk CP - VT Beta Lab</title>
+<link type="text/css" rel="stylesheet" href="../css/vt_cp.css" />
+</head>
+<body>
+<table class="liquidheight" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+      <div id="container">
+        <div id="header">
+          <div id="logo"><a href="index.html"><img src="../images/logo2.png" alt="ViaTalk" border="0" /></a></div>
+          <ul id="navtop">
+            <li><a href="#">ViaTalk.com</a></li>
+            <li><a href="#">Referral Program</a></li>
+            <li><a href="#">Network Status</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+          <div id="numberswap">
+            <form action="#">
+              <span>Currently Using #: </span>
+              <select name="currentnum">
+                <option>(555) 555-1234</option>
+                <option>(555) 555-5678</option>
+              </select>
+              <input type="image" src="../images/viatalk/button_change.png" align="absbottom" alt="Change" />
+            </form>
+          </div>
+          <ul id="navmain">
+            <li id="mainmenu"><a href="index.html">Main Menu</a></li>
+            <li id="myinfo"><a href="my-info.html">My Info</a></li>
+            <li id="contacts"><a href="contacts.html">Contacts</a></li>
+            <li id="tickets"><a href="tickets.html">Tickets</a></li>
+            <li id="faq"><a href="#">FAQ</a></li>
+            <li id="packages"><a href="packages.html">Packages</a></li>
+            <li id="transactions"><a href="transactions.html">Transactions</a></li>
+            <li id="feedback"><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+        <div id="content">
+          <ul id="alerts">
+            <li><a href="transactions.html" class="active">Current Invoice</a></li>
+            <li id="right"><a href="voicemail-inbox.html" class="active">3 Voicemails</a></li>
+          </ul>
+
+          <h1><a href="#" class="lab">VT Beta Lab</a></h1>
+
+          <h2>What Is The Beta Lab?</h2>
+          <p>This page allows you to take a look at the new features that we are developing to improve your service.  It will list the features that we are currently beta testing and  will show (for a little while) the features that moved from beta testing to full launch. You can also submit suggestions for new features you would like to see for your future phone service.</p>
+
+          <h2>Beta Testing</h2>
+          <p>This section shows you what features have been released for limited use.  These features are currently being tested and will be rolled out once bugs are identified and solved.</p>
+          <p>Features marked by <img src="../images/viatalk/icon_beta.gif" alt="Beta" /> are currently in beta.  If you believe you have identified a bug in a beta feature, please <a href="#" onclick="document.getElementById('lab_submit_bug').style.display = document.getElementById('lab_submit_bug').style.display === 'none' ? 'block' : 'none'; return false;">submit a bug report</a> to our developers.</p>
+
+          <div id="lab_submit_bug" style="display: none">
+            <div class="addontop">
+              <form action="#">
+                <input type="hidden" name="subject" value="[VT Lab] Bug Report" />
+                <div style="width:300px;margin:0 auto;">
+                  <p>Message: <br /><textarea name="message" rows="5" cols="35"></textarea></p>
+                  <p><input type="submit" value="Submit" name="submit" /></p>
+                </div>
+              </form>
+              <div class="clear"></div>
+            </div>
+            <div class="addonbot"></div>
+          </div>
+
+          <ul class="lab_list">
+            <li><b>Just Added</b> Adapter Settings - Toggle Call Waiting on or off</li>
+            <li><b>Just Added</b> Incoming Routing - Routes can now be enabled/disabled individually</li>
+            <li><b>Just Added</b> Speed Dial - International phone numbers are now supported</li>
+            <li><b>Just Added</b> Speed Dial - Add an optional name with your speed dials</li>
+            <li><b>Just Added</b> Adapter Settings - Control advanced settings for your ViaTalk adapter.</li>
+            <li><b>Just Added</b> Block Invalid Callers - Prevents invalid numbers from reaching your ViaTalk phone</li>
+            <li><b>Just Added</b> Assign a secondary password to your Call Logs</li>
+            <li><b>Just Added</b> Outgoing/Incoming Routing now supports call recording</li>
+            <li><b>Just Added</b> Export your Call Logs as Excel or XML files</li>
+            <li><b>Just Added</b> Voicemail Whitelist - Setup phone numbers to access your VM remotely without the need to enter a mailbox or PIN</li>
+          </ul>
+
+          <h2>Full Release</h2>
+          <p>Once the feature is released for all ViaTalk Plans, it will be taken from the Beta Testing Section and placed here as well as in the Control Panel itself.  These features will remain in this section for a short while as a reminder of new features that have just been developed and released for full use.</p>
+
+          <ul class="lab_list">
+            <li>Voicemail Notifications now available via AOL Instant Messenger.</li>
+            <li>Customizable Notification Formats let you change the text formatting on your voicemail alerts.</li>
+            <li>Blacklist by Caller ID allow you to block incoming calls by name using full or partial text matches.</li>
+            <li>Outgoing Call Routing lets you control what happens when certain numbers are dialed.  Examples: Map 311 to a local number or block the kids from calling certain numbers.</li>
+            <li>Pattern Match Filters/DND Whitelist - Whitelist numbers that are blocked via Pattern Match Filters, or Do Not Disturb.</li>
+            <li>Incoming Call Routing now gives you the options to forward calls to a generic disconnect message or have specific numbers simultaneously ring to the number of your choosing.</li>
+            <li>View Call Logs for your Virtual Numbers</li>
+          </ul>
+
+          <h2>Submit A Suggestion</h2>
+          <p>We're always looking for ways to improve your phone service.  If you have an idea for a new feature <a href="#" onclick="document.getElementById('lab_submit_suggestion').style.display = document.getElementById('lab_submit_suggestion').style.display === 'none' ? 'block' : 'none'; return false;">let us know</a>!</p>
+
+          <div id="lab_submit_suggestion" style="display: none">
+            <div class="addontop">
+              <form action="#">
+                <input type="hidden" name="subject" value="[VT Lab] Feature Suggestion" />
+                <div style="width:300px;margin:0 auto;">
+                  <p>Message: <br /><textarea name="message" rows="5" cols="35"></textarea></p>
+                  <p><input type="submit" value="Submit" name="submit" /></p>
+                </div>
+              </form>
+              <div class="clear"></div>
+            </div>
+            <div class="addonbot"></div>
+          </div>
+
+          <div style="margin-top:20px">
+            <a href="index.html" class="back">Back</a>
+          </div>
+
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+      <div id="footer">
+        <ul id="navfoot1">
+          <li><a href="index.html">main menu</a></li>
+          <li><a href="my-info.html">my info</a></li>
+          <li><a href="contacts.html">contacts</a></li>
+          <li><a href="tickets.html">tickets</a></li>
+          <li><a href="#">faq</a></li>
+          <li><a href="packages.html">packages</a></li>
+          <li><a href="transactions.html">transactions</a></li>
+          <li><a href="feedback.html">customer feedback</a></li>
+        </ul>
+        <ul id="navfoot2">
+          <li><a href="#">ViaTalk Forums</a>|</li>
+          <li><a href="#">Network Status</a>|</li>
+          <li><a href="#">tos</a>|</li>
+          <li><a href="#">logout</a></li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
