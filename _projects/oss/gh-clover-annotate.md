@@ -43,6 +43,7 @@ We commonly ship a `.github/workflows/coverage.yml` file with something like
 this:
 
 ```yaml
+{% raw %}
 name: Coverage
 
 on:
@@ -106,6 +107,7 @@ jobs:
         run: |
           gh extension install built-fast/gh-clover-annotate
           gh clover-annotate clover.xml >> "$GITHUB_STEP_SUMMARY"
+{% endraw %}
 ```
 
 That allows us to go to the Actions tab on one of our repos and then click
