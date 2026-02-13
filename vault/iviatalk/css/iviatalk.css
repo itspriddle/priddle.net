@@ -1,0 +1,664 @@
+/**
+ * CSS for iViaTalk
+ *
+ * Author: Joshua Priddle <josh.priddle@hostrocket.com>
+ * Date: April 2008
+ */
+
+body
+{
+	background-color: #fff;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0;
+	width: 100%;
+	min-width: 850px;
+}
+
+abbr
+{
+	border-bottom: 1px dotted #000;
+}
+
+#content
+{
+	margin: auto;
+	width: 90%;
+}
+
+#content h2
+{
+	border-bottom: 1px solid #DDD;
+	margin: 20px auto;
+}
+
+/* @group Header */
+
+#top
+{
+	background: url(../images/gui/top_bg.jpg) repeat-x top;
+	height: 122px;
+	width: 100%;
+}
+
+#header
+{
+	background: url(../images/gui/vt-logo.png) no-repeat center center;
+	height: 72px;
+	margin: 0;
+	width: 160px;
+}
+
+#header span
+{
+	display: none;
+}
+
+/* @group Navigation */
+
+#navigation
+{
+	height: 26px;
+	width: 100%;
+}
+
+#navigation ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0 15px;
+}
+
+#navigation li
+{
+	display: block;
+	float: left;
+	font-size: 8pt;
+	font-weight: 700;
+	margin: 0 4px 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+#navigation li a
+{
+	background-color: transparent;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 26px;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+#navigation li a span
+{
+	display: none;
+}
+
+#navigation li a#nav_home
+{
+	background-image: url(../images/gui/nav/nav-home.png);
+	width: 68px;
+}
+
+#navigation li a#nav_glossary
+{
+	background-image: url(../images/gui/nav/nav-glossary.png);
+	width: 84px;
+}
+
+#navigation li a#nav_orders
+{
+	background-image: url(../images/gui/nav/nav-orderchanges.png);
+	width: 119px;
+}
+
+#navigation li a#nav_knowledgebase
+{
+	background-image: url(../images/gui/nav/nav-knowledgebase.png);
+	width: 125px;
+}
+
+#navigation li a#nav_notebooks
+{
+	background-image: url(../images/gui/nav/nav-notebooks.png);
+	width: 96px;
+}
+
+#navigation li a#nav_servers
+{
+	background-image: url(../images/gui/nav/nav-servers.png);
+	width: 77px;
+}
+
+#navigation li a#nav_links
+{
+	background-image: url(../images/gui/nav/nav-links.png);
+	width: 66px;
+}
+
+#navigation li a#nav_users
+{
+	background-image: url(../images/gui/nav/nav-users.png);
+	width: 68px;
+}
+
+#navigation li a#nav_level2
+{
+	background-image: url(../images/gui/nav/nav-level2.png);
+	width: 74px;
+}
+
+#navigation li a#nav_tools
+{
+	background-image: url(../images/gui/nav/nav-tools.png);
+	width: 67px;
+}
+
+#navigation li a#nav_profile
+{
+	background-image: url(../images/gui/nav/nav-profile.png);
+	width: 71px;
+}
+
+#navigation li a#nav_logout
+{
+	background-image: url(../images/gui/nav/nav-logout.png);
+	width: 74px;
+}
+
+#navigation li a.selected:hover, #navigation li a.unselected:link, #navigation li a.unselected:active, #navigation li a.unselected:visited
+{
+	background-position: 0 -26px;
+}
+
+#navigation li a.selected:link, #navigation li a.selected:active, #navigation li a.selected:visited, #navigation li a.unselected:hover
+{
+	background-position: 0 0;
+}
+
+/* @end */
+
+/* @group Sub-navigation */
+
+#sub_navigation
+{
+	background: url(../images/gui/subnav_bg.jpg) repeat-x;
+	height: 30px;
+	width: 100%;
+}
+
+#sub_navigation ul
+{
+	list-style: none;
+	margin: 0;
+	height: 30px;
+	padding: 0 15px;
+	font-size: 8pt;
+}
+
+#sub_navigation li
+{
+	float: left;
+	font-size: 8pt;
+	line-height: 25px;
+	font-weight: 700;
+	margin: 0 15px 0 0;
+	padding: 0;
+}
+
+#sub_navigation a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#sub_navigation a:hover
+{
+	text-decoration: underline;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Forms */
+
+*:focus
+{
+	outline: 0;
+}
+
+fieldset
+{
+	border: 0;
+}
+
+form#lcr_search,
+form.server_info,
+form.server_info label,
+form.server_info legend
+{
+	font-size: 8pt;
+}
+
+form#server_edit input.text,
+form#users input.text,
+form#lcr_search input.text
+{
+	border: 0;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	height: 100%;
+	padding: 4px 0 4px 0;
+	text-indent: 4px;
+	font-size: 10pt;
+	font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+}
+
+/* @end */
+
+/* @group General */
+
+/* @group Tables */
+
+table.sortable
+{
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;
+	background-color: #CECECE;
+}
+
+table.sortable thead tr th, table.sortable tfoot tr th
+{
+	border: 1px solid #fff;
+	background-color: #CDDFF5;
+	font-size: 8pt;
+	padding: 4px;
+}
+
+table.sortable thead tr .header
+{
+	background-image: url(../images/gui/tablesorter/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+table.sortable tbody td
+{
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+
+table.sortable tbody tr.odd td
+{
+	background-color: #CDDFF5;
+}
+
+table.sortable thead tr .headerSortUp
+{
+	background-image: url(../images/gui/tablesorter/asc.gif);
+}
+
+table.sortable thead tr .headerSortDown
+{
+	background-image: url(../images/gui/tablesorter/desc.gif);
+}
+
+table.sortable tbody tr.disabled td
+{
+	background-color: #FBE6F2;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Footer */
+
+ul#ninja
+{
+	background: transparent url(../images/logos/ninja-logo.png) no-repeat 0 0;
+	height: 25px;
+	list-style: none;
+	margin: 5px auto;
+	padding: 0;
+	width: 250px;
+}
+
+ul#ninja li
+{
+	display: block;
+	float: left;
+	font-weight: 700;
+	font-size: 8pt;
+	line-height: 28px;
+	margin-left: 25px;
+}
+
+#footer
+{
+	clear: both;
+	width: 90%;
+	border-top: 1px solid #DDD;
+	margin: 20px auto;
+}
+
+/* @end */
+
+/* @group Warnings */
+
+#warnings
+{
+	margin: 15px 0 5px 0;
+	font-size: 10pt;
+}
+
+#warnings .warning
+{
+	background: #FBE6F2;
+	border: 1px solid #D893A1;
+	color: #000;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#warnings .success
+{
+	background: #B6DE8E;
+	border: 1px solid #8BA609;
+	color: #000;
+	margin: 5px 0 1px 0;
+	padding: 5px;
+}
+
+#warnings p
+{
+	margin: 0;
+	padding: 0;
+}
+
+/* @end */
+
+/* @group Pages */
+
+/* @group Homepage Feeds */
+
+/* @group Feedbox */
+
+#feeds div.feed_col
+{
+	width: 32%;
+	min-width: 32%;
+	min-height: 200px;
+	height: 100%;
+	float: left;
+	display: block;
+	margin: 0 1% 0 0;
+}
+
+.placeholder
+{
+	border: 2px dashed #5B5B5B;
+	width: 100%;
+}
+
+#feeds div.feed_container
+{
+	width: 100%;
+	border: 1px solid #5B5B5B;
+	margin: 0 0 10px 0;
+}
+
+#feeds div.feed_container div.header
+{
+	width: 100%;
+	height: 26px;
+	background: url(../images/gui/feed-header-bg.jpg) repeat-x;
+	font-size: 10pt;
+	line-height: 26px;
+}
+
+#feeds div.feed_container div.header div.title
+{
+	float: left;
+	text-indent: 4px;
+}
+
+#feeds div.feed_container div.header div.options
+{
+	float: right;
+}
+
+#feeds div.feed_container div.body
+{
+	background-color: #FFF;
+	padding: 4px;
+	margin: 0;
+}
+
+#feeds div.feed_box
+{
+	width: 100%;
+	max-width: 600px;
+	margin: 0 0 10px 0;
+}
+
+#feeds div.feed_box div.header
+{
+	background: url(../images/gui/feeds/header-right.jpg) no-repeat center right;
+	height: 25px;
+}
+
+#feeds div.feed_box div.header h3
+{
+	background: url(../images/gui/feeds/header-left.jpg) no-repeat center left;
+	height: 25px;
+	float: left;
+	font-size: 10pt;
+	line-height: 25px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	text-indent: 5px;
+}
+
+#feeds div.feed_box div.header div.header_buttons
+{
+	height: 25px;
+	line-height: 25px;
+	float: right;
+	padding-right: 5px;
+}
+
+#feeds div.feed_box div.header div.header_buttons a
+{
+	width: 14px;
+	height: 14px;
+	display: block;
+	float: left;
+	margin: 6px 0 4px 4px;
+	text-decoration: none;
+	background-image: url(../images/gui/feeds/header-buttons.png);
+	background-repeat: no-repeat;
+}
+
+#feeds div.feed_box div.body
+{
+	border-top: 0;
+	border-left: 1px solid #747474;
+	border-right: 1px solid #747474;
+	border-bottom: 1px solid #747474;
+	margin: 0;
+	padding: 5px;
+}
+
+table#feeds
+{
+	width: 100%;
+}
+
+table#feeds td
+{
+	width: 33%;
+	vertical-align: top;
+}
+
+table#feeds td.spacer
+{
+	width: 10px;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Tools */
+
+div.tools_button
+{
+	width: 350px;
+	height: 65px;
+	float: left;
+	border: 1px solid #CCC;
+	padding: 0 0 0 0;
+	margin: 0 10px 10px 0;
+}
+
+div.tools_button h3
+{
+	margin: 5px 5px 5px 65px;
+	border-bottom: 1px solid #CCC;
+	font-size: 12pt;
+}
+
+div.tools_button p
+{
+	margin: 0 5px 0 65px;
+	padding: 0;
+	font-size: 8pt;
+}
+
+div#tools_portscanner
+{
+	background: transparent url(../images/gui/tools-portscanner-icon.png) no-repeat left center;
+}
+
+div#tools_fax_to_email_checker
+{
+	background: transparent url(../images/gui/tools-fax-icon.png) no-repeat left center;
+}
+
+div#tools_emulators
+{
+	background: transparent url(../images/gui/tools-emulators-icon.png) no-repeat 5px center;
+}
+
+div#tools_overage_calculator
+{
+	background: transparent url(../images/gui/tools-overage-calculator-icon.png) no-repeat left center;
+}
+
+div#tools_cdr_lookup
+{
+	background: transparent url(../images/gui/tools-cdr-icon.png) no-repeat 2px center;
+}
+
+div#tools_lcr_search
+{
+	background: transparent url(../images/gui/tools-lcr-icon.png) no-repeat 5px center;
+}
+
+div#tools_beta_problems
+{
+	background: transparent url(../images/gui/tools-beta-problems.png) no-repeat 2px center;
+}
+
+div#tools_timezones
+{
+	background: transparent url(../images/gui/tools-timezones-icon.png) no-repeat 2px center;
+}
+
+/* @end */
+
+/* @group Servers */
+
+table#server_list td
+{
+	line-height: 16px;
+}
+
+table#server_list td.edit a
+{
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url(../images/gui/server_edit.png) no-repeat center center;
+}
+
+table#server_list td.drop a
+{
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url(../images/gui/server_delete.png) no-repeat center center;
+}
+
+table#server_list td.edit a span,
+table#server_list td.drop a span
+{
+	display: none;
+}
+
+table#server_list td.edit,
+table#server_list td.drop
+{
+	width: 16px;
+	height: 16px;
+}
+
+table#server_list th.hostname
+{
+	width: 75px;
+}
+
+table#server_list th.ip
+{
+	width: 85px;
+}
+
+table#server_list th.trunk
+{
+	width: 55px;
+}
+
+table#server_list th.data_center
+{
+	width: 90px;
+}
+
+table#server_list th.location
+{
+	width: 90px;
+}
+
+table#server_list th.options
+{
+	width: 40px;
+}
+
+table#server_list td.trunk
+{
+	text-align: center;
+}
+
+/* @end */
+
+/* @end */

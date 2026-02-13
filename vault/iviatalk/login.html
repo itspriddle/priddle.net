@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVia:Talk &raquo; Login</title>
+<link type="text/css" rel="stylesheet" href="css/login.css" />
+<script type="text/javascript">
+	function focusit() {
+		document.getElementById('user_name').focus();
+	}
+	window.onload = focusit;
+</script>
+</head>
+<body>
+
+		<div id="login">
+			<h2><span>via:talk Login</span></h2>
+			<form id="login_form" name="login" method="post" action="#">
+				<ul>
+					<li class="input"><label for="user_name">Username</label> <input id="user_name" name="user_name" type="text" /></li>
+					<li class="input"><label for="user_pass">Password</label> <input id="user_pass" name="user_pass" type="password" /></li>
+					<li class="submit"><input name="submit" type="submit" value="Login" onclick="window.location='index.html'; return false;" /></li>
+				</ul>
+			</form>
+		</div>
+</body>
+</html>

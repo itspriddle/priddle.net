@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iVia:Talk &raquo; Servers</title>
+<link type="text/css" rel="stylesheet" href="css/iviatalk.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tablesorter.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#server_list").tablesorter({
+		widgets: ['zebra']
+	});
+});
+</script>
+</head>
+<body>
+<div id="master">
+	<div id="top">
+		<h1 id="header"><span>iViaTalk</span></h1>
+		<div id="navigation">
+			<ul>
+				<li><a href="index.html" id="nav_home" class="unselected" title="Home"><span>Home</span></a></li>
+				<li><a href="#" id="nav_glossary" class="unselected" title="Glossary"><span>Glossary</span></a></li>
+				<li><a href="#" id="nav_orders" class="unselected" title="Order Changes"><span>Order Changes</span></a></li>
+				<li><a href="#" id="nav_knowledgebase" class="unselected" title="Knowledgebase"><span>Knowledgebase</span></a></li>
+				<li><a href="#" id="nav_notebooks" class="unselected" title="Notebooks"><span>Notebooks</span></a></li>
+				<li><a href="servers.html" id="nav_servers" class="selected" title="Servers"><span>Servers</span></a></li>
+				<li><a href="#" id="nav_links" class="unselected" title="Links"><span>Links</span></a></li>
+				<li><a href="#" id="nav_users" class="unselected" title="Users"><span>Users</span></a></li>
+				<li><a href="tools.html" id="nav_tools" class="unselected" title="Tools"><span>Tools</span></a></li>
+				<li><a href="#" id="nav_profile" class="unselected" title="Profile"><span>Profile</span></a></li>
+				<li><a href="login.html" id="nav_logout" class="unselected" title="Logout"><span>Logout</span></a></li>
+			</ul>
+		</div>
+		<div id="sub_navigation">
+			<ul>
+				<li><a href="servers.html">Server List</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+
+	<h2>Server List</h2>
+	<table id="server_list" cellspacing="1" class="sortable">
+		<thead>
+			<tr>
+				<th class="hostname">Hostname</th>
+				<th class="ip">IP Address</th>
+				<th class="trunk">Trunk</th>
+				<th class="data_center">Data Center</th>
+				<th class="location">Location</th>
+				<th class="dns_names">DNS Names</th>
+				<th class="disabled">Active</th>
+				<th colspan="2" class="options">Options</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="hostname">ast-prod-01</td>
+				<td class="ip">10.20.1.101</td>
+				<td class="trunk">T1</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">sip1.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-02</td>
+				<td class="ip">10.20.1.102</td>
+				<td class="trunk">T2</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">sip2.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-03</td>
+				<td class="ip">10.20.1.103</td>
+				<td class="trunk">T3</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">sip3.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-04</td>
+				<td class="ip">10.20.1.104</td>
+				<td class="trunk">T4</td>
+				<td class="data_center">365 Data Centers</td>
+				<td class="location">Tampa, FL</td>
+				<td class="dns_names">sip4.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-05</td>
+				<td class="ip">10.20.1.105</td>
+				<td class="trunk">T5</td>
+				<td class="data_center">365 Data Centers</td>
+				<td class="location">Tampa, FL</td>
+				<td class="dns_names">sip5.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-06</td>
+				<td class="ip">10.20.1.106</td>
+				<td class="trunk">T6</td>
+				<td class="data_center">365 Data Centers</td>
+				<td class="location">Tampa, FL</td>
+				<td class="dns_names">sip6.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-07</td>
+				<td class="ip">10.20.1.107</td>
+				<td class="trunk">T7</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">sip7.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">ast-prod-08</td>
+				<td class="ip">10.20.1.108</td>
+				<td class="trunk">T8</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">sip8.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr class="disabled">
+				<td class="hostname">ast-beta-01</td>
+				<td class="ip">10.20.2.201</td>
+				<td class="trunk">B1</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">beta1.viatalk.com</td>
+				<td>No</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">db-master-01</td>
+				<td class="ip">10.20.3.10</td>
+				<td class="trunk">&mdash;</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">db1.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">db-slave-01</td>
+				<td class="ip">10.20.3.11</td>
+				<td class="trunk">&mdash;</td>
+				<td class="data_center">365 Data Centers</td>
+				<td class="location">Tampa, FL</td>
+				<td class="dns_names">db2.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+			<tr>
+				<td class="hostname">web-01</td>
+				<td class="ip">10.20.4.50</td>
+				<td class="trunk">&mdash;</td>
+				<td class="data_center">Steadfast</td>
+				<td class="location">Chicago, IL</td>
+				<td class="dns_names">www.viatalk.com, portal.viatalk.com</td>
+				<td>Yes</td>
+				<td class="edit"><a href="#" title="Edit Server"><span>Edit</span></a></td>
+				<td class="drop"><a href="#" title="Drop Server"><span>Drop</span></a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	</div>
+
+	<div id="footer">
+		<ul id="ninja">
+			<li>Made by the ninja in 0.1204 seconds</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
