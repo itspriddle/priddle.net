@@ -107,3 +107,4 @@ The frontend uses Blade templates with Bootstrap 5, Stripe.js for payment
 processing, and integrations for analytics tracking, affiliate attribution
 (Post Affiliate Pro), and live chat.
 
+[View archive of the site &rarr;](/vault/gocart/)

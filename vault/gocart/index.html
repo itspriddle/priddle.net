@@ -1,0 +1,1483 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html data-layout="topnav" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout - A2 Hosting</title>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Toast plugin css -->
+    <link rel="stylesheet" href="vendor/jquery.toast.min.css">
+
+    <!-- Theme Config Js -->
+    <script src="js/hyper-config.js"></script>
+
+    <!-- App css -->
+    <link rel="stylesheet" href="css/app-a2.min.css" type="text/css" id="app-style">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" id="general-style">
+
+    <!-- Icons css -->
+    <link href="css/icons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Font Awesome css -->
+    <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Static CC form styling to match Stripe Elements */
+        .cc-field {
+            border: 1px solid #e2e5ec;
+            border-radius: 4px;
+            padding: 10px 12px;
+            font-size: 14px;
+            transition: border-color 0.15s ease;
+            background: #fff;
+        }
+        .cc-field:focus {
+            border-color: #128413;
+            outline: none;
+            box-shadow: 0 0 0 1px rgba(18, 132, 19, 0.25);
+        }
+        .cc-field::placeholder {
+            color: #aab7c4;
+        }
+        /* Demo toast override */
+        .jq-toast-wrap { z-index: 9999 !important; }
+    </style>
+</head>
+
+<body class="ff-poppins">
+    <!-- Begin page -->
+    <div class="wrapper">
+
+    <!-- Payment processing modal (visual only) -->
+    <div id="payment-modal" class="modal fade" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-filled bg-success">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <div class="spinner-border text-light avatar-sm text-primary m-2" role="status"></div>
+                        <h4 class="mt-2" id="payment-modal-header">Order In Process</h4>
+                        <h4 class="mt-3 fw-normal">This may take a moment.<br>Do not refresh this page or you could be charged twice.</h4>
+                        <p class="mt-3" id="payment-modal-text">If you aren't automatically redirected,<br>check your email in a few minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account chooser modal (visual only) -->
+    <div id="choose-account-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="choose-account-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-light text-dark">
+                    <h4 class="modal-title" id="choose-account-modalLabel">Choose Your Login Account</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="account_selector_err" class="alert alert-danger mb-3" role="alert" style="display:none">Please select an account.</div>
+                    <div class="fw-bold pb-4">
+                        <label class="form-label text-primary" for="account_selector">Account</label>
+                        <select class="form-control form-select nosave" id="account_selector" name="account_selector" data-val="true">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="continue-account" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product data -->
+    <script>
+        // Made-up billing cycle data for "Startup" Shared Hosting
+        var cycles = {
+            monthly:     { m: 1,  p: "12.99" },
+            annually:    { m: 12, p: "155.88" },
+            triennially: { m: 36, p: "467.64" }
+        };
+        var cycle_names = {
+            monthly: "1",
+            annually: "12",
+            triennially: "36"
+        };
+        // Promo prices (what customer pays)
+        var promo_prices = {
+            monthly:     5.99,
+            annually:    47.88,
+            triennially: 107.64
+        };
+        // Regular prices (strikethrough)
+        var regular_prices = {
+            monthly:     12.99,
+            annually:    155.88,
+            triennially: 467.64
+        };
+        // Config option renewal prices (dedicated IP)
+        var renewal_prices = {
+            dedicatedip: {
+                monthly: "3.99",
+                annually: "47.88",
+                triennially: "143.64"
+            }
+        };
+        var usd_renewal_prices = renewal_prices;
+    </script>
+
+        <form id="form" class="needs-validation" novalidate>
+
+            <!-- ========== Topbar Start ========== -->
+            <div class="navbar-custom" style="z-index: 1046;">
+                <div class="topbar container-fluid">
+                    <div class="d-flex align-items-center gap-lg-2 gap-1">
+                        <!-- Topbar Brand Logo -->
+                        <div class="logo-topbar">
+                            <a href="https://www.a2hosting.com/" class="logo-light">
+                                <span class="logo-lg">
+                                    <img src="images/logo.png" alt="A2 Hosting Logo">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="images/logo-sm.png" alt="A2 Hosting Logo">
+                                </span>
+                            </a>
+                            <a href="https://www.a2hosting.com/" class="logo-dark">
+                                <span class="logo-lg">
+                                    <img src="images/logo-dark.png" alt="A2 Hosting Logo">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="images/logo-dark-sm.png" alt="A2 Hosting Logo">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="topbar-menu d-flex align-items-center gap-3">
+                        <li class="dropdown">
+                            <a class="top-bar-item chat nav-link" href="#" onclick="showDemoToast('Sales chat is not available in demo mode');return false;" title="Chat">
+                                <i class="mdi mdi-comment-multiple-outline font-22"></i> <span class="ms-1 d-none d-md-inline-block">Sales Chat</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="top-bar-item callus nav-link" href="tel:+1(734) 222-4678" title="+1 (734) 222-4678">
+                                <i class="mdi mdi-phone-outline font-22"></i> <span class="ms-1 d-none d-md-inline-block">+1 (734) 222-4678</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown">
+                            <select class="form-select nosave no-validations" name="currency" id="currency" disabled>
+                                <option value="1" selected>USD</option>
+                            </select>
+                        </li>
+
+                        <!-- Product Summary (mobile) -->
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="offcanvas" href="#" title="Cart" role="button" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <i class="mdi mdi-cart-outline font-22"></i>
+                                <span id="cart-size" class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-primary">1</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown" id="userinfo" style="display:none">
+                            <a class="nav-link dropdown-toggle arrow-none nav-user px-2 bg-white border-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i class="ri-user-follow-line font-22"></i>
+                                <div class="d-lg-flex flex-column gap-1 d-none">
+                                    <h6 class="my-0" id="user_name"></h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ========== Topbar End ========== -->
+
+            <!-- content page -->
+            <div class="content-page">
+                <!-- Start Content -->
+                <div class="content">
+                    <!-- container -->
+                    <div class="container-fluid">
+                        <!-- row -->
+                        <div class="row justify-content-center">
+                            <!-- Product Details -->
+                            <div class="col-lg-8 mt-3">
+
+                                <div class="alert alert-danger" id="errorContainer" role="alert" style="display:none">
+                                    <ul id="errorList" class="mb-0"></ul>
+                                </div>
+
+                                <!-- ==================== SECTION 1: ACCOUNT ==================== -->
+                                <input name="authOption" id="register" type="hidden" value="register">
+                                <div class="card">
+                                    <div class="card-body px-2 px-sm-3">
+                                        <div class="container px-0 px-sm-3">
+
+                                            <!-- Section header: 1 Account -->
+                                            <div class="row align-items-center mb-2">
+                                                <div class="col">
+                                                    <div class="avatar-sm d-inline-block">
+                                                        <span class="avatar-title bg-success rounded-circle font-18 fw-bold">1</span>
+                                                    </div>
+                                                    <h4 class="d-inline-block mx-2 text-uppercase ff-poppins text-primary fw-bold font-20 align-items-center">Account</h4>
+                                                </div>
+                                            </div>
+                                            <p class="mb-2 text-black signin">Already have an account? <a href="#" class="fw-bold" data-bs-toggle="modal" data-bs-target="#login-modal">Log In</a></p>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <span class="border border-warning d-block"></span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Login modal -->
+                                            <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <div class="text-center mt-2 mb-4">
+                                                                <a href="https://www.a2hosting.com/" class="text-success">
+                                                                    <span><img src="images/logo-dark.png" alt="A2 Hosting Logo" height="48"></span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="auth-fluids">
+                                                                <div class="auth-fluid-form-box">
+                                                                    <div class="card-body d-flex flex-column h-100 gap-3">
+                                                                        <div class="my-auto">
+                                                                            <h4 class="mt-0">Sign In</h4>
+                                                                            <p class="text-black-75 mb-4">Enter your email address and password to access account.</p>
+                                                                            <div id="loginErrors" class="alert alert-danger mb-3" role="alert" style="display:none"></div>
+                                                                            <div class="mb-3">
+                                                                                <label for="email_l" class="form-label">Email address</label>
+                                                                                <input class="form-control nosave" type="email" id="email_l" name="email_l" placeholder="Enter your email" tabindex="1">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="password_l" class="form-label">Password</label>
+                                                                                <a class="float-end togglePassword" role="button" href="#"><i class="mdi mdi-eye text-primary"></i></a>
+                                                                                <input class="form-control nosave" type="password" id="password_l" name="password_l" placeholder="Enter your password" tabindex="2">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <div class="form-check">
+                                                                                    <input type="checkbox" class="form-check-input" id="checkbox-signin" tabindex="4">
+                                                                                    <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="d-grid mb-0 text-center">
+                                                                                <button class="btn btn-primary" type="button" id="loginBtn" tabindex="5"><i class="mdi mdi-login"></i> Log In </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <footer class="footer footer-alt">
+                                                                            <p class="text-black-75">Don't have an account? <a href="#" data-bs-dismiss="modal" aria-hidden="true" class="text-black-75 ms-1" tabindex="6"><b>Sign Up</b></a></p>
+                                                                        </footer>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Registration fields -->
+                                            <div class="row">
+                                                <div class="col col-md-12">
+                                                    <div id="registrationFields">
+                                                        <div class="row g-3">
+                                                            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                                                                <label class="form-label text-primary" for="firstname">First Name</label>
+                                                                <input type="text" class="form-control" id="firstname" required placeholder="First Name" name="firstname">
+                                                                <div class="invalid-feedback firstname-error">Please provide your first name.</div>
+                                                            </div>
+                                                            <div class="mb-3 col-12 col-sm-6 col-md-6 col-lg-6">
+                                                                <label class="form-label text-primary" for="lastname">Last Name</label>
+                                                                <input type="text" class="form-control" id="lastname" required placeholder="Last Name" name="lastname">
+                                                                <div class="invalid-feedback lastname-error">Please provide your last name.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row signin">
+                                                            <div class="mb-3 col-12 col-sm-6 col-md-6 col-lg-6">
+                                                                <label class="form-label text-primary" for="email">Email</label>
+                                                                <input type="email" class="form-control" id="email" required placeholder="Email" name="email">
+                                                                <div class="invalid-feedback email-error">Please provide a valid email.</div>
+                                                            </div>
+                                                            <div class="mb-3 col-12 col-sm-6 col-md-6 col-lg-6">
+                                                                <label class="form-label text-primary" for="password">Password</label>
+                                                                <i data-bs-toggle="popover" data-bs-custom-class="primary-popover" data-bs-trigger="hover" data-bs-content="This password is to log in to your account." class="mdi mdi-information-outline font-14 pe-2 text-primary"></i>
+                                                                <a tabindex="-1" class="float-end togglePassword" role="button" href="#"><i class="mdi mdi-eye text-primary"></i></a>
+                                                                <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{12,}$" class="pr-password form-control nosave" id="password" required placeholder="Password" name="password" autocomplete="one-time-code">
+                                                                <div class="invalid-feedback password-error">Please create a password.</div>
+                                                                <div id="weak-password-error" class="invalid-feedback text-danger" style="display:none">
+                                                                    <span>Please check password requirements.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row g-3 signin">
+                                                            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                                                                <label class="form-label text-primary" for="companyname">Company Name</label>
+                                                                <input type="text" class="form-control no-validations-text" id="companyname" name="companyname" placeholder="Company Name">
+                                                            </div>
+                                                            <div class="mb-3 col-12 col-sm-6 col-md-6 col-lg-6">
+                                                                <div class="mb-0">
+                                                                    <label class="form-label text-primary" for="country">Country</label>
+                                                                    <select class="form-control form-select nosave" id="country" name="country" data-val="true" required>
+                                                                        <option value="US">United States</option>
+                                                                        <option value="CA">Canada</option>
+                                                                        <option value="GB">United Kingdom</option>
+                                                                        <option value="AU">Australia</option>
+                                                                        <option value="DE">Germany</option>
+                                                                        <option value="FR">France</option>
+                                                                        <option value="NL">Netherlands</option>
+                                                                        <option value="IN">India</option>
+                                                                        <option value="BR">Brazil</option>
+                                                                        <option value="JP">Japan</option>
+                                                                        <option value="SG">Singapore</option>
+                                                                        <option value="MX">Mexico</option>
+                                                                    </select>
+                                                                    <div class="invalid-feedback country-error">Please provide your country.</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3 signin">
+                                                            <label class="form-label text-primary" for="address">Street Address</label>
+                                                            <input type="text" class="form-control" id="address" required placeholder="Address" name="address" maxlength="50">
+                                                            <div class="invalid-feedback address-error">Please provide a valid street address.</div>
+                                                        </div>
+                                                        <div class="row g-3 signin">
+                                                            <div class="mb-3 col">
+                                                                <div class="mb-0">
+                                                                    <label class="form-label text-primary" for="city">City/Town</label>
+                                                                    <input type="text" class="form-control" id="city" required placeholder="City" name="city">
+                                                                    <div class="invalid-feedback city-error">Please provide a valid city or town.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-0 col">
+                                                                <div class="mb-0">
+                                                                    <label class="form-label text-primary" for="state">State/Province/Region</label>
+                                                                    <div id="statesField">
+                                                                        <select class="form-control" id="state" name="state" required>
+                                                                            <option value="" disabled selected>Please Select...</option>
+                                                                            <option value="Alabama">Alabama</option>
+                                                                            <option value="Alaska">Alaska</option>
+                                                                            <option value="Arizona">Arizona</option>
+                                                                            <option value="Arkansas">Arkansas</option>
+                                                                            <option value="California">California</option>
+                                                                            <option value="Colorado">Colorado</option>
+                                                                            <option value="Connecticut">Connecticut</option>
+                                                                            <option value="Delaware">Delaware</option>
+                                                                            <option value="Florida">Florida</option>
+                                                                            <option value="Georgia">Georgia</option>
+                                                                            <option value="Hawaii">Hawaii</option>
+                                                                            <option value="Idaho">Idaho</option>
+                                                                            <option value="Illinois">Illinois</option>
+                                                                            <option value="Indiana">Indiana</option>
+                                                                            <option value="Iowa">Iowa</option>
+                                                                            <option value="Kansas">Kansas</option>
+                                                                            <option value="Kentucky">Kentucky</option>
+                                                                            <option value="Louisiana">Louisiana</option>
+                                                                            <option value="Maine">Maine</option>
+                                                                            <option value="Maryland">Maryland</option>
+                                                                            <option value="Massachusetts">Massachusetts</option>
+                                                                            <option value="Michigan">Michigan</option>
+                                                                            <option value="Minnesota">Minnesota</option>
+                                                                            <option value="Mississippi">Mississippi</option>
+                                                                            <option value="Missouri">Missouri</option>
+                                                                            <option value="Montana">Montana</option>
+                                                                            <option value="Nebraska">Nebraska</option>
+                                                                            <option value="Nevada">Nevada</option>
+                                                                            <option value="New Hampshire">New Hampshire</option>
+                                                                            <option value="New Jersey">New Jersey</option>
+                                                                            <option value="New Mexico">New Mexico</option>
+                                                                            <option value="New York">New York</option>
+                                                                            <option value="North Carolina">North Carolina</option>
+                                                                            <option value="North Dakota">North Dakota</option>
+                                                                            <option value="Ohio">Ohio</option>
+                                                                            <option value="Oklahoma">Oklahoma</option>
+                                                                            <option value="Oregon">Oregon</option>
+                                                                            <option value="Pennsylvania">Pennsylvania</option>
+                                                                            <option value="Rhode Island">Rhode Island</option>
+                                                                            <option value="South Carolina">South Carolina</option>
+                                                                            <option value="South Dakota">South Dakota</option>
+                                                                            <option value="Tennessee">Tennessee</option>
+                                                                            <option value="Texas">Texas</option>
+                                                                            <option value="Utah">Utah</option>
+                                                                            <option value="Vermont">Vermont</option>
+                                                                            <option value="Virginia">Virginia</option>
+                                                                            <option value="Washington">Washington</option>
+                                                                            <option value="West Virginia">West Virginia</option>
+                                                                            <option value="Wisconsin">Wisconsin</option>
+                                                                            <option value="Wyoming">Wyoming</option>
+                                                                        </select>
+                                                                        <div class="invalid-feedback state-error">Please provide a valid state, province or region.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row g-3 signin">
+                                                            <div class="mb-0 col">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label text-primary" for="postcode">Zip/Postal Code</label>
+                                                                    <input type="text" class="form-control" id="postcode" required placeholder="Postcode" name="postcode">
+                                                                    <div class="invalid-feedback postcode-error">Please provide a valid zip or postal code.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3 col">
+                                                                <div class="mb-0">
+                                                                    <label class="form-label text-primary" for="phonenumber">Phone Number</label>
+                                                                    <input type="text" class="form-control" id="phonenumber" required placeholder="Phone Number" name="phonenumber">
+                                                                    <div class="invalid-feedback phonenumber-error">Please provide a valid phone number.</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ==================== SECTION 2: DOMAIN ==================== -->
+                                <input type="hidden" id="domainOption" name="domainOption" class="nosave">
+                                <input type="hidden" name="eppcode" id="eppcode" class="nosave">
+                                <div class="card" id="domain-section">
+                                    <div class="card-body px-2 px-sm-3">
+                                        <div class="container px-0 px-sm-3">
+
+                                            <!-- Section header: 2 Domain -->
+                                            <div class="row align-items-center mb-2">
+                                                <div class="col">
+                                                    <div class="avatar-sm d-inline-block">
+                                                        <span class="avatar-title bg-success rounded-circle font-18 fw-bold">2</span>
+                                                    </div>
+                                                    <h4 class="d-inline-block mx-2 text-uppercase ff-poppins text-primary fw-bold font-20 align-items-center">Domain</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <span class="border border-warning d-block"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row pb-3">
+                                                <div class="invalid-feedback domain-error text-center mb-3">Please make selection.</div>
+                                                <div class="col-12 d-grid gap-2 mx-auto">
+                                                    <ul class="nav nav-pills mb-3 justify-content-center pe-0 d-grid d-inline d-md-inline text-center" id="pills-tab" role="tablist">
+                                                        <li class="nav-item me-sm-0 d-block me-md-3 me-lg-3 mb-3 d-grid d-md-inline" role="presentation">
+                                                            <button class="btn btn-outline-primary" id="pills-usemydomain-tab" data-bs-toggle="pill" data-bs-target="#pills-usemydomain" type="button" role="tab">I have a Domain</button>
+                                                        </li>
+                                                        <li class="nav-item d-grid d-md-inline" role="presentation">
+                                                            <button class="btn btn-outline-primary" id="pills-createdomain-tab" data-bs-toggle="pill" data-bs-target="#pills-createdomain" type="button" role="tab">I need to Register a New Domain</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-content" id="pills-tabContent">
+                                                <div class="tab-pane fade usemydomain" id="pills-usemydomain" role="tabpanel" tabindex="0"></div>
+                                                <div class="tab-pane fade createdomain" id="pills-createdomain" role="tabpanel" tabindex="0"></div>
+                                            </div>
+
+                                            <div class="row justify-content-center" id="domainSection" style="display:none">
+                                                <div class="col-sm-12 font-13">
+                                                    <div class="row g-0 justify-content-center mb-2">
+                                                        <div class="col-12 col-sm-12 col-md-9 text-center text-md-start">
+                                                            <div class="font-14">Type in the domain name with the extension (.com, .org, etc.).</div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-12 col-md-1 text-center text-md-start pt-1 pt-md-0"></div>
+                                                    </div>
+                                                    <div class="row g-0 justify-content-center">
+                                                        <div class="col-12 col-md-7 text-end">
+                                                            <input type="text" class="form-control no-validations-text nosave" id="domain" name="domain" placeholder="example.com">
+                                                        </div>
+                                                        <div class="col-12 col-md-3 text-center text-md-start pt-1 pt-md-0">
+                                                            <button class="btn darkblue-button ms-2 rounded-2 text-nowrap" id="check-domain-btn" type="button">Check Availability</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="domainAvailability" class="my-2"></div>
+
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-10 mt-3 font-13 text-center">
+                                                            <div class="transferdomain form-check mb-2" style="display: inline-block;">
+                                                                <input type="checkbox" id="transferDomain" name="transferDomain" class="form-check-input nosave">
+                                                                <label class="form-check-label fw-normal" for="transferDomain">Transfer My Domain to A2 Hosting <span id="transferPrice" class="fw-bold"></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-10 font-13">
+                                                    <div class="col-md-12 p-3 mt-3 mb-3 text-center domain-errors domain-failed domainCheck-error alert alert-warning alert-dismissible text-dark fade show" role="alert" style="display:none;" id="domain-failed">
+                                                        <p class="mb-1">Please enter a valid domain name and Try Again!</p>
+                                                    </div>
+                                                    <div class="col-md-12 p-3 mt-3 mb-3 text-center domain-errors domain-eligible alert alert-primary alert-dismissible text-dark border-0 fade show" role="alert" id="domain-eligible" style="display:none;">
+                                                        <p class="mb-1"><span class="fw-semibold domain_name"></span> is now associated to your hosting plan</p>
+                                                        <p class="mb-1">Register this domain for <span class="fw-semibold domain_price"></span></p>
+                                                    </div>
+                                                    <div class="col-md-12 p-3 mt-3 mb-3 text-center domain-errors domain-not-failed alert alert-warning alert-dismissible text-dark fade show" role="alert" style="display:none;" id="domain-not-available">
+                                                        <p class="mb-1">Your Domain is NOT available for Register! Try Again!</p>
+                                                    </div>
+                                                    <div class="col-md-12 p-3 mt-3 mb-3 text-center domain-errors domain-owndomain alert alert-primary alert-dismissible text-dark fade show" role="alert" style="display:none;" id="domain-owndomain">
+                                                        <p class="mb-1"><span class="fw-semibold domain_name"></span> is now associated to your hosting plan</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-center d-block text-center">
+                                                <a href="javascript:void(0)" id="skip-domain" class="fw-bold text-center text-decoration-underline">Skip for Now</a>
+                                                <div class="col-md-12 p-3 mt-3 mb-3 text-center domain-errors temp-domain-added alert alert-primary alert-dismissible text-dark fade show" role="alert" style="display:none;" id="temp-domain-added">
+                                                    <p class="mb-1">Temporary domain added - you can change this later</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ==================== SECTION 3: CONFIGURE HOSTING ==================== -->
+                                <div class="card">
+                                    <div class="card-body px-2 px-sm-3">
+                                        <div class="container px-0 px-sm-3">
+
+                                            <!-- Section header: 3 Configure Your Hosting -->
+                                            <div class="row align-items-center mb-2">
+                                                <div class="col">
+                                                    <div class="avatar-sm d-inline-block">
+                                                        <span class="avatar-title bg-success rounded-circle font-18 fw-bold">3</span>
+                                                    </div>
+                                                    <h4 class="d-inline-block mx-2 text-uppercase ff-poppins text-primary fw-bold font-20 align-items-center">Configure Your Hosting</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <span class="border border-warning d-block"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row pb-3">
+                                                <div class="col col-md-12">
+
+                                                    <!-- Server Location -->
+                                                    <div class="row">
+                                                        <div class="col col-md-6">
+                                                            <div class="d-flex align-items-top mt-0 ff-poppins">
+                                                                <i class="lh-1 mdi text-blue mdi-database font-24 float-start pe-2 text-primary"></i>
+                                                                <div class="fw-semibold font-16">Server Location
+                                                                    <p class="fw-normal font-12">Select a data center closer to your visitors for maximum speed.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2 mt-0 col-12 col-md-6">
+                                                            <select class="form-select form-select-sm nosave" id="option_server_location" name="option_server_location">
+                                                                <option value="us-mi">USA - Michigan</option>
+                                                                <option value="us-az">USA - Arizona</option>
+                                                                <option value="eu-ams">EU - Amsterdam</option>
+                                                                <option value="asia-sg">Asia - Singapore</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Dedicated IP -->
+                                                    <div class="row mt-3">
+                                                        <div class="col col-md-6">
+                                                            <div class="d-flex align-items-top mt-0 ff-poppins">
+                                                                <i class="lh-1 mdi text-blue mdi-map-marker font-24 float-start pe-2 text-primary"></i>
+                                                                <div class="fw-semibold font-16">Dedicated IP
+                                                                    <p class="fw-normal font-12">Recommended for SSL Certificates (HTTPS)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2 col-12 col-md-6">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" id="option_dedicated_ip" name="option_dedicated_ip" value="dedicatedip" class="form-check-input nosave">
+                                                                <label class="form-check-label font-12 fw-normal" for="option_dedicated_ip">
+                                                                    <span class="option_prefix">$</span><span class="option_price" id="option_price_dedicated_ip">3.99</span> <span class="option_suffix">USD</span> for <span class="monthDesc">1</span> <span class="month_at">mo.</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ==================== SECTION 4: BILLING ==================== -->
+                                <div class="card">
+                                    <div class="card-body px-2 px-sm-3">
+                                        <div class="container px-0 px-sm-3">
+
+                                            <!-- Section header: 4 Billing -->
+                                            <div class="row align-items-center mb-2">
+                                                <div class="col">
+                                                    <div class="avatar-sm d-inline-block">
+                                                        <span class="avatar-title bg-success rounded-circle font-18 fw-bold">4</span>
+                                                    </div>
+                                                    <h4 class="d-inline-block mx-2 text-uppercase ff-poppins text-primary fw-bold font-20 align-items-center">Billing</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <span class="border border-warning d-block"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row pb-3">
+                                                <div class="col col-md-12">
+
+                                                    <div class="invalid-feedback paymentMethod-error text-center mb-3">Please select your payment method.</div>
+
+                                                    <!-- Credit Card -->
+                                                    <div class="row mt-3 mb-3 p-2 border border-light align-items-center stripe_method" id="ccarea">
+                                                        <div class="col-10 col-sm-10">
+                                                            <div class="form-check">
+                                                                <input type="radio" id="stripe_method" name="paymentMethod" class="form-check-input nosave" value="stripe">
+                                                                <label class="form-check-label" for="stripe_method">Credit Card</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2 col-sm-2 text-end">
+                                                            <i class="mdi mdi-credit-card-multiple-outline fs-4"></i>
+                                                        </div>
+
+                                                        <!-- Static CC form (replaces Stripe Elements) -->
+                                                        <div id="creditcardinfo" class="hide form-check font-12 my-2" style="display:none">
+                                                            <div class="row g-2">
+                                                                <div class="col-12">
+                                                                    <input type="text" class="form-control cc-field" placeholder="Card number" id="cc-number" maxlength="19" inputmode="numeric" autocomplete="off">
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <input type="text" class="form-control cc-field" placeholder="MM / YY" id="cc-expiry" maxlength="7" inputmode="numeric" autocomplete="off">
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <input type="text" class="form-control cc-field" placeholder="CVC" id="cc-cvc" maxlength="4" inputmode="numeric" autocomplete="off">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="card-errors" role="alert"></div>
+                                                    </div>
+
+                                                    <!-- PayPal -->
+                                                    <div class="row mb-3 p-2 border border-light align-items-center paypal_method" id="paypalarea">
+                                                        <div class="col-10 col-sm-10">
+                                                            <div class="form-check">
+                                                                <input type="radio" id="paypal_method" name="paymentMethod" class="form-check-input nosave" value="paypal">
+                                                                <label class="form-check-label" for="paypal_method">PayPal</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2 col-sm-2 text-end">
+                                                            <i class="uil uil-paypal fs-4"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Bank Transfer -->
+                                                    <div class="row mb-3 p-2 border border-light align-items-center banktransfer_method" id="banktransferarea">
+                                                        <div class="col-10 col-sm-10">
+                                                            <div class="form-check">
+                                                                <input type="radio" id="banktransfer_method" name="paymentMethod" class="form-check-input nosave" value="banktransfer">
+                                                                <label class="form-check-label" for="banktransfer_method">Bank Wire Transfer</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2 col-sm-2 text-end">
+                                                            <i class="mdi mdi-bank-outline fs-4"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Terms & Submit -->
+                                                    <div class="row mb-3 p-2">
+                                                        <div class="col text-center">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input float-none nosave" id="terms" name="terms_of_service">
+                                                                <label class="form-check-label form-label" for="terms" id="termsText">I have read and agree to the <a href="https://www.a2hosting.com/policies/" target="_blank">Terms and Conditions</a></label>
+                                                                <div class="invalid-feedback terms_of_service-error">You must agree before submitting.</div>
+                                                            </div>
+                                                            <button class="btn btn-primary mt-2" type="submit" id="submit-button">Pay $47.88</button>
+                                                            <h6 class="ff-poppins">* Plus Taxes/VAT if applicable</h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Renewal info -->
+                                                    <div class="row p-2 font-13 justify-content-center text-center text-sm-start">
+                                                        <div class="col col-sm-12 text-decoration-underline p-0">Renewal</div>
+                                                        <div class="col col-sm-4 text-end d-none" id="renewal_total"></div>
+                                                    </div>
+                                                    <div class="row p-2 font-13">
+                                                        <div class="col-8 col-sm-6 p-0">Startup Shared Hosting</div>
+                                                        <div class="col-2 col-sm-3 text-center p-0">In <span class="monthDesc">12</span> mo.</div>
+                                                        <div class="col-2 col-sm-3 text-end p-0 fw-bold" id="renewal_price">$155.88</div>
+                                                    </div>
+                                                    <div id="renewalList"></div>
+                                                    <div class="row p-2 text-center mt-3 justify-content-center">
+                                                        <div class="col col-md-12">
+                                                            <p class="fw-medium">Your subscription to the above service(s) will be automatically renewed as defined above until you cancel. You authorize A2 Hosting to charge you accordingly unless you cancel via the client portal (my.a2hosting.com) prior to the end of the billing cycle. Cancellation terms and instructions can be found in our <a href="https://www.a2hosting.com/policies/" target="_blank">Terms of Service</a>.</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Product Details End -->
+
+                            <!-- ==================== SIDEBAR: ORDER SUMMARY ==================== -->
+                            <div class="col-lg-4 d-lg-block offcanvas-lg offcanvas-end p-0 mt-3" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-bs-scroll="true" tabindex="-1">
+                                <div class="card offcanvas-body sticky-top p-1" style="top:80px">
+                                    <div class="card-body">
+                                        <div class="offcanvas-header float-end p-0">
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasRight" aria-label="Close"></button>
+                                        </div>
+
+                                        <h4 id="offcanvasRightLabel" class="text-uppercase mt-0 text-primary fw-bold font-20 ff-poppins">Product and Service Summary</h4>
+                                        <div class="mt-3 text-uppercase fw-semibold">Startup Shared Hosting</div>
+
+                                        <div class="mb-3 mt-3 font-13">
+                                            <label for="billing_cycle" class="form-label text-warning font-14 fw-normal"><span class="fw-bold text-uppercase">Promotion</span> Billing Cycle</label>
+                                            <select class="form-select font-13 no-validations nosave" id="billing_cycle" name="billing_cycle">
+                                                <option value="monthly">1 Month - $5.99/mo</option>
+                                                <option value="annually" selected>12 Months - $3.99/mo ($47.88)</option>
+                                                <option value="triennially">36 Months - $2.99/mo ($107.64)</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="row font-13" id="vattax">
+                                            <div class="col align-baseline d-flex align-items-center fw-semibold">Have a VAT/Tax ID or GSTIN?</div>
+                                            <div class="col ms-2">
+                                                <a class="text-black" href="#taxcollapse" title="GSTIN Number / VAT/Tax ID" data-bs-toggle="collapse" data-bs-target="#collapseTaxID" aria-expanded="false" aria-controls="collapseTaxID" id="taxcollapse">Enter Number <i class="mdi mdi-chevron-down font-18 align-middle"></i></a>
+                                            </div>
+                                            <div class="m-0">
+                                                <div class="d-block col-md-12">
+                                                    <div class="collapse" id="collapseTaxID">
+                                                        <div class="card card-body mb-0">
+                                                            <div id="tax_id_area">
+                                                                <label class="form-label text-primary" for="tax_id">VAT/Tax ID</label>
+                                                                <input type="text" class="form-control no-validations-text" id="tax_id" name="tax_id" placeholder="VAT/Tax ID (optional)">
+                                                            </div>
+                                                            <div id="gstin_area">
+                                                                <label class="form-label text-primary mt-2" for="gstin">GSTIN Number (If Applicable)</label>
+                                                                <input type="text" class="form-control no-validations-text" id="gstin" name="gstin" placeholder="GSTIN Number (optional)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-center m-auto">
+                                            <span class="border border-warning my-2"></span>
+                                        </div>
+
+                                        <div class="row mb-0">
+                                            <div class="text-black-75 fw-600 font-13 mb-2">
+                                                <span class="fw-semibold">Cost</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="fw-bold text-uppercase" id="main_product">Startup Shared Hosting</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 font-12">
+                                                <p class="m-0">
+                                                    <a class="text-black font-11 text-right collapsed" href="#plancollapse" title="Plan Features" data-bs-toggle="collapse" data-bs-target="#PlanFeatures" aria-expanded="false" aria-controls="PlanFeatures">Plan Features <i class="mdi mdi-chevron-down font-18 align-middle"></i></a>
+                                                </p>
+                                            </div>
+                                            <div class="col mt-1 font-12">
+                                                <span><span class="monthDesc">12</span> mo. at</span>
+                                            </div>
+                                            <div class="col mt-1 font-12">
+                                                <p class="text-decoration-line-through text-end m-0" id="cycle_price">$155.88</p>
+                                                <p class="fw-semibold text-warning text-end mb-0" id="monthly_price">$47.88</p>
+                                            </div>
+
+                                            <div class="my-0 text-gith">
+                                                <div class="d-block col-md-12 font-12">
+                                                    <div class="collapse-vertical collapse" id="PlanFeatures">
+                                                        <div class="card card-body mb-0">
+                                                            <ul class="list-unstyled">
+                                                                <li><i class="fa fa-check-circle text-info"></i> 100 GB NVMe SSD Storage</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> Unlimited Bandwidth</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> Free SSL Certificate</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> 1 Website</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> 5 Email Accounts</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> Free Website Migration</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> cPanel Control Panel</li>
+                                                                <li><i class="fa fa-check-circle text-info"></i> 99.9% Uptime Commitment</li>
+                                                                <span id="planfeatures-add"></span>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="productsList" class="mb-0"></div>
+                                        </div>
+
+                                        <div class="row justify-content-center m-auto">
+                                            <span class="border border-warning my-2"></span>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col font-16 text-primary text-uppercase fw-bold">Total</div>
+                                            <div class="col font-16 fw-semibold text-end">
+                                                <span class="font-weight-bold" id="total"><p>$47.88</p></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-0">
+                                            <div class="col text-center">
+                                                <i class="text-primary align-middle mdi mdi-check-decagram font-24"></i>
+                                                <span class="fw-semibold">30 Day Money Back Guarantee</span>
+                                                <p>Try A2 Hosting Risk Free and Cancel With <br>A Refund If You Aren't 100% Satisfied</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Summary end -->
+
+                        </div>
+                        <!-- row -->
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- content -->
+            </div>
+            <!-- content page -->
+        </form>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="footer-section pb-0">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-between">
+                    <div class="col-12 col-lg-auto col-md-6 col-sm-12 text-center text-lg-start px-2 pb-2">
+                        <a href="https://www.a2hosting.com/hosting/" class="text-decoration-none footer-header"><h3 class="footer-menu-heading text-uppercase mb-4">Hosting</h3></a>
+                        <ul class="footer-menu-link p-0">
+                            <li><a href="https://www.a2hosting.com/web-hosting/">Web Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/wordpress-hosting/">WordPress Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/wordpress-hosting/managed/">Managed WordPress Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/vps-hosting/">VPS Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/vps-hosting/managed/">Managed VPS Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/dedicated-server-hosting/">Dedicated Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/dedicated-server-hosting/managed/">Managed Dedicated Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/reseller-hosting/">Reseller Hosting</a></li>
+                            <li><a href="https://www.a2hosting.com/compare/">Compare Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-auto col-md-6 col-sm-12 text-center text-lg-start px-2 pb-2">
+                        <a href="https://www.a2hosting.com/solutions/" class="text-decoration-none footer-header"><h3 class="footer-menu-heading text-uppercase mb-4">Solutions</h3></a>
+                        <ul class="footer-menu-link p-0">
+                            <li><a href="https://www.a2hosting.com/business-hosting/">Business</a></li>
+                            <li><a href="https://www.a2hosting.com/ecommerce-hosting/">eCommerce</a></li>
+                            <li><a href="https://www.a2hosting.com/agency-hosting/">Agency</a></li>
+                            <li><a href="https://www.a2hosting.com/blog-hosting/">Blog</a></li>
+                            <li><a href="https://www.a2hosting.com/personal-website-hosting/">Personal</a></li>
+                            <li><a href="https://www.a2hosting.com/linux-hosting/">Linux</a></li>
+                            <li><a href="https://www.a2hosting.com/cpanel-hosting/">cPanel Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-auto col-md-6 col-sm-12 text-center text-lg-start px-2 pb-2">
+                        <a href="https://www.a2hosting.com/a2-hosting-products-services/" class="text-decoration-none footer-header"><h3 class="footer-menu-heading text-uppercase mb-4">Products</h3></a>
+                        <ul class="footer-menu-link p-0">
+                            <li><a href="https://www.a2hosting.com/domains/">Domains</a></li>
+                            <li><a href="https://www.a2hosting.com/ssl-certificates/">SSL Certificates</a></li>
+                            <li><a href="https://www.a2hosting.com/website/sitebuilder/">Site Builder</a></li>
+                            <li><a href="https://www.a2hosting.com/email-hosting/">Email</a></li>
+                            <li><a href="https://www.a2hosting.com/turbo-hosting/">Turbo</a></li>
+                            <li><a href="https://www.a2hosting.com/a2-optimized/">A2 Optimized</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-auto col-md-6 col-sm-12 text-center text-lg-start px-2 pb-2">
+                        <a href="https://www.a2hosting.com/support/" class="text-decoration-none footer-header"><h3 class="footer-menu-heading text-uppercase mb-4">Sales & Support</h3></a>
+                        <ul class="footer-menu-link p-0">
+                            <li><a href="https://my.a2hosting.com/clientarea.php">Customer Portal</a></li>
+                            <li><a href="https://my.a2hosting.com/submitticket.php">Submit a Support Ticket</a></li>
+                            <li><a href="https://www.a2hosting.com/support/">Contact Support</a></li>
+                            <li><a href="https://www.a2hosting.com/sales/">Contact Sales</a></li>
+                            <li><a href="https://www.a2hosting.com/kb/">A2 Knowledgebase</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-auto col-md-6 col-sm-12 text-center text-lg-start px-2 pb-2">
+                        <a href="https://www.a2hosting.com/about/" class="text-decoration-none footer-header"><h3 class="footer-menu-heading text-uppercase mb-4">Company</h3></a>
+                        <ul class="footer-menu-link p-0">
+                            <li><a href="https://www.a2hosting.com/about/">About A2</a></li>
+                            <li><a href="https://www.a2hosting.com/reviews/">A2 Reviews</a></li>
+                            <li><a href="https://www.a2hosting.com/blog/">A2 Hosting Blog</a></li>
+                            <li><a href="https://www.a2hosting.com/about/affiliate-program/">Affiliate Program</a></li>
+                            <li><a href="https://www.a2hosting.com/about/careers/">Careers</a></li>
+                            <li><a href="https://www.a2hosting.com/about/data-center/">Data Centers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pb-1 ft-row-wr">
+                    <div class="d-flex flex-wrap justify-content-start">
+                        <div class="col-12 col-md-12 col-lg-6 ft-pay-img text-center text-md-center text-lg-start">
+                            <a class="pe-1 pe-sm-4" href="https://www.pcmag.com/reviews/a2-web-hosting" target="_blank"><img src="images/icons/trusted-logo3.png" class="img-fluid" loading="lazy" width="104" height="35" alt="trusted logo"></a>
+                            <br>
+                            <img src="images/icons/us-cc.png" class="img-fluid" loading="lazy" width="191" height="23" alt="us-cc">
+                            <img src="images/icons/paypal.png" class="img-fluid" loading="lazy" width="103" height="40" alt="paypal">
+                            <img src="images/icons/skrill.png" class="img-fluid" loading="lazy" width="74" height="29" alt="skrill">
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6 p-0 text-center text-md-center text-lg-end pb-2 pb-md-2 pb-lg-2 pt-2 pt-md-2 pt-lg-0">
+                            <ul class="ft-contact p-0">
+                                <li>
+                                    <a href="tel:+1(734)222-4678">
+                                        <span><img loading="lazy" class="img-fluid" src="images/icons/phone__icon.svg" width="150" height="150" alt="phone icon"></span>
+                                        +1 (734) 222-4678
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <div class="col-md-12 col-12 d-flex mb-auto flex-wrap justify-content-center justify-content-lg-end align-items-end">
+                            <ul class="footer_social">
+                                <li class="ft-follow-txt ms-0 me-0"><span>Follow Us</span></li>
+                                <li class="ms-0 ms-md-3 ms-lg-3"><a href="https://www.facebook.com/a2hostingcom/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.youtube.com/user/A2HostingHelp" target="_blank" aria-label="Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                                <li><a href="https://twitter.com/a2hosting" target="_blank" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/a2-hosting" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-end ps-3 ps-lg-0 pe-lg-0 pe-3 pt-1 pt-lg-0 pb-3 text-center text-md-center text-lg-end">
+                    <div class="col-lg-6 d-flex flex-wrap flex-lg-nowrap"></div>
+                    <div class="col-12 col-lg-6 align-items-center mt-3 mb-3 p-r-5 p-md-0 p-lg-0 news-block">
+                        <p class="color-light-white2 ft-promo fs-14-sm text-center">* The promotional price is for the first term only and renews at the <a target="_blank" class="text-link color-white color-light-white2 text-decoration-underline" href="https://www.a2hosting.com/about/renewal-pricing/">regular rate</a>.</p>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-wrap flex-lg-nowrap justify-content-center align-items-center my-3 news-block text-center text-md-center text-lg-start footer-newsletter-form">
+                        <h3 class="footer-menu-heading text-uppercase m-0">GET OUR NEWSLETTER</h3>
+                        <p class="color-light-white2 mx-0 mt-2 mt-sm-0 px-4 ft-promo fs-14-sm">Web development tips, marketing strategies and A2 Hosting news sent to your inbox.</p>
+                    </div>
+                    <div class="col-lg-6 my-3 px-1 px-sm-0 sub-form-wr">
+                        <form class="newsletter-form d-flex subscribe-form px-0" onsubmit="event.preventDefault();showDemoToast('Newsletter signup is not available in demo mode');">
+                            <input type="email" class="form-control newsletter__input" id="newsletter_email" name="email" placeholder="Enter your email address">
+                            <button type="submit" class="newsletter__submit f-sc-btn fs-6">Sign up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-div">
+                <div class="container">
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-between">
+                        <p class="copyright-text m-0 py-2">Copyright &copy; A2 HOSTING <span id="copyright-year"></span></p>
+                        <ul class="text-center text-lg-start footer-nav px-0 py-2">
+                            <li><a href="https://www.a2hosting.com/policies/">Terms of Service</a></li>
+                            <li><a href="https://www.a2hosting.com/policies/#Privacy-Policy">Privacy Policy</a></li>
+                            <li><a href="https://www.a2hosting.com/99.9-uptime-commitment/">99.9% Uptime Commitment</a></li>
+                            <li><a href="https://www.a2hosting.com/money-back-guarantee/">Money Back Guarantee</a></li>
+                            <li><a href="https://www.a2hosting.com/sitemap/">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+    </div>
+    <!-- end Wrapper -->
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Vendor JS (jQuery + Bootstrap) -->
+    <script src="js/a2main.min.js"></script>
+
+    <!-- Password Requirements plugin -->
+    <script src="js/jquery.passwordRequirements.js"></script>
+
+    <!-- Toast plugin -->
+    <script src="vendor/jquery.toast.min.js"></script>
+
+    <!-- App JS -->
+    <script src="js/app.min.js"></script>
+
+    <script>
+    // ============================================================
+    // GoCart Demo - All client-side logic
+    // ============================================================
+
+    var IsDomainValid = false;
+    var domain_checking = false;
+    var form_submitted = false;
+    var passwordField = false;
+    var cart_size = 1;
+    var currency_sign = '$';
+
+    // Set copyright year
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    // ---- Utility functions ----
+
+    function showDemoToast(msg) {
+        $.toast({
+            heading: 'Demo Mode',
+            text: msg || 'This is a portfolio demo — no real transactions are processed.',
+            position: 'top-right',
+            loaderBg: '#128413',
+            icon: 'info',
+            hideAfter: 3500,
+            stack: 3
+        });
+    }
+
+    function escapeHTML(str) {
+        if (!str) return '';
+        return str.replace(/[&<>"'\/]/g, function(c) {
+            return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','/':'&#x2F;'}[c] || c;
+        });
+    }
+
+    function isValidDomain(v) {
+        if (!v) return false;
+        return /^(?!:\/\/)([a-zA-Z0-9-]+\.){0,5}[a-zA-Z0-9-][a-zA-Z0-9-]+\.[a-zA-Z]{2,64}?$/gi.test(v);
+    }
+
+    function generateString(length) {
+        var chars = 'abcdefghijklmnopqrstuvwxyz';
+        return Array.from({length: length}, function() { return chars[Math.floor(Math.random() * chars.length)]; }).join('');
+    }
+
+    function filterDomain() {
+        var domain = $('#domain').val();
+        if (domain.indexOf('http:') >= 0 || domain.indexOf('https:') >= 0 || domain.indexOf('www.') >= 0) {
+            domain = domain.replace('www.', '').replace('https://', '').replace('http://', '').replace('https:', '').replace('http:', '');
+            $('#domain').val(domain);
+        }
+    }
+
+    function update_cart_size() {
+        $('#cart-size').html(cart_size);
+    }
+
+    function togglePassword(field) {
+        var eyeIcon = field.find('i');
+        var passField = field.next('input');
+        if (passField.attr('type') === 'password') {
+            passField.attr('type', 'text');
+            eyeIcon.removeClass('mdi-eye').addClass('mdi-eye-off');
+        } else {
+            passField.attr('type', 'password');
+            eyeIcon.removeClass('mdi-eye-off').addClass('mdi-eye');
+        }
+    }
+
+    // ---- Price calculation (all client-side) ----
+
+    function getSelectedCycle() {
+        return $('#billing_cycle').val() || 'annually';
+    }
+
+    function updatePrices() {
+        var cycle = getSelectedCycle();
+        var cycleData = cycles[cycle];
+        var promoTotal = promo_prices[cycle];
+        var regularTotal = regular_prices[cycle];
+        var months = cycleData.m;
+
+        // Update month descriptions
+        $('.monthDesc').html(months);
+
+        // Update promo/regular prices
+        $('#monthly_price').html(currency_sign + promoTotal.toFixed(2));
+        if (promoTotal !== regularTotal) {
+            $('#cycle_price').html(currency_sign + regularTotal.toFixed(2)).show();
+        } else {
+            $('#cycle_price').html('').hide();
+        }
+
+        // Update renewal price
+        $('#renewal_price').html(currency_sign + cycleData.p);
+
+        // Calculate total
+        var total = promoTotal;
+        var renewalHtml = '';
+
+        // Check dedicated IP
+        if ($('#option_dedicated_ip').is(':checked')) {
+            var ipPricePerMonth = 3.99;
+            var ipTotal = ipPricePerMonth * months;
+            total += ipTotal;
+
+            // Update the label price
+            var ipCyclePrice = renewal_prices.dedicatedip[cycle] || (ipPricePerMonth * months).toFixed(2);
+            $('#option_price_dedicated_ip').html(parseFloat(ipCyclePrice).toFixed(2));
+
+            // Show in sidebar
+            $('#productsList').html(
+                '<div class="row font-12"><div class="col"><div class="font-14">Dedicated IP</div></div></div>' +
+                '<div class="row font-12"><div class="col-6"></div><div class="col"><span>' + months + ' mo. at</span></div>' +
+                '<div class="col"><p class="fw-semibold text-warning text-end mb-0">' + currency_sign + ipTotal.toFixed(2) + '</p></div></div>'
+            );
+
+            renewalHtml = '<div class="row p-2 font-13"><div class="col-6 col-sm-6 p-0">Dedicated IP</div>' +
+                '<div class="col-3 col-sm-3 text-center p-0">In ' + months + ' mo.</div>' +
+                '<div class="col-3 col-sm-3 text-end p-0 fw-bold">' + currency_sign + ipTotal.toFixed(2) + '</div></div>';
+            cart_size = 2;
+        } else {
+            $('#productsList').html('');
+            cart_size = 1;
+        }
+
+        update_cart_size();
+        $('#renewalList').html(renewalHtml);
+        $('#total').html('<p>' + currency_sign + total.toFixed(2) + '</p>');
+        $('#submit-button').html('Pay ' + currency_sign + total.toFixed(2));
+    }
+
+    // ---- Domain checking (simulated) ----
+
+    function clean_domain_data() {
+        $('.domain-errors').hide();
+        $('#transferPrice, .domain_name, .domain_price').html('');
+        $('.domain_name').html(escapeHTML($('#domain').val()));
+    }
+
+    function checkDomains() {
+        if (domain_checking) return;
+
+        filterDomain();
+        domain_checking = true;
+
+        var domain = $('#domain').val();
+        var domainOption = $('#domainOption').val();
+
+        if (!domain) {
+            domain_checking = false;
+            return;
+        }
+
+        $('.domain-errors').hide();
+
+        if (!isValidDomain(domain) && domainOption !== 'temporary') {
+            $('#domain-failed').show();
+            domain_checking = false;
+            return;
+        }
+
+        // Simulate a brief loading delay
+        $('#check-domain-btn').attr('disabled', true).html('<span class="spinner-border spinner-border-sm me-1"></span>Checking...');
+
+        setTimeout(function() {
+            domain_checking = false;
+            IsDomainValid = true;
+            $('#check-domain-btn').attr('disabled', false);
+
+            if (domainOption === 'register') {
+                $('#check-domain-btn').html('Check Availability');
+                $('.domain_name').html(escapeHTML(domain));
+                $('.domain_price').html('$15.99');
+                $('#domain-eligible').show();
+            } else if (domainOption === 'owndomain') {
+                $('#check-domain-btn').html('Use This Domain');
+                $('.domain_name').html(escapeHTML(domain));
+                $('#domain-owndomain').show();
+            } else if (domainOption === 'temporary') {
+                $('#check-domain-btn').html('Check Availability');
+                $('#temp-domain-added').show();
+            }
+        }, 800);
+    }
+
+    // ---- Credit card input formatting ----
+
+    function formatCardNumber(val) {
+        var v = val.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        var matches = v.match(/\d{4,16}/g);
+        var match = matches && matches[0] || '';
+        var parts = [];
+        for (var i = 0, len = match.length; i < len; i += 4) {
+            parts.push(match.substring(i, i + 4));
+        }
+        return parts.length ? parts.join(' ') : v;
+    }
+
+    function formatExpiry(val) {
+        var v = val.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        if (v.length >= 2) {
+            return v.substring(0, 2) + ' / ' + v.substring(2, 4);
+        }
+        return v;
+    }
+
+    // ---- DOM Ready ----
+
+    $(document).ready(function() {
+
+        // Initialize password requirements
+        $('#password').passwordRequirements({'numCharacters': 12});
+
+        // Initialize prices
+        updatePrices();
+
+        // Toggle password visibility
+        $('.togglePassword').on('click', function(e) {
+            e.preventDefault();
+            togglePassword($(this));
+        });
+
+        // Login button - demo mode
+        $('#loginBtn').on('click', function(e) {
+            e.preventDefault();
+            showDemoToast('Login is not available in demo mode. Please fill out the registration form.');
+            $('#login-modal').modal('hide');
+        });
+
+        // Billing cycle change
+        $('#billing_cycle').on('change', function() {
+            updatePrices();
+        });
+
+        // Dedicated IP change
+        $('#option_dedicated_ip').on('change', function() {
+            updatePrices();
+        });
+
+        // Payment method radio buttons
+        $("input[name='paymentMethod']").on('click', function() {
+            var value = $(this).val();
+            $(".payment-selected").removeClass("payment-selected");
+            if (value === 'stripe') {
+                $('#creditcardinfo').show();
+                $(".stripe_method").addClass("payment-selected");
+            } else {
+                $('#creditcardinfo').hide();
+            }
+            if (value === 'paypal') $(".paypal_method").addClass("payment-selected");
+            if (value === 'banktransfer') $(".banktransfer_method").addClass("payment-selected");
+            $('.paymentMethod-error').hide();
+        });
+
+        // Terms checkbox
+        $('#terms').on('change', function() {
+            if ($(this).is(':checked')) {
+                $('.terms_of_service-error').hide();
+                $('#termsText').removeClass('text-danger');
+            } else {
+                $('.terms_of_service-error').show();
+                $('#termsText').addClass('text-danger');
+            }
+        });
+
+        // Domain tab: "I have a Domain"
+        $('#pills-usemydomain-tab').on('click', function() {
+            if (!$(this).hasClass('btn-primary')) {
+                $('#domain, #eppcode').val('');
+                $('#transferDomain').prop('checked', false);
+                $('.domain-errors, .domain-error, #domain-failed').hide();
+                $('#domainAvailability').html('');
+                $('#domainSection, .transferdomain').show();
+                $('#domainOption').val('owndomain');
+                $('#check-domain-btn').html('Use This Domain');
+
+                $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+                $('#pills-createdomain-tab').removeClass('btn-primary').addClass('btn-outline-primary');
+            }
+        });
+
+        // Domain tab: "Register New Domain"
+        $('#pills-createdomain-tab').on('click', function() {
+            if (!$(this).hasClass('btn-primary')) {
+                $('#domain, #eppcode').val('');
+                $('#transferDomain').prop('checked', false);
+                $('.domain-errors, .transferdomain, .domain-error').hide();
+                $('#domainAvailability').html('');
+                $('#domainSection').show();
+                $('#domainOption').val('register');
+                $('#check-domain-btn').html('Check Availability');
+
+                $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+                $('#pills-usemydomain-tab').removeClass('btn-primary').addClass('btn-outline-primary');
+            }
+        });
+
+        // Transfer domain checkbox
+        $('#transferDomain').on('change', function() {
+            $('.domain-errors, .domain-error, #domain-failed').hide();
+            $('#transferPrice').html('');
+            $('#check-domain-btn').html('Use This Domain');
+            if ($(this).is(':checked')) {
+                $('#domainOption').val('transfer');
+            } else {
+                $('#domainOption').val('owndomain');
+            }
+            if ($('#domain').val() !== '') checkDomains();
+        });
+
+        // Skip domain
+        $('#skip-domain').on('click', function(e) {
+            e.preventDefault();
+            $('.domain-error').hide();
+            $('#domainSection').hide();
+            $('#transferDomain').prop('checked', false);
+            $('#domain').val(generateString(8) + '.temporary.link');
+            $('#domainOption').val('temporary');
+            $('#domainSection, .domain-errors').hide();
+            $('#pills-createdomain, #pills-usemydomain, #pills-usemydomain-tab, #pills-createdomain-tab').removeClass('active show');
+            $('#pills-usemydomain-tab, #pills-createdomain-tab').removeClass('btn-primary').addClass('btn-outline-primary');
+            IsDomainValid = true;
+            $('#temp-domain-added').show();
+        });
+
+        // Check domain button
+        $('#check-domain-btn').on('click', function(e) {
+            e.preventDefault();
+            if ($('#domain').val() === '') {
+                clean_domain_data();
+                $('#domain-failed').show();
+            } else {
+                checkDomains();
+            }
+        });
+
+        // Domain input enter key
+        $('#domain').on('keydown', function(e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                if ($(this).val() === '') {
+                    clean_domain_data();
+                    $('#domain-failed').show();
+                } else {
+                    $('#check-domain-btn').trigger('click');
+                }
+            }
+        });
+
+        // Domain input keyup - clear errors when empty
+        $('#domain').on('keyup', function() {
+            if ($(this).val() === '') clean_domain_data();
+        });
+
+        // Credit card formatting
+        $('#cc-number').on('input', function() {
+            $(this).val(formatCardNumber($(this).val()));
+        });
+        $('#cc-expiry').on('input', function() {
+            $(this).val(formatExpiry($(this).val()));
+        });
+        $('#cc-cvc').on('input', function() {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+
+        // Country change -> update state field
+        $('#country').on('change', function() {
+            var country = $(this).val();
+            var statesField = $('#statesField');
+
+            if (country === 'US') {
+                // Reload page to get US states back (or just keep them)
+            } else if (country === 'CA') {
+                statesField.html(
+                    '<select class="form-control" id="state" name="state" required>' +
+                    '<option value="" disabled selected>Please Select...</option>' +
+                    '<option value="Alberta">Alberta</option><option value="British Columbia">British Columbia</option>' +
+                    '<option value="Manitoba">Manitoba</option><option value="New Brunswick">New Brunswick</option>' +
+                    '<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>' +
+                    '<option value="Nova Scotia">Nova Scotia</option><option value="Ontario">Ontario</option>' +
+                    '<option value="Prince Edward Island">Prince Edward Island</option><option value="Quebec">Quebec</option>' +
+                    '<option value="Saskatchewan">Saskatchewan</option>' +
+                    '</select><div class="invalid-feedback state-error">Please provide a valid state, province or region.</div>'
+                );
+            } else {
+                statesField.html(
+                    '<input type="text" class="form-control" id="state" name="state" required placeholder="State/Province">' +
+                    '<div class="invalid-feedback state-error">Please provide a valid state, province or region.</div>'
+                );
+            }
+        });
+
+        // VAT/Tax ID toggle
+        $('#tax_id').on('input', function() {
+            if ($(this).val() !== '') { $('#gstin').val(''); $('#gstin_area').hide(); }
+            else { $('#gstin_area').show(); }
+        });
+        $('#gstin').on('input', function() {
+            if ($(this).val() !== '') { $('#tax_id').val(''); $('#tax_id_area').hide(); }
+            else { $('#tax_id_area').show(); }
+        });
+
+        // ---- Form submission (demo - prevent actual submit) ----
+        $('#form').on('submit', function(e) {
+            e.preventDefault();
+
+            // Bootstrap validation
+            if (!this.checkValidity()) {
+                $(this).addClass('was-validated');
+
+                // Scroll to first invalid field
+                var firstInvalid = $(this).find(':invalid:visible:first');
+                if (firstInvalid.length) {
+                    $('html, body').animate({ scrollTop: firstInvalid.offset().top - 150 }, 300);
+                }
+                return;
+            }
+
+            $(this).addClass('was-validated');
+
+            // Check domain
+            if ($('#domainOption').val() === '' || ($('#domain').val() === '' && $('#domainOption').val() !== 'temporary')) {
+                $('.domain-error').html('Please make selection.').show();
+                $('html, body').animate({ scrollTop: $('#domain-section').offset().top - 150 }, 300);
+                return;
+            }
+
+            // Check payment method
+            if (!$('input[name="paymentMethod"]:checked').val()) {
+                $('.paymentMethod-error').show();
+                $('html, body').animate({ scrollTop: $('#ccarea').offset().top - 150 }, 300);
+                return;
+            }
+
+            // Check terms
+            if (!$('#terms').is(':checked')) {
+                $('.terms_of_service-error').show();
+                $('#termsText').addClass('text-danger');
+                return;
+            }
+
+            // Check password requirements
+            if ($('#register').val() === 'register' && !passwordField) {
+                if ($('#password').val() !== '') {
+                    $('.password-error').hide();
+                    $('#weak-password-error').show();
+                    $('#password').focus();
+                }
+                return;
+            }
+
+            // All good - show demo toast
+            showDemoToast('This is a portfolio demo. No payment has been processed.');
+        });
+
+        // Track password field validity via the requirements plugin
+        setInterval(function() {
+            var $pr = $('#pr-box');
+            if ($pr.length) {
+                var allOk = $pr.find('.pr-ok').length;
+                var total = $pr.find('li span').length;
+                passwordField = (allOk === total && total > 0);
+            }
+        }, 500);
+
+        // Initialize popover
+        var popoverList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        popoverList.map(function(el) { return new bootstrap.Popover(el); });
+
+        // Hide elements initially
+        $('#loginErrors').hide();
+        $('#domainSection').hide();
+        $('#errorContainer').hide();
+
+    });
+    </script>
+
+</body>
+</html>
