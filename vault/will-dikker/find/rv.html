@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Find RVs - Will Dikker</title>
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="../stylesheets/willdikker.master.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../stylesheets/fancybox.css" type="text/css" media="screen" />
+<script src="../javascripts/jquery.js" type="text/javascript"></script>
+<script src="../javascripts/jquery-ui.js" type="text/javascript"></script>
+<script src="../javascripts/jrails.js" type="text/javascript"></script>
+<script src="../javascripts/jquery.fancybox.js" type="text/javascript"></script>
+<script src="../javascripts/jquery.charcounter.js" type="text/javascript"></script>
+<script type="text/javascript">
+function validate_search() {
+  var zip = document.getElementById('find_zip');
+  if (!zip || zip.value == '' || zip.value.length < 5) {
+    document.getElementById('find_error').style.display = 'block';
+    return false;
+  }
+  return true;
+}
+
+jQuery(document).ready(function($) {
+  $("a.popup").fancybox();
+});
+</script>
+</head>
+<body>
+<div id="page_cont">
+<div id="top">
+  <div class="span-11m"><a href="../index.html" style="display:block;width:365px;height:100px;border:0;padding:0;margin:0" title="Home"><span class="hidden">Will Dikker.com</span></a></div>
+  <div class="span-13m last">
+    <div class="top-links"><a href="../login.html">Login</a> | &nbsp;&nbsp;<a href="../sell/index.html">Post FREE Ad</a> | &nbsp;&nbsp;<a href="#popup_wills_faq" class="popup">FAQ</a></div>
+    <div class="activate-stikker"><a href="../sell/index.html">Activate your Will Dikker For Sale Signs</a></div>
+    <div class="top-no-dealers">*Sorry, No Dealer Ads. Private Sales Only.</div>
+  </div>
+</div>
+<div id="nav">
+    <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="index.html" class="current">Find It</a></li>
+    <li><a href="../sell/index.html">Sell It FREE</a></li>
+    <li><a href="../financing.html">Financing</a></li>
+    <li><a href="../insurance.html">Insurance</a></li>
+    <li><a href="../warranties.html">Warranties</a></li>
+    <li><a href="../resources.html">Add'l Resources</a></li>
+    <li><a href="../events.html">Will's Events etc.</a></li>
+    </ul>
+</div>
+  <div id="content">
+    <div id="left" class="span-150">
+      <div class="private-listings-only"><span class="hidden">Private sales only please, No Dealers, Thanks</span></div>
+    </div>
+    <div id="center" class="span-600">
+      <div class="span-600" id="find_rv">
+  <div class="header_find-it-by-category"><span class="hidden">Find it by Category</span></div>
+  <div class="wrapper_600">
+    <div style="text-align: center">
+      <p><img src="../images/styles/links/rvs-text.gif" alt="RVs &amp; Travel Trailers" /></p>
+      <p><a href="index.html">(Change Category)</a></p>
+    </div>
+    <div id="find_error" style="display:none;color:#F00;text-align:center;margin: 10px 0 10px 0;">Please complete all required fields including ZIP Code.</div>
+    <form action="results.html" method="get" onsubmit="return validate_search();">
+      <input type="hidden" id="find_category" name="find[category]" value="rv" />
+      <table border="0" cellspacing="5" cellpadding="5">
+        <tr>
+          <td width="50%">Sub Category:
+            <select id="find_rv_sub_category" name="find[rv_sub_category]">
+              <option value="">Select Sub Category</option>
+              <option value="Class A">Class A</option>
+              <option value="Class B">Class B</option>
+              <option value="Class C">Class C</option>
+              <option value="Fifth Wheel">Fifth Wheel</option>
+              <option value="Folding/Pop-Up">Folding/Pop-Up</option>
+              <option value="Park Model">Park Model</option>
+              <option value="Sport Utility">Sport Utility</option>
+              <option value="Travel Trailer">Travel Trailer</option>
+              <option value="Other">Other</option>
+            </select><span class="required">*</span>
+          </td>
+          <td width="50%">Keywords: <input type="text" name="find[keywords]" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>ZIP Code: <input type="text" id="find_zip" name="find[zip]" size="6" maxlength="5"> <span class="required">*</span> (default 250 mile radius)</td>
+        </tr>
+      </table>
+      <p><input type="image" src="../images/styles/links/button_search.gif" alt="Search" /></p>
+    </form>
+  </div>
+</div>
+    </div>
+    <div id="right" class="span-150 last">
+      &nbsp;
+    </div>
+    <br class="clear" />
+  </div>
+  <div id="footer"></div>
+</div>
+<div id="bottom">
+  <div class="links">
+    <a href="../index.html">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="index.html">Find It</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="../sell/index.html">Sell It</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="../financing.html">Financing</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="../insurance.html">Insurance</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="../warranties.html">Warranties</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="../resources.html">Resources</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="../events.html">Will's Events etc.</a>
+  </div>
+  <div class="agreement">&copy; 2010 Will Dikker.com All Rights Reserved. "WillDikker.com" is a registered trademark of WillDikker, LLC</div>
+  <div class="links"><a href="../feedback.html">Send Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../privacy.html">Privacy Statement</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:support@willdikker.com">Help</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../sms.html">SMS Info</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../terms.html">Terms Of Use</a></div>
+</div>
+</body>
+</html>

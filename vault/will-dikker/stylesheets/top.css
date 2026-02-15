@@ -1,0 +1,7 @@
+.span-11m {width: 355px;background-image: url(../images/gui/page-header-new.png);height: 107px;background-repeat: no-repeat;}
+.span-13m {width: 585px;height: 107px;background-image: url(../images/gui/top_truck.jpg);background-repeat: no-repeat;}
+.top-links {margin-left: 320px;color: #FFFFFF;text-align: right;padding-right: 12px;height: 40px;}
+.top-links a {color: #FFFFFF;text-decoration: underline;font-family: Arial, Helvetica, sans-serif;font-size: 8pt;margin-right: 5px;}
+#top .top-no-dealers {font-family: "Times New Roman", Times, serif;color: #000000;margin-left: 300px;font-size: 9pt;padding-right: 12px;text-align: right;height: 18px;}
+#top .activate-stikker {font-family: Arial, Helvetica, sans-serif;font-size: 8pt;margin-right: 10px;text-align: right;height: 47px;}
+#top .activate-stikker a {font-family: Arial, Helvetica, sans-serif;font-size: 8pt;margin-top: 18px;margin-right: 5px;text-align: right;color: #FFFFFF;}

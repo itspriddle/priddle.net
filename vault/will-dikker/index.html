@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Free Ads by Will Dikker Auto Classifieds: Buy Sell Used Car Boat RV Motorcycle Trailer and more</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="stylesheets/willdikker.master.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="stylesheets/fancybox.css" type="text/css" media="screen" />
+<script src="javascripts/jquery.js" type="text/javascript"></script>
+<script src="javascripts/jquery-ui.js" type="text/javascript"></script>
+<script src="javascripts/jrails.js" type="text/javascript"></script>
+<script src="javascripts/jquery.fancybox.js" type="text/javascript"></script>
+<script src="javascripts/jquery.charcounter.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  $("a.popup").fancybox();
+  // Homepage category dropdown redirect
+  $("#category_form").submit(function(e) {
+    e.preventDefault();
+    var cat = $("#listing_category").val();
+    if (cat === '') return false;
+    var map = {
+      'automobile': 'find/automobile.html',
+      'boat': 'find/boat.html',
+      'motorcycle': 'find/motorcycle.html',
+      'rv': 'find/rv.html',
+      'utility_trailer': 'find/utility-trailer.html'
+    };
+    window.location.href = map[cat];
+  });
+  // Homepage text code search
+  $("#textcode_form").submit(function(e) {
+    e.preventDefault();
+    if ($("#text_code").val() === '') return false;
+    window.location.href = 'find/results.html';
+  });
+});
+</script>
+</head>
+<body>
+<div id="page_cont">
+<div id="top">
+	<div class="span-11m"><a href="index.html" style="display:block;width:365px;height:100px;border:0;padding:0;margin:0" title="Home"><span class="hidden">Will Dikker.com</span></a></div>
+	<div class="span-13m last">
+		<div class="top-links"><a href="login.html">Login</a> | &nbsp;&nbsp;<a href="sell/index.html">Post FREE Ad</a> | &nbsp;&nbsp;<a href="#popup_wills_faq" class="popup">FAQ</a></div>
+		<div class="activate-stikker"><a href="sell/index.html">Activate your Will Dikker For Sale Signs</a></div>
+		<div class="top-no-dealers">*Sorry, No Dealer Ads. Private Sales Only.</div>
+	</div>
+</div>
+
+<div id="nav">
+    <ul>
+		<li><a href="index.html" class="current">Home</a></li>
+		<li><a href="find/index.html">Find It</a></li>
+		<li><a href="sell/index.html">Sell It FREE</a></li>
+		<li><a href="financing.html">Financing</a></li>
+		<li><a href="insurance.html">Insurance</a></li>
+		<li><a href="warranties.html">Warranties</a></li>
+		<li><a href="resources.html">Add'l Resources</a></li>
+		<li><a href="events.html">Will's Events etc.</a></li>
+    </ul>
+</div>
+
+	<div id="content">
+		<div id="left" class="span-120" style="width:120px !important;">
+			<div class="post-your-ad-free"><span class="hidden">Post Your Ad FREE! No Purchase Necessary</span></div>
+			<div class="left-line">&nbsp;</div>
+			<div style="text-align:center;padding-bottom:10px;">
+				What are Will Dikker's customers saying? <br /><a href="#popup_wills_testimonials" class="popup">Will's Testimonials</a>
+			</div>
+			<div class="left-line">&nbsp;</div>
+			<div style="text-align:center;padding-bottom:10px;">
+				Have questions or<br />need more information?<br /><a href="#popup_wills_faq" class="popup">Check out Will's FAQ</a>
+			</div>
+			<div class="left-line">&nbsp;</div>
+			<div style="text-align:center;padding-bottom:10px;">
+				Need to activate your<br />For Sale Signs? <br /><a href="sell/index.html">Activate them here</a>
+			</div>
+			<div class="left-line">&nbsp;</div>
+			<div class="commercial">Lindsay S.<br />
+			  <div class="commercial"><a href="#popup_commercial" class="popup"><img src="images/styles/links/will-dikker-commercial.gif" /></a><br /><strong>Will Dikker Girl</strong><br />April 2009</div>
+			</div>
+		</div>
+		<div id="center" class="span-540" style="width:540px !important;">
+			<div class="header_find-it"><span class="hidden">Find It</span></div>
+			<div class="wrapper_540">
+				<div class="find-it">
+					<div class="find-it-text" style="font-weight: bold">For Sale By Owner Cars Used, Trucks, Boats, Motorcycles, ATVs, RVs, Trailers, and more.</div>
+					<div class="span-5">Search For Sale Sign Text Code</div>
+					<div class="span-1mb last">Search FREE Ads by Category</div>
+					<br />
+					<div class="span-5">
+						<form id="textcode_form" action="find/results.html" method="get">
+							<div class="span-1mb"><input name="text_code" type="text" id="text_code" maxlength="6" size="8" /></div>
+							<div class="span-1mb last"><input type="image" src="images/styles/links/button_continue.gif" alt="Continue" /></div>
+						</form>
+					</div>
+					<div class="span-7m">
+						<form id="category_form" action="find/automobile.html" method="get">
+							<div class="span-1mb">
+								<select name="listing_category" id="listing_category">
+									<option value="">Select Category</option>
+									<option value="automobile">Cars &amp; Trucks</option>
+									<option value="boat">Boats &amp; Personal Watercraft</option>
+									<option value="motorcycle">Cycles &amp; Motorsports</option>
+									<option value="rv">RVs &amp; Travel Trailers</option>
+									<option value="utility_trailer">Utility &amp; Misc Trailers</option>
+								</select>
+							</div>
+							<div class="span-1mb last"><input type="image" src="images/styles/links/button_continue.gif" alt="Continue" /></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="header_sell-it"><span class="hidden">Sell It</span></div>
+			<div class="wrapper_540-02" style="height:340px;">
+				<div id="container_steps">
+					<div class="span-13" style="font-weight:bold;text-align:center;padding-left:10px;padding-bottom:10px;">Sell Used Cars, Trucks Used, Boats, Motorcycles, ATVs, RVs, Trailers, PWC etc. FREE post!</div>
+					<div class="span-5m">
+						<div class="step-01-image"> </div>
+						<div class="selltext-01" style="padding-left:5px;">Totally FREE Classified Ad<br />posted on WillDikker.com</div>
+					</div>
+					<div class="span-5m">
+						<div class="step-02-image"> </div>
+						<div class="selltext-02">Will Dikker For Sale Signs <br />with Text Message Feature</div>
+					</div>
+					<div class="span-5m last">
+						<div class="step-03-image"> </div>
+						<div class="selltext-03 last">Sell it fast with Online and <br />Real World Ad Exposure</div>
+					</div>
+				</div>
+				<br class="clear" />
+				<div id="sell-points">
+				  <div>
+			  		<div class="info_icon"><a href="#popup_sell_it_01b" class="popup">&nbsp;</a></div>
+			  		<div class="span-12zm"><a href="#popup_sell_it_01b" class="popup"><strong>FREE Classifieds on WillDikker.com</strong></a> are accessible to tens of millions of potential buyers both on WillDikker.com and on numerous partner web sites.</div>
+					</div>
+					<div style="clear:both">
+			  		<div class="info_icon"><a href="#popup_sell_it_02b" class="popup">&nbsp;</a></div>
+			  		<div class="span-12zm"><a href="#popup_sell_it_02b" class="popup"><strong>Exclusive Text Message Feature</strong></a> allows potential buyers to get instant info about your item for sale by simply sending a text message right from their cell phone.</div>
+					</div>
+					<div style="clear:both">
+			  		<div class="info_icon"><a href="#popup_sell_it_03b" class="popup">&nbsp;</a></div>
+			  		<div class="span-12zm"><a href="#popup_sell_it_03b" class="popup"><strong>Will Dikker For Sale Signs</strong></a> enable text messaging while providing the best local and real world advertising exposure. They are safe, easy to apply and to remove.</div>
+			    </div>
+				</div>
+				<div class="button_get-started"><a href="sell/index.html"><img src="images/styles/links/get-started.gif" alt="Get Started" /></a></div>
+			</div>
+		</div>
+		<div id="right" class="span-240 last" style="width:243px !important;clear:right">
+			<div class="try-our-text">&nbsp;</div>
+			<div class="span-6" style="text-align:center;text-decoration:underline;font-weight:bold;padding-bottom:5px;padding-left:10px;padding-top:10px;">How It Works:</div>
+			<div style="height: 10px; clear: both;">&nbsp;</div>
+			<div class="span-1m" style="font-weight:bold;padding-left:20px;">1)</div>
+			<div class="span-3" style="margin-left:-20px;">Potential buyer sees Will Dikker For Sale Sign and sends a text msg with your unique text code to 78501</div>
+			<div class="span-2 last" style="padding-bottom:5px;"><a href="#popup_try_it_01" class="popup"><img src="images/styles/bullets/cell01.jpg"></a></div>
+			<div style="height: 10px; clear: both;">&nbsp;</div>
+			<div class="span-1m" style="font-weight:bold;padding-left:20px;">2)</div>
+			<div class="span-3" style="margin-left:-20px;">Potential buyer then instantly receives reply with your item's info and a link to your free ad on Will Dikker</div>
+			<div class="span-2 last" style="padding-bottom:5px;"><a href="#popup_try_it_02" class="popup"><img src="images/styles/bullets/cell02.jpg"></a></div>
+			<div style="height: 10px; clear: both;">&nbsp;</div>
+			<div class="span-1m" style="font-weight:bold;padding-left:20px;">3)</div>
+			<div class="span-3" style="margin-left:-20px;">You instantly receive potential buyer's cell phone number via text msg and/or email (cell phone is not required)</div>
+			<div class="span-2 last" style="padding-bottom:5px;"><a href="#popup_try_it_03" class="popup"><img src="images/styles/bullets/cell03.jpg"></a></div>
+		</div>
+		<br class="clear" style="font-size:1px"/>
+	</div>
+
+	<div id="footer"></div>
+
+</div>
+<div id="bottom">
+	<div class="links">
+		<a href="index.html">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="find/index.html">Find It</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="sell/index.html">Sell It</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="financing.html">Financing</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="insurance.html">Insurance</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="warranties.html">Warranties</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="resources.html">Resources</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="events.html">Will's Events etc.</a>
+	</div>
+	<div class="agreement">&copy; 2010 Will Dikker.com All Rights Reserved. "WillDikker.com" is a registered trademark of WillDikker, LLC</div>
+	<div class="links"><a href="feedback.html">Send Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.html">Privacy Statement</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:support@willdikker.com">Help</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="sms.html">SMS Info</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="terms.html">Terms Of Use</a></div>
+</div>
+
+<!-- Hidden popup content for FancyBox -->
+<div style="display:none">
+
+<div id="popup_sell_it_01b">
+  <strong>Will Dikker's FREE Ads are Accessible to Millions!</strong><br /><br />
+  <div class="center"><img src="images/styles/headers/header_blue-yes-its-free.jpg"><br /><img src="images/styles/popups/sell-laptop.jpg"></div><br /><br />
+  WillDikker.com has teamed up with various other "high traffic" classifieds web
+  sites to provide you with optimal online advertising exposure. This means that
+  your FREE listing will be accessible to tens of millions of potential buyers, on
+  multiple "big name" web sites throughout the internet.<br /><br /><br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+</div>
+
+<div id="popup_sell_it_02b">
+  <strong>Will Dikker's Text Message Feature Delivers Results!</strong><br /><br />
+  <div class="center"><img src="images/styles/headers/header_blue-did-you-know.jpg"></div><br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; There are currently more than 250 million US cell phone subscribers<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Nearly 70% of US cell phone users have sent or received a text message<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; US mobile operators reported over 75 billion text messages sent in June '08<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; 73% of cell phone users cite 'text messaging' as the 'most important' feature<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Text Messaging has surpassed talking for 13 to 44 year old cell phone users<br /><br /><br />
+  <div class="center"><img src="images/styles/popups/sell-cell-providers.jpg"></div><br /><br />
+  With Will Dikker's exclusive text message feature, when a potential buyer sees
+  your item with Will Dikker for sale signs displayed and wants more information,
+  they simply send a text message using the unique text code found on your Will
+  Dikker for sale signs. Within just a few moments, they then receive a reply with
+  info about your item for sale and a direct link to your WillDikker.com listing.<br /><br />
+  Will Dikker text messaging is certified with all of the major carriers and many
+  others as well, offering nationwide connectivity and the greatest reach.<br /><br /><br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+  <br /><br />
+</div>
+
+<div id="popup_sell_it_03b">
+  <strong>Will Dikker For Sale Signs with Text Message Feature!</strong><br /><br />
+  <div class="center"><img src="images/styles/headers/header_blue-exclusive.jpg"><br /><br /><img src="images/styles/popups/sell-stickers.jpg"></div> <br />
+  Will Dikker for sale signs provide the best local and real world advertising
+  exposure while allowing potential buyers to get instant information about the
+  item you are selling. Each set of Will Dikker for sale signs feature a unique
+  text code that is linked to info about your item and your WillDikker.com listing.<br /><br />
+  Each set includes three Will Dikker for sale signs (2 - 7"x11" and 1 - 9"x15").
+  Additional Will Dikker for sale signs and larger sizes available upon checkout. <br /><br /><br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+</div>
+
+<div id="popup_try_it_01">
+  <strong>1.) Potential Buyer Sends Text Message:</strong><br /><br />
+  <div style="text-align:center;"><img src="images/styles/bullets/cell-big-1.jpg" /></div>
+  With Will Dikker's Enhanced or Ultimate package options you will get custom
+  for sale signs to advertise your item for sale locally in the real world.<br /><br />
+  When potential buyers see your item with Will Dikker for sale signs displayed
+  and want more information, they simply send a text message using the unique
+  text code found on your Will Dikker for sale signs. Within moments of sending
+  their text message, they will receive a reply.<br /><br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+</div>
+
+<div id="popup_try_it_02">
+  <strong>2.) Potential Buyer Receives an Instant Reply:</strong><br /><br />
+  <div style="text-align:center;"><img src="images/styles/bullets/cell-big-2.jpg" /></div>
+  Within moments of sending a text message inquiry, potential buyers receive a
+  reply with info about your item along with a link to your WillDikker.com listing.<br /><br />
+  Many of today's cell phones have internet connectivity and web browsers,
+  providing potential buyers with the ability to instantly view your WillDikker.com
+  listing and photos right on their cell phone. They may also choose to simply
+  search your item by it's unique text code at WillDikker.com.<br /><br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+</div>
+
+<div id="popup_try_it_03">
+ <strong> 3.) You Receive Instant Text Msg and/or Email Notification:</strong><br /><br />
+ <div style="text-align:center;"><img src="images/styles/bullets/cell-big-3.jpg" /></div>
+  Whenever a potential buyer sends a text message, inquiring about your item
+  for sale, a text msg and/or email notification is immediately sent to you as well.<br /><br />
+  Because the potential buyer has initiated contact, the notification you receive
+  will include the cell phone number that the text message inquiry was sent from,
+  providing you with the opportunity to then contact the potential buyer via text
+  message or possibly by phone. (A cell phone is not required.)<br /><br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+</div>
+
+<div id="popup_wills_testimonials">
+  <strong>What Will Dikker's Customers Are Saying...</strong><br /><br />
+
+  I just sold my truck and it only took 12 days! Let me tell you, Will Dikker's
+  for sale signs are nothing short of amazing. I had text message inquiries daily,
+  even multiple times per day and was literally bombarded with people wanting to
+  buy my truck. Those things are incredible!<br /><br />
+  Dave W.<br />
+  San Diego, CA<br />
+
+  <hr />
+
+  I was skeptical at first because it seemed too good to be true - free ads, text
+  messaging and for sale signs? But I was pleasantly surprised. The for sale signs
+  are top notch quality and the text messaging works perfectly. This is really
+  cool stuff!<br /><br />
+  Ricky B.<br />
+  SanDiego, CA<br />
+
+  <hr />
+
+  I'm glad my friend told me about this site. I sure do like having the local exposure and the
+  online exposure too. My kids think the text-in feature is really cool. I can't wait to get
+  my for sale signs! <br /><br />
+  Janice G.<br />
+  York, PA<br />
+
+  <hr />
+
+  There are so many sites advertising "FREE ADS" but they always come with some kind of catch.
+  Well, I was skeptical but there is no catch with Will Dikker. All I wanted was to post a
+  free ad and that's what I got without any surprises. Good experience!<br /><br />
+  Frank P.<br />
+  Kansas City, MO<br />
+
+  <hr />
+
+  I met one of the Will Dikker girls at the car show last weekend. She was so excited about
+  this classified site that I decided to try it. I've had my for sale signs on for 3 days
+  and have already received 4 text messages! <br /><br />
+  Earl M.<br />
+  Nashville, TN<br />
+
+  <hr />
+
+  Finally a good idea for text messaging! I've already received 2 messages and today is
+  the first day with the for sale signs! <br />
+  Heidi R.<br />
+  Miami, FL<br />
+
+  <hr />
+
+  I can't believe it! I sold my bike yesterday. I had it for sale for months. That text
+  messaging thing and the signs really work! <br /><br />
+  Ben H.<br />
+  Scranton, PA<br />
+
+  <hr />
+
+  Saw the Will Dikker commercial on TV and said I would give it a try. I'm sure glad that I
+  did. I sold my car in just over a week after getting a bunch of text messages. This web
+  site is awesome! <br /><br />
+  Ann S.<br />
+  Fairfax, VA<br />
+
+  <hr />
+
+  I really needed to sell my second car after losing my job. My neighbor said to try Will
+  Dikker. It sold in less than two weeks. What a relief. Those for sale signs are not
+  only cool but really work too.<br /><br />
+  John E.<br />
+  Edgewater, FL<br />
+
+  <hr />
+
+  I couldn't be happier with the results I got with listing my car with Will Dikker. I'll
+  use Will Dikker again when I want to sell a car.<br /><br />
+  Claude V.<br />
+  Houston TX<br />
+
+  <hr />
+
+  No more grandpa orange and black, taped to window, falling off, with my phone number scribbled
+  on them for sale signs. From now on when I need to sell a vehicle I ride only with Will Dikker!<br /><br />
+  Bobby M.<br />
+  Huntsville, AL<br />
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+  <br /><br />
+</div>
+
+<div id="popup_wills_faq">
+  <strong>Will's Frequently Asked Questions.</strong><br /><br />
+
+  <strong>1.) Do I need a cell phone to sell my vehicle with the text message feature and for sale signs?</strong><br />
+  No, a cell phone is not required. You will be notified of all text message inquiries on your item for sale by text message and/or email.
+  This means, if you do not have a cell phone, you will simply receive email notifications and correspondence only and not text messages.<br /><br />
+
+  <strong>2.) How do I set up the text message feature to work with item I am selling?</strong><br />
+  In order for the text message feature to work, you must "activate" your Will Dikker for sale signs. It's easy and takes only a minute or two. Simply log into your account and follow the prompts.<br /><br />
+
+  <strong>3.) How do I know my for sale signs are "activated" and the text message feature is working?</strong><br />
+  After you have activated your for sale signs on WillDikker.com, simply try out the text message feature for yourself by texting the
+  unique text code shown on your for sale signs to 78501. If your for sale signs have been successfully activated, you will receive the
+  message that potential buyers will receive when then send a text message for information.<br /><br />
+
+  <strong>4.) Do I have to pay more when someone sends a text message requesting info about my item for sale?</strong><br />
+  No, WillDikker.com never charges for individual text messages. There are no "per-message" charges or hidden fees of any kind
+  to you or to potential buyers. Standard message rates from your carrier, however, may apply.<br /><br />
+
+  <strong>5.) Are the Will Dikker for sale signs included?</strong><br />
+  Our Enhanced and Ultimate packages both include three Will Dikker for sale signs (2- 7"x11" and 1- 9"x15"). Additional
+  for sale signs and larger sizes are also available for purchase. *Basic package does not include for sale signs or text messaging.<br /><br />
+
+  <strong>6.) When will I receive my Will Dikker for sale signs?</strong><br />
+  Processing and delivery is fast and FREE! Once your account and/or your listing have been created, your Will
+  Dikker for sale signs will be shipped out no later than the following business day via USPS Priority Mail. <br /><br />
+
+  <strong>7.) Are Will Dikker for sale signs safe for my vehicle?</strong><br />
+  Yes, they are safe? Our for sale signs are made from a high quality removable-adhesive-backed vinyl material. The material has
+  been time-tested and proven to be safe after more than six years of use on tens of thousands of vehicles throughout the country.<br /><br />
+
+  <strong>8.) Is it difficult to put on or take off the Will Dikker for sale signs?</strong><br />
+  No, application and removal are both very easy and fast. To apply, all you will need is a squeegee or a credit card,
+  glass cleaner or a squirt bottle with soapy water and a clean towel. To remove, simply grab an edge and carefully peel away from surface.<br /><br />
+
+  <strong>9.) How long will the for sale signs last?</strong><br />
+  Will Dikker For Sale Signs are made from the very best materials and inks available and can literally last for years.
+  If applied per recommendation, they will not fade or peel in the time it takes to sell your item.<br /><br />
+
+  <strong>10.) Does Will Dikker have a referral or affiliate program?</strong><br />
+  Yes, we do! Please contact us if you are interested in earning ongoing recurring revenue by promoting WillDikker.com<br /><br />
+
+  <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+  <br /><br />
+</div>
+
+<div id="popup_commercial">
+  <div class="center">
+    <p><em>Will Dikker TV Commercial (2009)</em></p>
+    <p>Video no longer available.</p>
+    <div class="center"><img src="images/styles/popups/popup-logo.jpg" /></div>
+  </div>
+</div>
+
+</div><!-- end hidden popups -->
+
+</body>
+</html>

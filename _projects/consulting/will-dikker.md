@@ -141,3 +141,4 @@ recipe also included iptables firewall configuration for server hardening.
 Error tracking was handled by Hoptoad (now Airbrake), and reCAPTCHA protected
 public-facing forms.
 
+[View archive of the site &rarr;](/vault/will-dikker/)

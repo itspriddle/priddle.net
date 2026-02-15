@@ -1,0 +1,53 @@
+fieldset {padding:1.4em;margin:0 0 50px 0;border:1px solid #ccc;}
+legend {font-weight:normal;font-size:9pt;font-family:"Times New Roman", Times, serif}
+form fieldset {padding:5px 0 0 0;border:0;}
+form .required {color:#F00;}
+form fieldset legend {padding:0;margin:0;}
+form fieldset textarea {width:100%;height:150px;}
+form ul {list-style:none;padding:0;margin:0;}
+form ul li {height:30px;border-bottom:1px solid #ccc;}
+form ul li.last {border-bottom:0;padding-top:10px;}
+form ul li:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+form ul li label,form ul li div.label {display:block;margin:0;padding:0;float:left;width:180px;height:30px;line-height:30px;}
+form ul li div.field input {border:1px solid #999;}
+input#listing_title {border:1px solid #999;height:20px;}
+form.activate-stickers ul li label {display:block;margin:0;padding:0;float:left;width:100px;height:30px;line-height:30px;}
+form.activate-stickers ul li.first {border-top:1px solid #ccc;}
+form ul li div.field {float:left;width:250px;height:30px;line-height:30px;}
+form fieldset.errors {color:#F00;}
+.warning {background:#FBE6F2;border:1px solid #D893A1;color:#000;margin:0px 0 15px 0;padding:5px;font-size:9pt;font-family:Arial, Helvetica, sans-serif !important;font-weight:bold;}
+.success {background:#B6DE8E;border:1px solid #8BA609;color:#000;margin:0px 0 15px 0;padding:5px;font-size:9pt;font:Arial, Helvetica, sans-serif !important;font-weight:bold;}
+.warning p, .success p, .warning li, .success li {font-size:9pt;font-family:Arial, Helvetica, sans-serif !important;font-weight:bold;}
+div#listing-gallery {width:234px;}
+div#listing-avatar {margin-bottom:3px;}
+div#listing-avatar img {border:0;padding:1px;margin:0;font-size:1px;outline:1px solid #000;}
+div#listing-gallery div.thumb {float:left;width:74px;margin:0 6px 3px 0;padding:0;}
+div#listing-gallery div.thumb-link {}
+div#listing-gallery div.thumb-link img {border:0;padding:1px;margin:0;font-size:1px;outline:1px solid #000;}
+div#listing-gallery div.delete-link {padding:0;margin:0 0 5px 0;line-height:10px;text-align:center;}
+div#listing-gallery div.delete-link a {padding:0;margin:0;line-height:10px;font-size:7pt !important;}
+br.clear {font-size:1px;clear:both;}
+.section-label {margin-bottom:10px;}
+.sell-progress {height:30px;line-height:30px;text-align:center;width:96%;margin-bottom:20px;}
+.step1of4 {background:transparent url(../images/styles/headers/step1of4.gif) no-repeat right top;}
+.step2of4 {background:transparent url(../images/styles/headers/step2of4.gif) no-repeat right top;}
+.step3of4 {background:transparent url(../images/styles/headers/step3of4.gif) no-repeat right top;}
+.step4of4 {background:transparent url(../images/styles/headers/step4of4.gif) no-repeat right top;}
+#confirm_order {font-family:"Times New Roman", Times, serif;font-size:9pt;}
+#confirm_order h1 {font-size:9pt;font-weight:bold;font-family:Arial, Helvetica, sans-serif;}
+.warning ul {list-style:none;}
+#checkout .error {display:none;background:transparent url(../images/icons/exclamation.png) no-repeat;padding:0px 6px 4px 10px;margin-left:10px;vertical-align:center;}
+#right .textfield {width:100px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;margin-bottom:5px;}
+#right .messagebox {width:130px;}
+.featured-item, .featured-item-02 {border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCCCCC;padding-right:10px;padding-left:10px;font-family:Arial, Helvetica, sans-serif;border-right-width:1px;border-left-width:1px;border-right-style:solid;border-left-style:solid;border-right-color:#CCCCCC;border-left-color:#CCCCCC;}
+.featured-item-02 {background-color:#F6F6F6;}
+.featured-item a {font-size:10px;font-family:Arial, Helvetica, sans-serif;}
+.center {text-align:center;}
+.left {text-align:left;}
+.right {text-align:right;}
+.checkbox-col-left {width:48%;float:left;}
+.checkbox-col-right {width:50%;margin-left:2%;float:left;}
+.checkbox-col-left li, .checkbox-col-right li {width:100%;}
+.checkbox-col-left li div.field, .checkbox-col-right li div.field {float:left;width:20px;height:30px;line-height:30px;}
+.checkbox-col-left li label, .checkbox-col-right li label {display:block;margin:0;padding:0;float:left;width:180px;height:30px;line-height:30px;}
+.checkbox-col-right li label {width:190px;}

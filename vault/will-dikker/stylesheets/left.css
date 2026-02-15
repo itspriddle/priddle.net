@@ -1,0 +1,22 @@
+#left .header {background-image:url(../images/styles/backgrounds/content-box-120-top.jpg);background-repeat:no-repeat;height:11px;}
+#left .header_150 {background-image:url(../images/styles/backgrounds/content-box-150-top.jpg);background-repeat:no-repeat;height:11px;}
+#right .header_150 {background-image:url(../images/styles/backgrounds/content-box-150-top.jpg);background-repeat:no-repeat;height:11px;}
+#left .wrapper_120 {padding-top:10px;border-bottom-width:5px;border-bottom-style:solid;border-bottom-color:#67A6D9;}
+#left .container_120 {background-image:url(../images/styles/backgrounds/content-box-120.jpg);background-repeat:repeat-y;width:120px;text-align:center;padding-bottom:10px;font-family:"Times New Roman", Times, serif;font-size:9pt;}
+#left .container_150 {width:138px;padding-top:10px;padding-right:5px;padding-bottom:10px;padding-left:5px;}
+.grey_box_blue_border {border-bottom-width:5px;border-bottom-style:solid;border-bottom-color:#67A6D9;border-right-width:1px;border-left-width:1px;border-right-style:solid;border-left-style:solid;border-right-color:#9a9a9a;border-left-color:#9a9a9a;background-color:#F6F6F6;}
+#left .win-wills-ride {height:206px;width:120px;margin-top:15px;}
+#left .private-listings-only {background-image:url(../images/styles/headers/private-listings-only.gif);background-repeat:no-repeat;height:88px;width:147px;margin-right:auto;margin-left:auto;margin-bottom:10px;}
+#left .private-sales-only {background-image:url(../images/styles/headers/no-dealers.jpg);height:85px;width:120px;}
+#left .why-will-dikker {background-image:url(../images/styles/headers/why-will-dikker.gif);height:29px;width:110px;margin-right:auto;margin-left:auto;margin-bottom:5px;}
+#left .consider-it-sold {background-image:url(../images/styles/headers/consider-it-sold.gif);background-repeat:no-repeat;height:29px;width:96px;margin-right:auto;margin-left:auto;margin-top:10px;}
+#left .header_refine-search {background-image:url(../images/styles/headers/header_refine-search.gif);height:21px;width:150px;}
+#left .header_saved-listings {background-image:url(../images/styles/headers/header_saved-listings.gif);height:21px;width:150px;margin-bottom:5px;}
+#left .star {background-image:url(../images/styles/bullets/star.gif);height:22px;width:22px;margin-right:auto;margin-left:auto;margin-top:5px;margin-bottom:2px;}
+#left #textfield {width:100px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;}
+#left #listbox_category {font-family:Arial, Helvetica, sans-serif;font-size:9pt;width:60px;}
+#left #listbox_category02 {font-family:Arial, Helvetica, sans-serif;font-size:9pt;width:70px;}
+.spacer {height:5px;}
+#refine-search a {font-family:Arial, Helvetica, sans-serif;font-size:9px;}
+#refine-search {width:125px;margin-right:auto;margin-left:auto;margin-top:10px;margin-bottom:20px;}
+#right .red {color:#FF0000;}
