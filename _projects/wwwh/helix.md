@@ -20,18 +20,21 @@ tags:
 project_type: work
 tier: 1
 excerpt: >-
-  Multi-app Rails billing and hosting platform that powered 385,000+
-  WordPress sites across three companies over eight years — the core system
-  behind WWWH, Pressed, and Envato Hosted.
+  Multi-app Rails billing and hosting platform spanning three companies over
+  eight years — a ground-up rewrite of Synco built for maintainability, and
+  the core system behind WWWH, Pressed, and Envato Hosted.
 ---
 
 Helix was the billing and hosting management platform behind World Wide Web
-Hosting (WWWH), Pressed, and Envato Hosted. It managed the complete lifecycle
-of web hosting services — customer signups, billing, domain registration,
-WordPress provisioning, SSL certificates, support, and partner management —
-across 385,000+ sites and dozens of white-label brands. I was a lead developer
-from the project's inception in 2011 through the Envato era in 2019, spanning
-three companies and the full evolution from shared hosting to managed WordPress.
+Hosting (WWWH), Pressed, and Envato Hosted. It was a ground-up rewrite of
+[Synco](/work/wwwh/synco/), WWWH's legacy billing system — built for feature
+parity but with modern patterns and long-term maintainability. Helix managed
+the complete lifecycle of web hosting services — customer signups, billing,
+domain registration, WordPress provisioning, SSL certificates, support, and
+partner management — across dozens of white-label brands. I was a lead
+developer from the project's inception in 2011 through the Envato era in 2019,
+spanning three companies and the full evolution from shared hosting to managed
+WordPress.
 
 ## Architecture
 
@@ -91,9 +94,11 @@ a method name internally.
 
 ## The WWWH → Pressed → Envato Arc
 
-**WWWH (2011–2015):** Helix started as a ground-up replacement for WWWH's
-existing billing system. WWWH was a traditional shared web host supporting
-multiple brands (including [Site5](https://en.wikipedia.org/wiki/Site5)).
+**WWWH (2011–2015):** Helix started as a ground-up replacement for
+[Synco](/work/wwwh/synco/), WWWH's legacy billing system. The goal was full
+feature parity with modern Rails patterns and a maintainable architecture that
+could evolve with the business. WWWH was a traditional shared web host supporting
+multiple brands (including Site5).
 The original system managed shared hosting, VPS, dedicated servers, and domain
 registrations across these brands. The multi-brand architecture — where a
 single `Brand` record controlled theming, products, pricing, payment
@@ -188,7 +193,7 @@ pipeline.
 ## Related Projects
 
 - [MWP Lazy Upgrader](/work/pressed/mwp-lazy-upgrader/) — Network filesystem
-  optimization for WordPress upgrades across 385,000 sites
+  optimization for WordPress upgrades at scale
 - [Pressed Bundles](/work/pressed/pressed-bundles/) — Automated WordPress
   theme bundling (the original version)
 - [Bender Builds](/work/envato/bender-builds/) — CI-driven theme bundling
