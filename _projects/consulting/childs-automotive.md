@@ -26,8 +26,7 @@ The site launched in August 2002 and featured image-based navigation with
 rollover effects, a staff directory with ASE certifications, a photo gallery of
 customer cars, a racing sponsorship page for Stock Car Team #36, and an
 affiliate links section. The entire layout was a single Fireworks PNG
-(`childsautomotive_test2_sliced.png`) exported as a sliced GIF table ---
-the signature workflow of the era.
+exported as a sliced GIF table --- the signature workflow of the era.
 
 Shockingly, it still renders pixel perfect in a modern browser today.
 
@@ -45,16 +44,4 @@ handled the map and site requirements pages.
 
 **Tools:** Macromedia Fireworks MX, Macromedia Dreamweaver MX
 
-## Screenshots
-
-![Homepage]({{ "/images/childs-automotive/01-homepage.png" | relative_url }})
-
-![About Us]({{ "/images/childs-automotive/02-about.png" | relative_url }})
-
-![Services]({{ "/images/childs-automotive/03-services.png" | relative_url }})
-
-![Pictures]({{ "/images/childs-automotive/04-pictures.png" | relative_url }})
-
-![Racing]({{ "/images/childs-automotive/05-racing.png" | relative_url }})
-
-![Links]({{ "/images/childs-automotive/06-links.png" | relative_url }})
+[View archive of the site &rarr;](/vault/childs-automotive/)
