@@ -59,10 +59,4 @@ separation between the main app database and the Asterisk SIP configuration.
 Both versions integrated with AddThis for social sharing, and the Rails
 version added native Facebook Like and Twitter Tweet buttons.
 
-## Screenshots
-
-![Homepage]({{ "/images/lets-call-santa/homepage.png" | relative_url }})
-
-![Voicemail Playback]({{ "/images/lets-call-santa/voicemail-playback.png" | relative_url }})
-
-![Success Page]({{ "/images/lets-call-santa/success.png" | relative_url }})
+[View archive of the site &rarr;](/vault/lets-call-santa/)

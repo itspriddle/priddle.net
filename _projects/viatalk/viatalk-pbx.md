@@ -85,3 +85,5 @@ cache invalidation logic.
 **Multi-tenant isolation** - the same Asterisk instance served three
 companies with separate queues, agents, SIP endpoints, and branded web
 interfaces while sharing common infrastructure.
+
+[View archive of the site &rarr;](/vault/viatalk-pbx/)

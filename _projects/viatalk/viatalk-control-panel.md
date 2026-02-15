@@ -69,3 +69,5 @@ Redesigned the staff administration portal for managing customers, packages,
 resellers, and support tickets. Also worked on the multi-step shopping cart and
 signup flow that handled service area validation, E911 verification, and
 payment processing.
+
+[View archive of the site &rarr;](/vault/viatalk-cp/)

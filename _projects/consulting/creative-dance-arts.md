@@ -33,3 +33,5 @@ I trained the Artistic Director on WordPress content management and provided
 ongoing support for the site's 200+ active users during class sessions. This
 was my longest client relationship — a project that grew from a simple
 static site into a functional web application over a decade.
+
+[View archive of the site &rarr;](/vault/creative-dance-arts/)
