@@ -30,14 +30,25 @@ entire workflow.
 
 ## Key Features
 
-- **Sprint Reports** - Generate detailed breakdowns with issue categorization
-  (completed, punted, mid-sprint additions, blocked work)
+- **Sprint Reports** - Generate detailed breakdowns at sprint start, mid-sprint,
+  and close — showing how the sprint evolved, not just a final summary. Issues
+  are categorized by status (completed, in progress, blocked, punted) with
+  per-epic, per-developer, and per-project stat tables
+- **Rock Tracking** - Separate tracking for quarterly priority ("rock") stories
+  vs regular work, with dedicated commitment, completion, and punt rates. Rocks
+  are the backbone of the KPI system — the tool distinguishes rock epics from
+  non-rock epics throughout every report section
+- **KPI Dashboard** - Three leadership-facing KPIs with traffic-light thresholds
+  reported weekly: Rocks Committed (% of sprint devoted to quarterly
+  priorities — green at 80%+), Rocks Completed (% of rock points delivered —
+  green at 80%+), and Mid-Sprint Damage (% of unplanned non-rock work pulled
+  in — green at 0-10%). Each mid-sprint addition requires a justification note
+  explaining why it was pulled in
 - **Velocity Tracking** - Calculate rolling averages across configurable sprint
   ranges with developer count normalization
-- **KPI Metrics** - Points committed vs completed, work days remaining, team
-  capacity analysis
-- **Multi-Format Output** - Table (terminal), Markdown, HTML, and JSON for
-  different audiences and integrations
+- **Visual Reports** - HTML output with embedded Mermaid.js pie charts for rock
+  commitment, completion, and mid-sprint damage breakdowns. Also supports
+  terminal tables, Markdown, and JSON
 - **Board/Sprint Navigation** - List boards, find sprints by ID/name/date, open
   directly in JIRA
 
@@ -56,3 +67,5 @@ seconds. The consistent formatting eliminates errors and ensures stakeholders
 receive reliable, comparable data week over week. The tool also enabled
 backfilling historical sprint data for trend analysis that wasn't previously
 feasible.
+
+[View fake reports &rarr;](/vault/storytime/)

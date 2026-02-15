@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Storytime - Sprint Report for Cyndaquil</title>
+
+    <link rel="stylesheet" href="https://pages-themes.github.io/primer/assets/css/style.css?v=1734359738">
+
+    <style>
+      html.theme-dark body {
+        background-color: black;
+        filter: hue-rotate(180deg) invert(90%);
+      }
+
+      html.theme-dark body .icon {
+        filter: hue-rotate(-180deg) invert(90%);
+      }
+
+      .markdown-body {
+        font-size: 14px !important;
+      }
+
+      pre:has(.language-mermaid) {
+        background-color: #ffffff;
+      }
+
+      .language-mermaid {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      table th:not(:last-child),
+      table td:not(:last-child) { white-space: nowrap !important }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <h1 id="storytime---sprint-report-for-cyndaquil-sprint-3-2025">Storytime - Sprint Report for Cyndaquil (Sprint 3, 2025)</h1>
+
+<h2 id="general-information">General Information</h2>
+
+<ul>
+  <li><strong>Sprint Status</strong>: Active</li>
+  <li><strong>Start Date</strong>: Monday, February 3, 2025</li>
+  <li><strong>End Date</strong>: Friday, February 14, 2025</li>
+  <li><strong>Work Days Remaining</strong>: 5</li>
+  <li><strong>Points Committed</strong>: 73</li>
+  <li><strong>Points Completed</strong>: 14 (19% of total sprint points)</li>
+  <li><strong>Rock Points (Committed, Mid-Sprint, and Punted)</strong>: 55 (74% of total sprint points)</li>
+  <li><strong>Rock Points Completed</strong>: 8 (15% of total rock points)</li>
+  <li><strong>Rock Points Punted</strong>: 0 (0% of total rock points)</li>
+  <li><strong>Stories In Progress:</strong> 6 (24 points)</li>
+  <li><strong>Quarter:</strong> 2025-Q1</li>
+  <li><strong>Average Velocity:</strong> 77 (over the last 6 sprints, excluding this sprint, 8 developers/sprint)</li>
+  <li><strong>Generated Time:</strong> Monday, February 10, 2025 at 9:30am</li>
+</ul>
+
+<p><a href="#">View Sprint Report in Jira</a></p>
+
+<h3 id="sprint-goals">Sprint Goals</h3>
+
+<ul>
+  <li>Launch email template engine v2</li>
+  <li>Complete database index optimization</li>
+</ul>
+
+<h3 id="rock-epics-worked">Rock Epics Worked</h3>
+
+<ul>
+  <li><a href="#">&#9733; API Rate Limiting [25Q1]</a></li>
+  <li><a href="#">&#9733; Webhook Delivery System [25Q2]</a></li>
+  <li><a href="#">&#9733; Database Migration Tooling [25Q1]</a></li>
+  <li><a href="#">&#9733; Payment Gateway Integration [25Q1]</a></li>
+  <li><a href="#">&#9733; SSO Integration [25Q2]</a></li>
+</ul>
+
+<h3 id="non-rock-epics-worked">Non-rock Epics Worked</h3>
+
+<ul>
+  <li><a href="#">Cron Job Monitoring</a></li>
+  <li><a href="#">Server Health Dashboard</a></li>
+  <li><a href="#">Report Export Enhancements</a></li>
+  <li><a href="#">Tax Calculation Fixes</a></li>
+</ul>
+
+<h2 id="epic-stats">Epic Stats</h2>
+
+<p>Stats for epics that were worked on during this sprint.</p>
+
+<p>Note: these stats reflect stories worked on during the sprint, not the overall
+status of the epic itself. I.e. &ldquo;100% completed&rdquo; means that all stories that
+were added to this sprint for an epic were completed, not that the epic itself
+is 100% complete.</p>
+
+<p>&#9733; denotes a rock epic.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Epic</th>
+      <th>Stories</th>
+      <th>Points</th>
+      <th>Stories Completed</th>
+      <th>Points Completed</th>
+      <th>Percent Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">&#9733; API Rate Limiting [25Q1]</a></td>
+      <td>2</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Cron Job Monitoring</a></td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">&#9733; Database Migration Tooling [25Q1]</a></td>
+      <td>3</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">&#9733; Payment Gateway Integration [25Q1]</a></td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Report Export Enhancements</a></td>
+      <td>3</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">&#9733; SSO Integration [25Q2]</a></td>
+      <td>4</td>
+      <td>24</td>
+      <td>1</td>
+      <td>8</td>
+      <td>33%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Server Health Dashboard</a></td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Tax Calculation Fixes</a></td>
+      <td>2</td>
+      <td>6</td>
+      <td>2</td>
+      <td>6</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td><a href="#">&#9733; Webhook Delivery System [25Q2]</a></td>
+      <td>3</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="kpis">KPIs</h2>
+
+<h3 id="company-kpis">Company KPIs - Sprint 3, 2025 (Cyndaquil)</h3>
+
+<p>These KPIs are reported up to the leadership team on a weekly basis.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>KPI</th>
+      <th>Status</th>
+      <th>Percent</th>
+      <th>Green</th>
+      <th>Yellow</th>
+      <th>Red</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">Rocks Committed</a><br /><small>The percentage of stories that are rocks<br />that were committed to the sprint.</small></td>
+      <td>&#x1F7E1;</td>
+      <td>74.3%<br />55 rock points &divide;<br />74 total points</td>
+      <td>80% - 100%</td>
+      <td>60% - 79%</td>
+      <td>0% - 59%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rocks Completed</a> *<br /><small>The percentage of stories that are rocks<br />that were completed in the sprint.</small></td>
+      <td>&#x1F534;</td>
+      <td>14.5%<br />8 rock points completed &divide;<br />55 rock points committed</td>
+      <td>80% - 100%</td>
+      <td>60% - 79%</td>
+      <td>0% - 59%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Mid-Sprint Damage</a> *<br /><small>The percentage of stories that came in<br />mid-sprint and weren&rsquo;t related to rocks.</small></td>
+      <td>&#x1F7E2;</td>
+      <td>1.4%<br />1 mid-sprint points &divide;<br />74 total points</td>
+      <td>0% - 10%</td>
+      <td>11% - 20%</td>
+      <td>21% - 100%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>*Note: This sprint is still active. These KPIs are based on the current state
+of the sprint and will change as the sprint progresses.</small></p>
+
+<h4 id="rock-points-committed">Rock Points Committed</h4>
+
+<pre><code class="language-mermaid">%%{init: {
+  "themeVariables": {
+    "fontFamily": "Helvetica,Arial,sans-serif",
+    "background": "#ffffff",
+    "pieTitleTextSize": "14px",
+    "pieSectionTextSize": "13px",
+    "pieLegendTextSize": "13px",
+    "pieStrokeWidth": "1px",
+    "pieOuterStrokeWidth": "1px"
+  }
+}}%%
+pie showData
+    "Rock Points" : 55
+    "Other Points" : 19
+</code></pre>
+
+<h4 id="rock-points-completed">Rock Points Completed</h4>
+
+<pre><code class="language-mermaid">%%{init: {
+  "themeVariables": {
+    "fontFamily": "Helvetica,Arial,sans-serif",
+    "background": "#ffffff",
+    "pieTitleTextSize": "14px",
+    "pieSectionTextSize": "13px",
+    "pieLegendTextSize": "13px",
+    "pieStrokeWidth": "1px",
+    "pieOuterStrokeWidth": "1px"
+  }
+}}%%
+pie showData
+    "Completed" : 8
+    "Not Completed" : 47
+</code></pre>
+
+<h4 id="mid-sprint-damage">Mid-Sprint Damage (Non-Rocks)</h4>
+
+<pre><code class="language-mermaid">%%{init: {
+  "themeVariables": {
+    "fontFamily": "Helvetica,Arial,sans-serif",
+    "background": "#ffffff",
+    "pieTitleTextSize": "14px",
+    "pieSectionTextSize": "13px",
+    "pieLegendTextSize": "13px",
+    "pieStrokeWidth": "1px",
+    "pieOuterStrokeWidth": "1px"
+  }
+}}%%
+pie showData
+    "Mid-Sprint Points" : 1
+    "Other Points" : 73
+</code></pre>
+
+<h2 id="sprint-stats">Sprint Stats</h2>
+
+<h3 id="all-stories">All Stories</h3>
+
+<p>This table shows the breakdown of all stories in the sprint, including rock
+stories.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Story Count</th>
+      <th>Story Points</th>
+      <th>Percentages</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">Total Stories</a></td>
+      <td>22</td>
+      <td>74</td>
+      <td>100% of sprint points</td>
+      <td>All stories added to the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories Committed</a></td>
+      <td>21</td>
+      <td>73</td>
+      <td>99% of sprint points</td>
+      <td>Stories committed to at the start of the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories Completed</a></td>
+      <td>3</td>
+      <td>14</td>
+      <td>19% of sprint points</td>
+      <td>Stories completed during the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories Mid-Sprint</a></td>
+      <td>1</td>
+      <td>1</td>
+      <td>1% of sprint points</td>
+      <td>Stories added mid-sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories In Progress</a></td>
+      <td>6</td>
+      <td>24</td>
+      <td>32% of sprint points</td>
+      <td>Stories in progress</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories Punted</a></td>
+      <td>0</td>
+      <td>0</td>
+      <td>0% of sprint points</td>
+      <td>Stories removed from the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories To Do</a></td>
+      <td>7</td>
+      <td>16</td>
+      <td>22% of sprint points</td>
+      <td>Stories that still need to be started</td>
+    </tr>
+    <tr>
+      <td><a href="#">Stories Blocked</a></td>
+      <td>2</td>
+      <td>8</td>
+      <td>11% of sprint points</td>
+      <td>Stories that are blocked</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rock-stats">Rock Stats</h3>
+
+<p>This table shows the breakdown of rock stories in the sprint.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Story Count</th>
+      <th>Story Points</th>
+      <th>Percentages</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">Rock Stories</a></td>
+      <td>14</td>
+      <td>55</td>
+      <td>74% of sprint points</td>
+      <td>Stories contributing to rocks</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rock Stories Committed</a></td>
+      <td>14</td>
+      <td>55</td>
+      <td>74% of sprint points</td>
+      <td>Stories contributing to rocks committed to at the start of the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rock Stories Completed</a></td>
+      <td>1</td>
+      <td>8</td>
+      <td>15% of rock points</td>
+      <td>Stories contributing to rocks completed during the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rock Stories Mid-Sprint</a></td>
+      <td>0</td>
+      <td>0</td>
+      <td>0% of sprint points</td>
+      <td>Stories contributing to rocks that were added mid-sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rock Stories In Progress</a></td>
+      <td>5</td>
+      <td>23</td>
+      <td>42% of rock points</td>
+      <td>Stories contributing to rocks that are in progress</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rock Stories Punted</a></td>
+      <td>0</td>
+      <td>0</td>
+      <td>0% of rock points</td>
+      <td>Stories contributing to rocks that were removed from the sprint</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rock Stories To Do</a></td>
+      <td>3</td>
+      <td>7</td>
+      <td>13% of rock points</td>
+      <td>Stories contributing to rocks that still need to be started</td>
+    </tr>
+    <tr>
+      <td><a href="#">Rocks Blocked</a></td>
+      <td>2</td>
+      <td>8</td>
+      <td>15% of rock points</td>
+      <td>Stories contributing to rocks that are blocked</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="developer-stats">Developer Stats</h2>
+
+<p>This table shows a breakdown of stories assigned to each developer.</p>
+
+<p>Note: due to pair programming, the number of stories assigned to a developer may
+not be the same as the number of stories they worked on.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Developer</th>
+      <th>Stories Assigned</th>
+      <th>Points Assigned</th>
+      <th>Stories Completed</th>
+      <th>Points Completed</th>
+      <th>Percent Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">Alex Chen</a></td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Dev Patel</a></td>
+      <td>3</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">James Wilson</a></td>
+      <td>1</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Lisa Brown</a></td>
+      <td>3</td>
+      <td>10</td>
+      <td>1</td>
+      <td>5</td>
+      <td>50%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Maria Santos</a></td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Ryan Murphy</a></td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Sarah Kim</a></td>
+      <td>3</td>
+      <td>12</td>
+      <td>2</td>
+      <td>9</td>
+      <td>75%</td>
+    </tr>
+    <tr>
+      <td><a href="#">Tom Zhang</a></td>
+      <td>3</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-mermaid">%%{init: {
+  "themeVariables": {
+    "fontFamily": "Helvetica,Arial,sans-serif",
+    "background": "#ffffff",
+    "pieTitleTextSize": "14px",
+    "pieSectionTextSize": "13px",
+    "pieLegendTextSize": "13px",
+    "pieStrokeWidth": "1px",
+    "pieOuterStrokeWidth": "1px"
+  }
+}}%%
+pie showData title Points Completed by Developer [14 total]
+    "Lisa Brown" : 5
+    "Sarah Kim" : 9
+</code></pre>
+
+<h2 id="project-stats">Project Stats</h2>
+
+<p>This table shows a breakdown of stories by project. A project is a specific
+application or area of work, not an epic.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Stories</th>
+      <th>Points</th>
+      <th>Stories Completed</th>
+      <th>Points Completed</th>
+      <th>Percent Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">API</a></td>
+      <td>9</td>
+      <td>39</td>
+      <td>1</td>
+      <td>8</td>
+      <td>21%</td>
+    </tr>
+    <tr>
+      <td><a href="#">APP</a></td>
+      <td>3</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td><a href="#">BILL</a></td>
+      <td>4</td>
+      <td>10</td>
+      <td>2</td>
+      <td>6</td>
+      <td>60%</td>
+    </tr>
+    <tr>
+      <td><a href="#">OPS</a></td>
+      <td>6</td>
+      <td>17</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-mermaid">%%{init: {
+  "themeVariables": {
+    "fontFamily": "Helvetica,Arial,sans-serif",
+    "background": "#ffffff",
+    "pieTitleTextSize": "14px",
+    "pieSectionTextSize": "13px",
+    "pieLegendTextSize": "13px",
+    "pieStrokeWidth": "1px",
+    "pieOuterStrokeWidth": "1px"
+  }
+}}%%
+pie showData title Points Completed by Project
+    "API" : 8
+    "BILL" : 6
+</code></pre>
+
+<h2 id="stories">Stories</h2>
+
+<p>This table shows all stories added to the sprint. <a href="#">View these stories in Jira</a>.</p>
+
+<p>Note: statuses reflect a snapshot in time. If a sprint is completed, statuses
+represent the final state of the story at the end of the sprint. If a sprint
+is in progress, statuses represent the state of the story at the time of
+generating this report.</p>
+
+<p>&#9733; denotes a rock epic.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Key</th>
+      <th>Status</th>
+      <th>Assignee</th>
+      <th>Points</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><a href="#">API-101</a></td>
+      <td>In Review</td>
+      <td>Dev Patel</td>
+      <td>2</td>
+      <td><strong><a href="#">&#9733; API Rate Limiting [25Q1]</a>:</strong> Implement server provisioning status webhook emitter <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><a href="#">API-102</a></td>
+      <td>In Progress</td>
+      <td>Lisa Brown</td>
+      <td>3</td>
+      <td><strong><a href="#">&#9733; API Rate Limiting [25Q1]</a>:</strong> Add payment method tokenization support for PCI compliance <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><a href="#">API-103</a></td>
+      <td>Blocked</td>
+      <td>Unassigned</td>
+      <td>5</td>
+      <td><strong><a href="#">&#9733; Webhook Delivery System [25Q2]</a>:</strong> Implement PDF generation service for invoice exports <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><a href="#">API-104</a></td>
+      <td>Blocked</td>
+      <td>Unassigned</td>
+      <td>3</td>
+      <td><strong><a href="#">&#9733; Webhook Delivery System [25Q2]</a>:</strong> Add two-factor authentication flow to admin login <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><a href="#">API-105</a></td>
+      <td>To Do</td>
+      <td>Unassigned</td>
+      <td>2</td>
+      <td><strong><a href="#">&#9733; Webhook Delivery System [25Q2]</a>:</strong> Redesign customer dashboard layout with new grid system <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><a href="#">OPS-106</a></td>
+      <td>In Progress</td>
+      <td>Unassigned</td>
+      <td>5</td>
+      <td><strong><a href="#">&#9733; Database Migration Tooling [25Q1]</a>:</strong> Add audit trail logging for admin panel actions <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><a href="#">OPS-107</a></td>
+      <td>To Do</td>
+      <td>Alex Chen</td>
+      <td>2</td>
+      <td><strong><a href="#">&#9733; Database Migration Tooling [25Q1]</a>:</strong> Create automated invoice dunning email sequence <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><a href="#">OPS-108</a></td>
+      <td>In Review</td>
+      <td>Tom Zhang</td>
+      <td>5</td>
+      <td><strong><a href="#">&#9733; Database Migration Tooling [25Q1]</a>:</strong> Implement token bucket rate limiter for public API endpoints <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><a href="#">BILL-109</a></td>
+      <td>In Review</td>
+      <td>Tom Zhang</td>
+      <td>2</td>
+      <td><strong><a href="#">&#9733; Payment Gateway Integration [25Q1]</a>:</strong> Build payment dispute management workflow <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><a href="#">BILL-110</a></td>
+      <td>In Progress</td>
+      <td>Lisa Brown</td>
+      <td>2</td>
+      <td><strong><a href="#">&#9733; Payment Gateway Integration [25Q1]</a>:</strong> Create client area ticket search with Elasticsearch <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><a href="#">API-111</a></td>
+      <td>In Progress</td>
+      <td>Tom Zhang</td>
+      <td>5</td>
+      <td><strong><a href="#">&#9733; SSO Integration [25Q2]</a>:</strong> Build automated database backup verification tool <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><a href="#">API-112</a></td>
+      <td>Done</td>
+      <td>Sarah Kim</td>
+      <td>8</td>
+      <td><strong><a href="#">&#9733; SSO Integration [25Q2]</a>:</strong> Build webhook event queue with configurable retry policy <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><a href="#">API-113</a></td>
+      <td>In Progress</td>
+      <td>James Wilson</td>
+      <td>8</td>
+      <td><strong><a href="#">&#9733; SSO Integration [25Q2]</a>:</strong> Add RBAC permission system for admin module access <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><a href="#">API-114</a></td>
+      <td>To Do</td>
+      <td>Unassigned</td>
+      <td>3</td>
+      <td><strong><a href="#">&#9733; SSO Integration [25Q2]</a>:</strong> Build payment reconciliation report generator <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><a href="#">OPS-115</a></td>
+      <td>To Do</td>
+      <td>Sarah Kim</td>
+      <td>3</td>
+      <td><strong><a href="#">Cron Job Monitoring</a>:</strong> Add screen reader support for order form steps <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><a href="#">OPS-116</a></td>
+      <td>To Do</td>
+      <td>Unassigned</td>
+      <td>1</td>
+      <td><strong><a href="#">Server Health Dashboard</a>:</strong> Add memory usage tracking to ops dashboard <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><a href="#">APP-117</a></td>
+      <td>To Do</td>
+      <td>Ryan Murphy</td>
+      <td>2</td>
+      <td><strong><a href="#">Report Export Enhancements</a>:</strong> Fix stale job detection in queue monitoring cron <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><a href="#">APP-118</a></td>
+      <td>In Review</td>
+      <td>Dev Patel</td>
+      <td>3</td>
+      <td><strong><a href="#">Report Export Enhancements</a>:</strong> Fix WHMCS hook registration for product provisioning <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><a href="#">APP-119</a></td>
+      <td>To Do</td>
+      <td>Dev Patel</td>
+      <td>3</td>
+      <td><strong><a href="#">Report Export Enhancements</a>:</strong> Fix queue worker memory leak on long-running jobs <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><a href="#">BILL-120</a></td>
+      <td>Done</td>
+      <td>Lisa Brown</td>
+      <td>5</td>
+      <td><strong><a href="#">Tax Calculation Fixes</a>:</strong> Fix PDF page break handling in service reports <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td><a href="#">BILL-121</a></td>
+      <td>Done</td>
+      <td>Sarah Kim</td>
+      <td>1</td>
+      <td><strong><a href="#">Tax Calculation Fixes</a>:</strong> Fix CSV export encoding for international characters <i>&mdash; Notes: Committed to at start of sprint.</i></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><a href="#">OPS-122</a></td>
+      <td>In Progress</td>
+      <td>Maria Santos</td>
+      <td>1</td>
+      <td>Fix cron job overlap detection for invoice generation <i>&mdash; Notes: Added mid-sprint.</i></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><small class="color-mode-toggle">
+Generated by Storytime v1.0.1 on Monday, February 10, 2025 at 9:30am<br /></small></p>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (window.Marked !== undefined) {
+      mermaid.initialize({ startOnLoad: true });
+
+      Marked.hooks.register('update', () => {
+        mermaid.run({ querySelector: 'code.mermaid' });
+      });
+      Marked.hooks.triggerUpdate();
+    } else {
+      mermaid.initialize({ startOnLoad: false });
+
+      await mermaid.run({ querySelector: '.language-mermaid' });
+    }
+  });
+</script>
+
+
+    </div>
+      </body>
+</html>
